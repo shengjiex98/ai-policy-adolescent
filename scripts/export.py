@@ -410,8 +410,19 @@ function render() {
     body.append(el("tr", {}, el("td", { colspan: "9", class: "empty" }, "No records match the current filters.")));
     return;
   }
-  let lastGroup;
   const grouping = document.getElementById("groupby").value !== "none";
+  if (grouping) {
+    // Cluster rows by group (groups ordered by first appearance in the sorted
+    // list, so the sort mode still decides group order); the sort within each
+    // group is preserved because Array.prototype.sort is stable.
+    const order = new Map();
+    for (const e of list) {
+      const g = groupKey(e);
+      if (!order.has(g)) order.set(g, order.size);
+    }
+    list.sort((a, b) => order.get(groupKey(a)) - order.get(groupKey(b)));
+  }
+  let lastGroup;
   for (const e of list) {
     if (grouping) {
       const g = groupKey(e);
