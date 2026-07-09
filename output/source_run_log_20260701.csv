@@ -1,10 +1,10 @@
 source_name,source_url,company_hint,platform_hint,status,records_found,records_included,error_message,run_id
-ChatGPT Release Notes,https://help.openai.com/en/articles/6825453-chatgpt-release-notes,OpenAI,ChatGPT,failed,0,0,HTTP 403 Forbidden on direct fetch; not bypassed per constitution Section 2 Step 3,20260701
-OpenAI Usage Policies,https://openai.com/policies/usage-policies,OpenAI,ChatGPT,partial,1,1,HTTP 403 on direct fetch; policy content and 2025-10-29 effective date recovered via web-search evidence,20260701
-OpenAI Parental Controls FAQ,https://help.openai.com/en/articles/12315553-parental-controls-faq,OpenAI,ChatGPT,partial,1,0,HTTP 403 on direct fetch; content recovered via web-search evidence and used as supporting source for the 2025-09-29 parental-controls event,20260701
-OpenAI Teen Safety Blog Post,https://openai.com/index/teen-safety-freedom-and-privacy/,OpenAI,ChatGPT,partial,1,1,HTTP 403 on direct fetch; content recovered via web-search evidence,20260701
-OpenAI Introducing Parental Controls,https://openai.com/index/introducing-parental-controls/,OpenAI,ChatGPT,partial,1,1,HTTP 403 on direct fetch; content recovered via web-search evidence,20260701
-OpenAI Age Prediction Help,https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt,OpenAI,ChatGPT,partial,0,0,HTTP 403 on direct fetch; page retained as supporting source URL for the 2025-09-16 age-prediction event,20260701
+ChatGPT Release Notes,https://help.openai.com/en/articles/6825453-chatgpt-release-notes,OpenAI,ChatGPT,success,1,1,Live page 403; content retrieved from Wayback snapshot 20260102071947,20260701
+OpenAI Usage Policies,https://openai.com/policies/usage-policies,OpenAI,ChatGPT,success,1,1,Live page 403; content retrieved from Wayback snapshot 20251102012204,20260701
+OpenAI Parental Controls FAQ,https://help.openai.com/en/articles/12315553-parental-controls-faq,OpenAI,ChatGPT,success,1,0,Live page 403; content retrieved from Wayback snapshot 20260128234253; supporting source for 2025-09-29 event,20260701
+OpenAI Teen Safety Blog Post,https://openai.com/index/teen-safety-freedom-and-privacy/,OpenAI,ChatGPT,success,1,1,Live page 403; content retrieved from Wayback snapshot 20251231081004,20260701
+OpenAI Introducing Parental Controls,https://openai.com/index/introducing-parental-controls/,OpenAI,ChatGPT,success,1,1,Live page 403; content retrieved from Wayback snapshot 20260107104512,20260701
+OpenAI Age Prediction Help,https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt,OpenAI,ChatGPT,partial,0,0,Live page 403; no Wayback snapshot available as of 2026-07-09; retained as supporting URL only,20260701
 Anthropic News,https://www.anthropic.com/news,Anthropic,Claude,partial,0,0,Hub page only lists 2026 posts; historical safety posts were fetched directly by URL (see individual sources),20260701
 Anthropic Usage Policy,https://www.anthropic.com/legal/aup,Anthropic,Claude,success,1,1,,20260701
 Anthropic Protecting User Wellbeing,https://www.anthropic.com/news/protecting-well-being-of-users,Anthropic,Claude,success,1,1,,20260701

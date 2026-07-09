@@ -54,6 +54,11 @@ output/     generated viewer HTML, CSV exports, and markdown run reports
 - The constitution specifies `.xlsx` input/output workbooks; this repo uses
   CSV/JSON/HTML instead — an operator-approved simplification (V2). The V1
   xlsx pipeline was removed.
-- OpenAI web properties block automated fetching (HTTP 403). Per the
-  constitution, bot protections are not bypassed; OpenAI records are built
-  from search-derived evidence and flagged `human_review_needed`.
+- OpenAI web properties block automated fetching of live pages (HTTP 403).
+  Restricted pages are instead retrieved from Wayback Machine snapshots of the
+  official URLs; verbatim quotes and dates are verified against the archived
+  text, snapshot URLs are stored in `supporting_source_urls`, and extracted
+  snapshot text is preserved under `data/raw/wayback/` for evidence. Only
+  pages without any archive snapshot fall back to search-derived evidence and
+  keep their `human_review_needed` flag. Per the constitution, bot protections
+  are never bypassed.

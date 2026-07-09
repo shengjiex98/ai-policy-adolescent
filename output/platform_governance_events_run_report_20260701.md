@@ -80,3 +80,28 @@ By company: OpenAI 9, Anthropic 5, Google 5.
 3. Diff Anthropic's Privacy Policy version effective 2026-07-08 against the prior version; it may contain a codable privacy event (takes effect one week after this run).
 4. Compare Anthropic's Usage Policy (effective 2025-09-15) against its prior version to determine what changed.
 5. For V2: add archived (Wayback) sources for OpenAI pages to obtain fetchable canonical text, and consider expanding sources to system cards and app-store metadata.
+
+---
+
+## Addendum (2026-07-09): Wayback Machine verification of restricted OpenAI pages
+
+All OpenAI web properties return HTTP 403 to automated fetches, so the original
+run relied on search-derived evidence with `human_review_needed = TRUE` on all
+9 OpenAI records. On 2026-07-09 those records were re-verified against Wayback
+Machine snapshots of the official pages:
+
+- **All 9 publication/effective dates confirmed exactly** as recorded,
+  including the GPT-5 default rollout (August 7, 2025), confirmed from the
+  archived ChatGPT Release Notes entry.
+- **All quotes replaced with verbatim text** from the archived official pages;
+  snapshot URLs added to `supporting_source_urls`; extracted snapshot text
+  preserved in `data/raw/wayback/`.
+- **Review flags cleared** on all 9 OpenAI records; `classification_confidence`
+  raised to `high`. Records needing human review: 14 → 5 (remaining: Gemini
+  under-13 rollout date, two Anthropic policy-version diffs, two undated
+  Google baselines).
+- **Source log updated**: 5 previously failed/partial OpenAI sources are now
+  `success` via archive snapshots. `OpenAI Age Prediction Help` remains
+  `partial` (no Wayback snapshot exists for that help-center article).
+- `input_sources.csv` now notes the Wayback retrieval path for all OpenAI
+  sources so future runs use archives directly.
