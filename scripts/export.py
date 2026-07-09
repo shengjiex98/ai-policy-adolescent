@@ -6,11 +6,13 @@
 Usage:
     uv run scripts/export.py data/events_YYYYMMDD.json          # HTML viewer
     uv run scripts/export.py data/events_YYYYMMDD.json --csv    # viewer + CSVs
+    python scripts/export.py data/events_YYYYMMDD.json --csv --out-dir site --force --index
 
 Applies the V1 subset of QC rules from the constitution (Section 11) and
 fails loudly if any check is violated. Never overwrites existing outputs.
 """
 
+import argparse
 import csv
 import json
 import re
@@ -90,12 +92,16 @@ def qc(events: list[dict]) -> list[str]:
     return errors
 
 
-def write_csvs(data: dict, out_dir: Path, run_date: str) -> list[Path]:
+def check_writable(path: Path, force: bool) -> None:
+    if path.exists() and not force:
+        sys.exit(f"Refusing to overwrite existing output: {path}")
+
+
+def write_csvs(data: dict, out_dir: Path, run_date: str, force: bool = False) -> list[Path]:
     events_path = out_dir / f"platform_events_{run_date}.csv"
     log_path = out_dir / f"source_run_log_{run_date}.csv"
     for path in (events_path, log_path):
-        if path.exists():
-            sys.exit(f"Refusing to overwrite existing output: {path}")
+        check_writable(path, force)
     with events_path.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=EVENT_FIELDS + ["run_id"], extrasaction="ignore")
         writer.writeheader()
@@ -470,23 +476,53 @@ renderSources();
 """
 
 
-def write_viewer(data: dict, out_dir: Path, run_date: str) -> Path:
-    viewer_path = out_dir / f"events_viewer_{run_date}.html"
-    if viewer_path.exists():
-        sys.exit(f"Refusing to overwrite existing output: {viewer_path}")
+def viewer_html(data: dict) -> str:
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
-    html = VIEWER_TEMPLATE.replace("__RUN_DATE__", data["run_date"]).replace("__DATA__", payload)
+    return VIEWER_TEMPLATE.replace("__RUN_DATE__", data["run_date"]).replace("__DATA__", payload)
+
+
+def write_viewer(data: dict, out_dir: Path, run_date: str, force: bool = False, index: bool = False) -> list[Path]:
+    viewer_path = out_dir / f"events_viewer_{run_date}.html"
+    paths = [viewer_path]
+    if index:
+        paths.append(out_dir / "index.html")
+    for path in paths:
+        check_writable(path, force)
+    html = viewer_html(data)
     viewer_path.write_text(html)
-    return viewer_path
+    if index:
+        paths[1].write_text(html)
+    return paths
+
+
+def parse_args(argv: list[str]) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Export a run JSON to a static HTML viewer, optionally with CSVs."
+    )
+    parser.add_argument("data_path", help="Path to data/events_YYYYMMDD.json")
+    parser.add_argument("--csv", action="store_true", help="Also write event and source-log CSV files")
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=Path(__file__).resolve().parent.parent / "output",
+        help="Directory for generated outputs (default: output)",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite existing outputs. Intended for clean CI/site publishing.",
+    )
+    parser.add_argument(
+        "--index",
+        action="store_true",
+        help="Also write index.html with the same viewer HTML for hosted sites.",
+    )
+    return parser.parse_args(argv)
 
 
 def main() -> None:
-    args = sys.argv[1:]
-    want_csv = "--csv" in args
-    paths = [a for a in args if not a.startswith("--")]
-    if len(paths) != 1:
-        sys.exit("Usage: uv run scripts/export.py data/events_YYYYMMDD.json [--csv]")
-    data = json.loads(Path(paths[0]).read_text())
+    args = parse_args(sys.argv[1:])
+    data = json.loads(Path(args.data_path).read_text())
     run_date = data["run_date"].replace("-", "")
 
     errors = qc(data["events"])
@@ -497,11 +533,11 @@ def main() -> None:
         sys.exit(1)
     print(f"QC passed ({len(data['events'])} events checked)")
 
-    out_dir = Path(__file__).resolve().parent.parent / "output"
-    viewer_path = write_viewer(data, out_dir, run_date)
-    print(f"Wrote {viewer_path}")
-    if want_csv:
-        for path in write_csvs(data, out_dir, run_date):
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    for path in write_viewer(data, args.out_dir, run_date, force=args.force, index=args.index):
+        print(f"Wrote {path}")
+    if args.csv:
+        for path in write_csvs(data, args.out_dir, run_date, force=args.force):
             print(f"Wrote {path}")
 
 

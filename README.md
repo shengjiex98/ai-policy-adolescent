@@ -27,9 +27,17 @@ Google DeepMind (Gemini), with dated events since 2023-01-01.
    filters, search, and per-event verification links. The Sources tab shows
    which sources succeeded, were partial, or failed.
 
+5. **Publish to GitHub Pages**: after changes land on `main`, the
+   `Deploy web viewer` GitHub Actions workflow builds the latest
+   `data/events_YYYYMMDD.json` into a Pages artifact. The hosted site uses a
+   stable `index.html` URL for the latest run, plus dated HTML and CSV files.
+   The project site URL is
+   `https://shengjiex98.github.io/ai-policy-adolescent/` after GitHub Pages is
+   enabled with **Source: GitHub Actions** in the repository Pages settings.
+
 The export runs quality-control checks (taxonomy codes, ISO dates, required
 fields, review-flag rules) before writing anything and refuses to overwrite
-existing dated outputs.
+existing dated outputs unless `--force` is passed for CI/site publishing.
 
 ## Layout
 
@@ -38,6 +46,7 @@ rules/      constitutions defining scope, taxonomy, and output requirements
 data/       input_sources.csv and canonical per-run events JSON
 scripts/    make_input_sources.py, export.py (standalone uv scripts, stdlib only)
 output/     generated viewer HTML, CSV exports, and markdown run reports
+.github/    GitHub Pages deployment workflow
 ```
 
 ## Notes
