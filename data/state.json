@@ -1,0 +1,152 @@
+{
+  "chatgpt-release-notes": {
+    "source_name": "ChatGPT Release Notes",
+    "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "text_hash": "14df732b5c99768c19e035d84a797b6fe0225a2e07c5241336e9c65c8952493e",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/chatgpt-release-notes/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via wayback"
+  },
+  "openai-usage-policies": {
+    "source_name": "OpenAI Usage Policies",
+    "source_url": "https://openai.com/policies/usage-policies",
+    "text_hash": "bf75454c373316066b42d6bd01a31a27786fb1098230332b5ce7e36b808c5de4",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/openai-usage-policies/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via wayback"
+  },
+  "openai-parental-controls-faq": {
+    "source_name": "OpenAI Parental Controls FAQ",
+    "source_url": "https://help.openai.com/en/articles/12315553-parental-controls-faq",
+    "text_hash": "34279666773c7a5a2efc8c42f37caaeb3f1ff178326d25436fcd659ee83c56e8",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/openai-parental-controls-faq/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via wayback"
+  },
+  "openai-teen-safety-blog": {
+    "source_name": "OpenAI Teen Safety Blog Post",
+    "source_url": "https://openai.com/index/teen-safety-freedom-and-privacy/",
+    "text_hash": "ad3f6a50ae8deb3ac5306d41db27f5c83206963ac4155d2daa4c65392779cc96",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/openai-teen-safety-blog/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via wayback"
+  },
+  "openai-introducing-parental-controls": {
+    "source_name": "OpenAI Introducing Parental Controls",
+    "source_url": "https://openai.com/index/introducing-parental-controls/",
+    "text_hash": "c5e887c2bccccd09efffa7f8f555bb8301d78d4188ef59a04d8d14958d3bb7dc",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/openai-introducing-parental-controls/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via wayback"
+  },
+  "openai-age-prediction-help": {
+    "source_name": "OpenAI Age Prediction Help",
+    "source_url": "https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt",
+    "text_hash": "6d199e7a28362e8d3edea209e6f42d7c16361bbb861571e3579d7d0d0619ccaf",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/openai-age-prediction-help/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via wayback"
+  },
+  "anthropic-news": {
+    "source_name": "Anthropic News",
+    "source_url": "https://www.anthropic.com/news",
+    "text_hash": "b80516efb4af6c3971b1a452634069e1013459ccc986fdd80ddf6f70a54fb489",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/anthropic-news/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via live"
+  },
+  "anthropic-usage-policy": {
+    "source_name": "Anthropic Usage Policy",
+    "source_url": "https://www.anthropic.com/legal/aup",
+    "text_hash": "b0bef34e423022ac6e1e593a06d6ed2a497d3f9c8caecbc17dcc2a982bdcaa07",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/anthropic-usage-policy/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via live"
+  },
+  "anthropic-wellbeing-post": {
+    "source_name": "Anthropic Protecting User Wellbeing",
+    "source_url": "https://www.anthropic.com/news/protecting-well-being-of-users",
+    "text_hash": "a4ab67cd4b66517e7bc2b9b0ce02a1b49478f5cd09e9e6d350910539f83c85d2",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/anthropic-wellbeing-post/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via live"
+  },
+  "anthropic-privacy-policy": {
+    "source_name": "Anthropic Privacy Policy",
+    "source_url": "https://www.anthropic.com/legal/privacy",
+    "text_hash": "80db81a4b1560554cd4ca0a0a9812239163d8d9070fc3ec15963a3fcfc9c6388",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/anthropic-privacy-policy/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via live"
+  },
+  "google-gemini-blog": {
+    "source_name": "Google Gemini Blog",
+    "source_url": "https://blog.google/products/gemini/",
+    "text_hash": "f833783171c78d593c311a6512801a5e3d517fd341df999ef178a5d7994c0d42",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/google-gemini-blog/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via live"
+  },
+  "gemini-privacy-hub": {
+    "source_name": "Gemini Apps Privacy Hub",
+    "source_url": "https://support.google.com/gemini/answer/13594961",
+    "text_hash": "68026910416a700a73d6c523d223184985154a95e5e4c60bf316be74abc13291",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/gemini-privacy-hub/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via live"
+  },
+  "gemini-children-guide": {
+    "source_name": "Gemini for Children Guide (Family Link)",
+    "source_url": "https://support.google.com/gemini/answer/16109150",
+    "text_hash": "ffa2124460729dce791b98eab5041dacec408a049b7de13c2ed0200008361aae",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/gemini-children-guide/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via live"
+  },
+  "bard-teens-blog": {
+    "source_name": "Google Bard for Teens Blog Post",
+    "source_url": "https://blog.google/products/gemini/google-bard-expansion-teens/",
+    "text_hash": "d07355bcd45b9f78bfc7e80acfed7018a1b158bdeb500e9204d3acc86e05bcc8",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/bard-teens-blog/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via live"
+  },
+  "google-kids-protections": {
+    "source_name": "Google Built-in Protections for Kids and Teens",
+    "source_url": "https://blog.google/technology/families/google-new-built-in-protections-kids-teens/",
+    "text_hash": "7326e3cc942eb747b280c0075388f371a6ac90467833ece605c34e966cb60a6d",
+    "last_checked": "2026-07-09",
+    "last_changed": "2026-07-09",
+    "last_snapshot": "snapshots/google-kids-protections/2026-07-09.txt",
+    "last_status": "success",
+    "note": "fetched via live"
+  }
+}

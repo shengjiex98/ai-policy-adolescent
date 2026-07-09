@@ -1,0 +1,94 @@
+SOURCE: Google Bard for Teens Blog Post
+URL: https://blog.google/products/gemini/google-bard-expansion-teens/
+FETCHED: 2026-07-09T02:28:03-07:00
+VIA: live
+---
+Google will responsibly expand Bard access to teenagers around the world
+How we’ve created a helpful and responsible Bard experience for teens
+Nov 15, 2023
+·
+Share
+x.com
+Facebook
+LinkedIn
+Mail
+Copy link
+Teens in most countries around the world will be able to use Bard to easily find inspiration and learn new skills.
+Tulsee Doshi
+Head of Product, Responsible AI
+Share
+x.com
+Facebook
+LinkedIn
+Mail
+Copy link
+Tomorrow, we’ll open up access to Bard to teenagers in most
+countries
+around the world. Teens in those countries who meet the
+minimum age requirement
+to manage their own Google Account will be able to access Bard in English, with more languages to come over time.
+A helpful and informational tool for teens
+Teens can use Bard to find inspiration, discover new hobbies and solve everyday problems. For example, they could ask Bard for writing tips for a class president speech, suggestions for what universities to apply to, or ways to learn a new sport like pickleball.
+Bard can also be a helpful learning tool for teens, allowing them to dig deeper into topics, better understand complex concepts and practice new skills in ways that work best for them. They could, for instance, ask Bard to help them brainstorm science fair project ideas or learn more about a specific time period in history.
+For even more interactive learning, we’re bringing a math learning experience into Bard. Anyone, including teens, can simply type or upload a picture of a math equation, and Bard won’t just give the answer — it’ll share step-by-step explanations of how to solve it.
+Bard will be able to help with data visualization, too. With this new capability, Bard can generate charts from tables or data included in a prompt — like if a teen asks Bard to show in a bar chart how many hours they volunteered across a few months.
+Both features will be live tomorrow and available in English to start.
+Our responsible approach
+We're continuing to be
+responsible
+as we open up Bard to more people. Before launching to teens, we consulted with child safety and development experts to help shape our content policies and an experience that prioritizes safety. And organizations like the Family Online Safety Institute (FOSI) advised us on how to keep the needs of teens and families in mind.
+"FOSI's
+research
+found that most teens and parents expect that GenAI skills will be an important part of their future,” says Stephen Balkam, Founder & CEO of the Family Online Safety Institute. “Google's thoughtful approach to expanding Bard access to teens represents an important step in offering teens the opportunity to explore this technology with the appropriate safeguards in place.”
+Teens also shared feedback with us directly that they have questions about how to use generative AI and what its limitations might be. So we’ve developed a tailored onboarding experience in Bard for teens that includes resources like our
+AI Literacy Guide
+and a video with tips on how to use generative AI responsibly. The onboarding will also share an overview of how Bard Activity is used, and give teens the option to turn it on or off.
+Meanwhile, we’ve trained Bard to recognize areas that are inappropriate to younger users and implemented safety features and guardrails to help prevent unsafe content, such as illegal or age-gated substances, from appearing in its responses to teens.
+We also recognize that many people, including teens, are not always aware of hallucinations in LLMs. So the first time a teen asks a fact-based question, we’ll automatically run our
+double-check response feature
+, which helps evaluate whether there’s content across the web to substantiate Bard’s response. Soon, this feature will automatically run when any new Bard user asks their first factual question. And for teens, we'll actively recommend using double-check to help them develop information literacy and critical thinking skills.
+Over time, we’ll add even more ways for teens to learn and explore responsibly — and for everyone using Bard to have a creative collaborator at their fingertips.
+POSTED IN:
+Related stories
+AI
+The latest AI news we announced in June 2026
+By
+Keyword Team
+Jul 01, 2026
+Gemini App
+Gemini Spark updates: macOS launch, connected apps and more
+By
+Adam Coimbra
+&
+Srinivasan (Cheenu) Venkatachary
+Jun 30, 2026
+Gemini App
+The Gemini app is bringing personalized image creation to more users.
+By
+David Sharon
+Jun 29, 2026
+Gemini App
+5 ways to learn with study notebooks in the Gemini app
+By
+Carol Walport
+Jun 25, 2026
+Gemini App
+Save time and grow your business with new Gemini tools
+By
+Vishnu Sivaji
+Jun 10, 2026
+AI
+The latest AI news we announced in May 2026
+By
+Blog Team
+Jun 05, 2026
+.
+Jump to position 1
+Jump to position 2
+Jump to position 3
+Jump to position 4
+Jump to position 5
+Jump to position 6
+Let’s stay in touch. Get the latest news from Google in your inbox.
+Subscribe
+No thanks

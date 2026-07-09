@@ -1,23 +1,31 @@
 # /// script
 # requires-python = ">=3.11"
 # ///
-"""Export a scrape-run events JSON to the default web viewer, optionally CSV.
+"""Export the event registry to the default web viewer, optionally CSV.
+
+Reads the longitudinal store: data/events.json (cumulative event registry),
+data/state.json (per-source scan state), and data/sources.csv (source list).
 
 Usage:
-    uv run scripts/export.py data/events_YYYYMMDD.json          # HTML viewer
-    uv run scripts/export.py data/events_YYYYMMDD.json --csv    # viewer + CSVs
-    python scripts/export.py data/events_YYYYMMDD.json --csv --out-dir site --force --index
+    uv run scripts/export.py                # HTML viewer
+    uv run scripts/export.py --csv          # viewer + CSV files
+    python scripts/export.py --csv --out-dir site --force --index   # CI/site
 
 Applies the V1 subset of QC rules from the constitution (Section 11) and
-fails loudly if any check is violated. Never overwrites existing outputs.
+fails loudly if any check is violated. Never overwrites existing outputs
+unless --force is passed.
 """
 
 import argparse
 import csv
+import datetime as dt
 import json
 import re
 import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
 
 # Section 5 taxonomy: category -> valid subcategory codes
 TAXONOMY = {
@@ -44,9 +52,9 @@ EVENT_FIELDS = [
     "classification_confidence", "human_review_needed", "human_review_reason",
 ]
 
-RUN_LOG_FIELDS = [
-    "source_name", "source_url", "company_hint", "platform_hint",
-    "status", "records_found", "records_included", "error_message",
+SOURCE_STATE_FIELDS = [
+    "source_slug", "source_name", "source_url", "company", "platform",
+    "status", "last_checked", "last_changed", "last_snapshot", "note",
 ]
 
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -97,27 +105,53 @@ def check_writable(path: Path, force: bool) -> None:
         sys.exit(f"Refusing to overwrite existing output: {path}")
 
 
-def write_csvs(data: dict, out_dir: Path, run_date: str, force: bool = False) -> list[Path]:
-    events_path = out_dir / f"platform_events_{run_date}.csv"
-    log_path = out_dir / f"source_run_log_{run_date}.csv"
-    for path in (events_path, log_path):
+def load_payload() -> dict:
+    """Assemble the viewer/CSV payload from the longitudinal store."""
+    registry = json.loads((DATA / "events.json").read_text())
+    state = json.loads((DATA / "state.json").read_text())
+    with (DATA / "sources.csv").open() as f:
+        source_rows = list(csv.DictReader(f))
+    hints = {row["source_slug"]: row for row in source_rows}
+    sources = []
+    for slug, entry in state.items():
+        hint = hints.get(slug, {})
+        sources.append({
+            "source_slug": slug,
+            "source_name": entry.get("source_name", slug),
+            "source_url": entry.get("source_url", ""),
+            "company": hint.get("company_hint", ""),
+            "platform": hint.get("platform_hint", ""),
+            "status": entry.get("last_status", "unknown"),
+            "last_checked": entry.get("last_checked", ""),
+            "last_changed": entry.get("last_changed", ""),
+            "last_snapshot": entry.get("last_snapshot", ""),
+            "note": entry.get("note", ""),
+        })
+    return {
+        "generated": dt.date.today().isoformat(),
+        "updated_at": registry.get("updated_at", ""),
+        "events": registry["events"],
+        "sources": sources,
+    }
+
+
+def write_csvs(payload: dict, out_dir: Path, date_tag: str, force: bool = False) -> list[Path]:
+    events_path = out_dir / f"platform_events_{date_tag}.csv"
+    sources_path = out_dir / f"sources_state_{date_tag}.csv"
+    for path in (events_path, sources_path):
         check_writable(path, force)
     with events_path.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=EVENT_FIELDS + ["run_id"], extrasaction="ignore")
         writer.writeheader()
-        for ev in data["events"]:
-            row = {k: ev.get(k, "") for k in EVENT_FIELDS}
+        for ev in payload["events"]:
+            row = {k: ev.get(k, "") for k in EVENT_FIELDS + ["run_id"]}
             row["human_review_needed"] = "TRUE" if ev.get("human_review_needed") else "FALSE"
-            row["run_id"] = data["run_id"]
             writer.writerow(row)
-    with log_path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=RUN_LOG_FIELDS + ["run_id"], extrasaction="ignore")
+    with sources_path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=SOURCE_STATE_FIELDS, extrasaction="ignore")
         writer.writeheader()
-        for src in data["source_run_log"]:
-            row = {k: src.get(k, "") for k in RUN_LOG_FIELDS}
-            row["run_id"] = data["run_id"]
-            writer.writerow(row)
-    return [events_path, log_path]
+        writer.writerows(payload["sources"])
+    return [events_path, sources_path]
 
 
 VIEWER_TEMPLATE = """<!DOCTYPE html>
@@ -269,7 +303,7 @@ footer { padding: 0 24px 24px; color: var(--muted); font-size: 12px; }
     <div class="tablewrap">
       <table>
         <thead>
-          <tr><th>Source</th><th>Company</th><th>Status</th><th>Found</th><th>Included</th><th>Notes</th></tr>
+          <tr><th>Source</th><th>Company</th><th>Status</th><th>Last checked</th><th>Last changed</th><th>Notes</th></tr>
         </thead>
         <tbody id="sources-body"></tbody>
       </table>
@@ -292,8 +326,6 @@ const IMPORTANCE_LABEL = {
   baseline_policy_snapshot: ["Baseline", "b-baseline"],
   exclude: ["Excluded", "b-minor"],
 };
-const STATUS_CLASS = { success: "b-ok", partial: "b-warn", failed: "b-fail", skipped: "b-minor" };
-
 function el(tag, attrs = {}, ...children) {
   const node = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
@@ -317,9 +349,10 @@ function catLabel(code) {
 }
 
 document.getElementById("subtitle").textContent =
-  `Run ${DATA.run_date} · ${EVENTS.length} records · ` +
+  `${EVENTS.length} records · ` +
   `${EVENTS.filter(e => e.event_importance === "major_safety_relevant_event").length} major safety-relevant · ` +
-  `${EVENTS.filter(e => e.human_review_needed).length} need review`;
+  `${EVENTS.filter(e => e.human_review_needed).length} need review · ` +
+  `data updated ${DATA.updated_at}`;
 
 // Populate filter options
 const companies = [...new Set(EVENTS.map(e => e.company))].sort();
@@ -376,7 +409,7 @@ function detailRow(e) {
   td.append(el("div", {}, e.event_summary));
   const grid = el("div", { class: "detail-grid" });
   const meta = [
-    ["Event ID", e.event_id], ["Type", e.event_type],
+    ["Event ID", e.event_id], ["Run", e.run_id], ["Type", e.event_type],
     ["Date basis", `${e.date_basis} (confidence: ${e.date_confidence})`],
     ["Subcategory", e.primary_subcategory_code],
     ["Expected direction", e.expected_direction],
@@ -456,14 +489,16 @@ function render() {
 function renderSources() {
   const body = document.getElementById("sources-body");
   body.replaceChildren();
-  for (const s of DATA.source_run_log) {
+  for (const s of DATA.sources) {
+    const cls = s.status.startsWith("success") ? "b-ok"
+      : s.status.startsWith("failed") ? "b-fail" : "b-warn";
     body.append(el("tr", {},
       el("td", {}, link(s.source_url, s.source_name)),
-      el("td", {}, s.company_hint || ""),
-      el("td", {}, el("span", { class: "badge " + (STATUS_CLASS[s.status] || "b-minor") }, s.status)),
-      el("td", {}, String(s.records_found)),
-      el("td", {}, String(s.records_included)),
-      el("td", {}, s.error_message || ""),
+      el("td", {}, s.company || ""),
+      el("td", {}, el("span", { class: "badge " + cls, title: s.status }, s.status.split(":")[0])),
+      el("td", {}, s.last_checked || ""),
+      el("td", {}, s.last_changed || ""),
+      el("td", {}, s.note || ""),
     ));
   }
 }
@@ -487,19 +522,19 @@ renderSources();
 """
 
 
-def viewer_html(data: dict) -> str:
-    payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
-    return VIEWER_TEMPLATE.replace("__RUN_DATE__", data["run_date"]).replace("__DATA__", payload)
+def viewer_html(payload: dict) -> str:
+    blob = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
+    return VIEWER_TEMPLATE.replace("__RUN_DATE__", payload["generated"]).replace("__DATA__", blob)
 
 
-def write_viewer(data: dict, out_dir: Path, run_date: str, force: bool = False, index: bool = False) -> list[Path]:
-    viewer_path = out_dir / f"events_viewer_{run_date}.html"
+def write_viewer(payload: dict, out_dir: Path, date_tag: str, force: bool = False, index: bool = False) -> list[Path]:
+    viewer_path = out_dir / f"events_viewer_{date_tag}.html"
     paths = [viewer_path]
     if index:
         paths.append(out_dir / "index.html")
     for path in paths:
         check_writable(path, force)
-    html = viewer_html(data)
+    html = viewer_html(payload)
     viewer_path.write_text(html)
     if index:
         paths[1].write_text(html)
@@ -508,10 +543,9 @@ def write_viewer(data: dict, out_dir: Path, run_date: str, force: bool = False, 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Export a run JSON to a static HTML viewer, optionally with CSVs."
+        description="Export the event registry to a static HTML viewer, optionally with CSVs."
     )
-    parser.add_argument("data_path", help="Path to data/events_YYYYMMDD.json")
-    parser.add_argument("--csv", action="store_true", help="Also write event and source-log CSV files")
+    parser.add_argument("--csv", action="store_true", help="Also write event and source-state CSV files")
     parser.add_argument(
         "--out-dir",
         type=Path,
@@ -533,22 +567,22 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args(sys.argv[1:])
-    data = json.loads(Path(args.data_path).read_text())
-    run_date = data["run_date"].replace("-", "")
+    payload = load_payload()
+    date_tag = payload["generated"].replace("-", "")
 
-    errors = qc(data["events"])
+    errors = qc(payload["events"])
     if errors:
         print("QC FAILED:")
         for err in errors:
             print(f"  - {err}")
         sys.exit(1)
-    print(f"QC passed ({len(data['events'])} events checked)")
+    print(f"QC passed ({len(payload['events'])} events checked)")
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
-    for path in write_viewer(data, args.out_dir, run_date, force=args.force, index=args.index):
+    for path in write_viewer(payload, args.out_dir, date_tag, force=args.force, index=args.index):
         print(f"Wrote {path}")
     if args.csv:
-        for path in write_csvs(data, args.out_dir, run_date, force=args.force):
+        for path in write_csvs(payload, args.out_dir, date_tag, force=args.force):
             print(f"Wrote {path}")
 
 

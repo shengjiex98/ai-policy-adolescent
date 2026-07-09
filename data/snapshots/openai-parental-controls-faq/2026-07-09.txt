@@ -1,0 +1,249 @@
+SOURCE: OpenAI Parental Controls FAQ
+URL: https://help.openai.com/en/articles/12315553-parental-controls-faq
+FETCHED: 2026-07-09T02:30:51-07:00
+VIA: wayback:https://web.archive.org/web/20260128234253/https://help.openai.com/en/articles/12315553-parental-controls-faq
+---
+Parental Controls on ChatGPT - FAQ | OpenAI Help Center
+Parental Controls on ChatGPT - FAQ
+Updated: 19 days ago
+Parental controls in ChatGPT are designed to support families and put children’s wellbeing first. When a parent and teen link accounts, parents can manage select settings for ChatGPT and Sora, set quiet hours, and receive safety alerts in certain situations. Controls are easy to change or turn off at any time. This article explains how to get started, how invitations work, what parents can manage, what teens can do, and the limits of these controls.
+​
+How to get started
+Link your teen’s account, then choose the settings that fit your family. You can change these anytime.
+Open
+Settings
+by selecting your profile icon and selecting
+Settings
+.
+​
+Select
+Parental controls
+in the menu.
+​
+Choose
++ Add family member
+(see
+Invite teen
+steps below).
+​
+After your teen accepts, select their name under
+Family members.
+​
+Review or change any of your teen’s settings, including:
+​
+Reduce sensitive content
+Improve the model for everyone
+Reference saved memories
+Voice mode
+Image generation
+Quiet hours
+Certain settings related to Sora
+To stop using parental controls, you or your teen can select
+Unlink accounts
+.
+Please note: Parental controls help guide what ChatGPT shows and which features are available to your teen. Parents don’t have access to their teen’s conversations, except in rare cases where our system and trained reviewers detect possible signs of serious safety risk, parents may be notified — but only with the information needed to support their teen’s safety.
+Invite teen
+Link your teen’s account so you can choose settings together. You can invite by phone (web only) or email, and you can change or remove the link at any time. One parent can link with multiple teens, but each teen can link with only one parent at this time.
+Open
+Settings
+by selecting your profile icon and selecting
+Settings
+.
+​
+Select
+Parental controls
+in the menu.
+​
+In
+Settings
+→
+Parental controls
+, select
++ Add family member
+.
+​
+In
+Invite family member
+, pick how to send the invite:
+​
+Use phone
+→ choose country (e.g.,
+United States +(1)
+) and enter the
+Phone number
+.
+​
+Use email
+→ enter the
+Email address
+.
+​
+Select
+Send
+. Depending on the contact method you chose, your teen will get a text or email with a link to connect their ChatGPT account. They’ll also receive a notification within ChatGPT.
+​
+Once your teen accepts, you’ll see them under
+Family members
+and can adjust settings anytime.
+Please note that any family member can unlink accounts. Parents will be notified if a teen unlinks their account.
+Safety notifications
+When parental controls are turned on, ChatGPT will send a safety notification to a parent or guardian in certain limited situations. These notifications are designed to alert parents if our systems and trained reviewers detect activity that may indicate certain serious safety concerns involving self-harm.
+Parents are notified that a possible concern has been detected and receive resources — provided in partnership with mental health experts.
+No system is perfect, and these notifications are not a substitute for professional care or emergency services. They are one way we aim to help families stay informed and support their teens when something serious may be happening.
+What you’ll receive
+An alert that a serious safety risk related to self-harm was detected .
+​
+Links to support resources and other relevant information.
+How it works
+Our systems detect ChatGPT prompts that may relate to a serious safety concern involving  self-harm.
+​
+A small team of specially trained people reviews to determine whether there are signs of acute distress.
+​
+The parent account gets an alert notifying them of what we detected, resources available to them, and how to contact us as needed.
+​
+Parents can select to receive alerts via SMS, email, or push notification.
+Managing safety notifications
+These notifications are on by default when a parent and child agree to link accounts. Parents can choose how they’d like to be notified (email, SMS, or push notification).
+Information and resources
+​
+We’ve gathered additional resources to help parents who may receive these notifications. We provide resources that may be helpful to parents, including
+crisis helplines
+.
+​
+Settings and Data
+Where to manage:
+Go to
+Settings
+and select
+Parental controls
+​
+Under Family members, select your teen
+​
+Scroll down to find the ChatGPT and Sora settings
+These settings are on and off switches for features in your teen’s account. Turning a feature
+Off
+hides or blocks it for your teen; turning it
+On
+enables it with our safety systems. Your teen won’t be able to adjust these settings choices while they’re linked to your account. These controls do
+not
+give you access to your child’s conversations with ChatGPT and do not provide real-time monitoring.
+Please note that updates to these settings may not take effect right away.
+ChatGPT
+Model training
+On:
+Your teen’s conversations (transcripts, files, and model outputs) can help improve ChatGPT and Sora models.
+Off:
+Your teen’s conversations are excluded from training. This doesn’t affect their ability to use ChatGPT or Sora.
+Memory
+On:
+ChatGPT can remember helpful details (like a class or project) to personalize replies.
+Off:
+ChatGPT won’t store new memories; and any previously stored memories will be deleted within 30 days.
+Voice mode
+On:
+your teen can use voice mode in ChatGPT.
+Off:
+Voice mode in ChatGPT is disabled.
+Image generation
+On:
+your teen can create and edit images with ChatGPT.
+Off:
+image creation and edit tools are disabled.
+Reducing sensitive content
+Once parents and teens connect their accounts, the teen account will automatically get additional content protections, including reduced graphic content, viral challenges, sexual, romantic or violent roleplay, and extreme beauty ideals, to provide enhanced age-appropriate protections.
+Parents can choose to toggle off “Reduce sensitive content”.
+Quiet hours
+Parents can set a time window when ChatGPT cannot be used.
+Only one time window can be set at a time.
+Turn on “Quiet hours”, then select a start time and an end time.
+Please note that the following features are only available in the Sora app.
+Sora
+Personalized feed
+​
+On
+: Allow videos to be recommended based on your child's history and activity.
+Off
+: The feed will not use your child's history and activity.
+​
+Continuous feed
+​
+On:
+Allows an uninterrupted feed of content while scrolling.
+Off:
+Limits the feed of content while scrolling.
+​
+Messaging
+​
+Allows your child to use direct messages.
+Please note that the following features are only available in the ChatGPT Atlas app.
+ChatGPT Atlas
+ChatGPT Atlas⁠
+is a web browser with ChatGPT built in. You can manage your teen's settings for Atlas directly in ChatGPT including:
+Reference browser memories:
+Allow ChatGPT to reference key details from your child’s browsing history in Atlas.
+Agent mode:
+Allow ChatGPT agent in Atlas to help with more complex, multi-step tasks, like research or shopping
+.
+Safe search:
+Allow explicit links in search results when enabled. Learn more about safe search.
+Important:
+Changes apply to
+new conversations
+started after you update a setting. Existing conversations keep their prior behavior.
+For Teens
+Invite a parent
+Link a parent or guardian’s account. Please note that teens can only be linked to one parent at a time.
+Open
+Settings
+→
+Parental controls
+.
+​
+Select
+Invite a parent
+.
+​
+Choose how to send it (
+Use phone
+or
+Use email
+) and enter their info.
+​
+Tap
+Send
+. Your parent will get a link to connect their account.
+​
+After they accept, you’ll see them under
+Family members
+. You can see which settings are on or off.
+If your parent already sent an invite, go to Settings → Parental controls and select Accept invite.
+Privacy:
+Linking lets your parent manage certain settings and receive safety alerts in certain limited situations.
+Unlinking
+You’re free to end parental controls when you need to.
+Open
+Settings
+→
+Parental controls
+.
+​
+Select your linked parent.
+​
+Choose
+Unlink
+and confirm.
+What happens next
+Parental controls turn off for your account.
+​
+Your parent is notified that parental controls are no longer accessible..
+​
+You can re-link later from the same screen.
+Need more help? Contact us
+AI Chat
+Chat now
+AI Phone Call (beta)
+1-888-GPT-0090
+Calls may be recorded to improve OpenAI services.
+Learn more.
+Was this article helpful?
+Submit

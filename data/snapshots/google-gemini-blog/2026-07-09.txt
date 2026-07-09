@@ -1,0 +1,24 @@
+SOURCE: Google Gemini Blog
+URL: https://blog.google/products/gemini/
+FETCHED: 2026-07-09T02:28:03-07:00
+VIA: live
+---
+Official Gemini news and updates | Google Blog
+Gemini
+The latest news about Gemini. Chat to start writing, planning, learning and more with Google AI.
+Gemini App
+The latest AI news we announced in June 2026
+Gemini Spark updates: macOS launch, connected apps and more
+The Gemini app is bringing personalized image creation to more users.
+Gemini Models
+Start building with Nano Banana 2 Lite and Gemini Omni Flash
+Introducing computer use in Gemini 3.5 Flash
+Fluid, natural voice translation with Gemini 3.5 Live Translate
+Gemini Features
+June Pixel Drop: New features for creators, Gemini upgrades and more
+A smarter, more proactive Android with Gemini Intelligence
+March Pixel Drop: New personalization and AI tools
+All the Latest
+Let’s stay in touch. Get the latest news from Google in your inbox.
+Subscribe
+No thanks

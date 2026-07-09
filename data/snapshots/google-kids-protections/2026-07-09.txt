@@ -1,0 +1,114 @@
+SOURCE: Google Built-in Protections for Kids and Teens
+URL: https://blog.google/technology/families/google-new-built-in-protections-kids-teens/
+FETCHED: 2026-07-09T02:28:03-07:00
+VIA: live
+---
+New digital protections for kids, teens and parents
+New digital protections for kids, teens and parents
+Feb 12, 2025
+·
+Share
+x.com
+Facebook
+LinkedIn
+Mail
+Copy link
+We’re bringing our built-in protections to more kids and teens and launching new features like School Time, parent-approved contacts, Android tap to pay for supervised kids, and more.
+Jen Fitzpatrick
+SVP, Core
+Share
+x.com
+Facebook
+LinkedIn
+Mail
+Copy link
+Updated February 13, 2025
+As technology continues to evolve, we’re constantly researching and deploying new ways to help keep our users safe online. Today, we’re sharing several updates that build on our existing safeguards for under-18 users, helping further protect them online while they access the many benefits the internet offers, and provide parents and guardians with additional peace of mind.
+Safeguards for kids and teens
+In recent years, we’ve
+taken
+many important steps to provide age-appropriate experiences to kids and teens across our products, including a number of changes for all users under 18: defaulting to our
+SafeSearch Filter
+, restricting
+sensitive ad content
+, gating age-restricted content on YouTube & Play, incorporating
+teen wellbeing
+protections on YouTube and additional safeguards in our
+generative AI
+experiences. We are also rolling out a new
+sensitive content warning
+feature in Google Messages, this feature is opt-in for adults, managed via Android Settings, and is opt-out for users under 18 years, with parental controls for supervised accounts.
+As we continue to find new ways to deliver age-appropriate safeguards, one of the most complex challenges is understanding the age of the user. This year we’ll begin testing a machine learning-based age estimation model in the U.S. This model helps us estimate whether a user is over or under 18 so that we can apply protections to help provide more age-appropriate experiences. We’ll bring this technology to more countries over time.
+Additional family-focused controls
+What’s right for every family is different, which is why we built
+Google Family Link
+to give parents the tools to create healthy digital habits while respecting their choices with technology. Today, we’re making an update to Family Link that brings the most important tools and resources for managing screen time to the forefront. This allows easier management of multiple kids’ online experiences across their Android and Chrome devices.
+We’re also adding capabilities to Family Link that help kids stay focused in class by minimizing distractions from their personal devices. In the next week, we’ll start rolling out School Time to Android phones and tablets for parents to automatically limit or adjust phone functionality and restrict app access during school hours.
+Starting next month, parents will be able to add contacts directly to their child’s device and choose to limit phone calls and text conversations to only these contacts. These parent-approved contacts can help foster safer and more intentional connections.
+Helpful experiences for kids and teens
+We’re committed to bringing the best of Google to all of our users — including features and products for youth like the
+Fitbit Ace LTE
+and
+Samsung Galaxy Watch for Kids
+,
+YouTube Kids and supervised experiences
+and Gemini for teens both at
+home
+and
+school
+. Here are some new ways we’re helping kids and teens safely explore, grow and play online.
+For supervised Android users under the applicable age of consent, we’re bringing the ability to tap to pay from an Android phone. This spring, parents will be able to add a payment card to their child’s Google Wallet for tap to pay transactions in stores. Parents will be able to approve new cards, easily remove cards and view recent transaction history. Kids can also add things like gift cards and event tickets.
+We want to prepare teens with the skills and tools they need to thrive in the future where generative AI exists, and teach them how this technology can be used to unlock creativity and facilitate learning. Building on our
+responsible approach
+to generative AI and additional policies to safeguard teens, we’ve made available a number of features and products for teens over the past two years including
+AI Overviews
+,
+Gemini
+and
+Circle to Search
+. Over the coming months we’ll continue to responsibly expand access for teens including
+Learn About
+, a feature that uses generative AI to provide interactive learning experiences.
+We will continue to invest in technologies that help protect and empower kids and teens across all of Google’s platforms, and we’re also committed to working with stakeholders around the world to help advance smart and strong policy approaches for keeping youth safer online.
+POSTED IN:
+Related stories
+AI
+The latest AI news we announced in June 2026
+By
+Keyword Team
+Jul 01, 2026
+Google Ads
+Expanding financial advertiser verification across Europe
+By
+Keerat Sharma
+Jun 23, 2026
+Google.org
+Expanding our U.S. digital wellbeing fund
+By
+Maggie Johnson
+Jun 16, 2026
+Families
+3 ways to balance screen time and keep kids engaged this summer
+By
+Mindy Brooks
+Jun 16, 2026
+Safety & Security
+How we're combatting AI scams with security, legislation and more
+By
+Halimah DeLaine Prado
+Jun 12, 2026
+Safety & Security
+Our latest fraud and scams advisory
+By
+Laurie Richardson
+Jun 08, 2026
+.
+Jump to position 1
+Jump to position 2
+Jump to position 3
+Jump to position 4
+Jump to position 5
+Jump to position 6
+Let’s stay in touch. Get the latest news from Google in your inbox.
+Subscribe
+No thanks

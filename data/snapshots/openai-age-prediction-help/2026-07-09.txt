@@ -1,0 +1,100 @@
+SOURCE: OpenAI Age Prediction Help
+URL: https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt
+FETCHED: 2026-07-09T02:30:51-07:00
+VIA: wayback:https://web.archive.org/web/20260618124413/https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt
+---
+Age prediction in ChatGPT | OpenAI Help Center
+Age prediction in ChatGPT
+Learn how ChatGPT uses age prediction and age verification to support age-appropriate experiences for teens.
+Updated: 15 hours ago
+Age prediction is rolling out globally. In the EU, age prediction will roll out in the coming weeks to account for regional requirements.
+Overview
+To help provide age-appropriate experiences in ChatGPT, OpenAI may use signals to predict whether an account belongs to someone under 18.
+If ChatGPT predicts that an account may belong to someone under 18, ChatGPT may apply the teen experience. This can include extra safeguards for sensitive or age-inappropriate content and some feature limits. Your account stays active, and you can still use ChatGPT to learn, create, and ask questions. OpenAI will not show ads in your account.
+If you are 18 or older and ChatGPT placed your account in the teen experience by mistake, you can verify your age to have teen protections removed.
+For questions or requests about age prediction, email
+privacy@openai.com
+.
+Note for users in Italy: If ChatGPT asks you to verify your age, you must complete age verification within 60 days. If you do not complete verification within that time, certain features may be disabled until you verify your age.
+How age prediction works
+ChatGPT has extra safeguards for teens. These safeguards help keep the experience safer and more age-appropriate. They can limit some sensitive content and certain kinds of interactions.
+To decide when to apply the teen experience, ChatGPT uses an age prediction system. It looks at different signals linked to your account. For example, it may look at general topics you talk about, the times of day you use ChatGPT, how and when your account is used, and how long your account has existed.
+Age prediction is an extra safety check. It can apply the teen experience even if you already gave your date of birth when you created your account.
+No system is perfect. Sometimes ChatGPT may get it wrong. If you are 18 or older and were placed in the teen experience by mistake, you can verify your age.
+What changes when ChatGPT predicts you may be under 18
+If ChatGPT predicts that you may be under 18, ChatGPT may apply the teen experience. Your account stays active.
+The teen experience handles some topics with extra care and may reduce sensitive content, such as:
+Graphic violence or gore
+Viral challenges that could push risky or harmful behavior
+Sexual, romantic, or violent roleplay
+Content that promotes extreme beauty standards, unhealthy dieting, or body shaming
+For more information about this content safeguard, see:
+Reduce sensitive content in ChatGPT
+.
+If ChatGPT determines that you are 18 or older, or if your verified date of birth shows that you have turned 18, your account moves out of the teen experience. For more information, see:
+What happens when a teen account turns 18 in ChatGPT
+.
+If your account is linked to a parent or guardian through parental controls, they may be able to manage selected settings for your account. Parental controls do not give your parent or guardian access to your conversations. For more information, see:
+Parental controls in ChatGPT
+.
+Verify your age if you are 18 or older
+You do not need to verify your age to keep using ChatGPT with teen protections. You only need to verify your age if you are 18 or older and want those protections removed.
+If you are logged in, you can
+start age verification
+.
+If you are in Italy, you have 60 days from the time you are asked to verify before some features may be disabled.
+To verify your age:
+Sign in to ChatGPT on the web.
+Open
+Settings
+.
+Under
+Account
+, check whether your account is in the teen experience.
+Select
+Verify age
+.
+Follow the steps with Persona.
+Persona is a trusted third-party company OpenAI uses to help verify age.
+What Persona may ask for
+Depending on your country, Persona may ask for one or both of these:
+Live selfie:
+Use your phone or webcam to take a real-time photo of your face.
+Government ID:
+Upload a photo of a government-issued ID, such as a driver’s license, passport, or state ID. Persona checks your date of birth and that your selfie matches your ID photo. Accepted IDs vary by country.
+After you verify
+If Persona confirms that you are 18 or older, ChatGPT will remove teen protections. This change may take a short time to fully apply.
+If verification shows that your account should remain in the teen experience, ChatGPT may keep or restore teen protections for your account.
+OpenAI does not see what you share with Persona. OpenAI only learns the information needed to determine the right experience for your account, such as whether you verified that you are 18 or older and age-related information such as your date of birth. OpenAI does not receive the ID itself.
+Privacy and data use
+Persona handles age verification and deletes your uploaded ID or selfie within 7 days after verification.
+OpenAI does not receive your ID or selfie. OpenAI only receives your date of birth or an age prediction. OpenAI stores this securely and uses it only as described in OpenAI’s Privacy Policy.
+If you do not want OpenAI to predict your age, you can verify your age with Persona. After you verify, OpenAI will not run age prediction on your account.
+You can also control whether your data is used to improve OpenAI’s models using the
+Improve the model for everyone
+setting in your ChatGPT account. To learn more, see the
+Data Controls FAQ
+.
+If you have questions or want to object to how OpenAI uses data for age prediction, email privacy@openai.com.
+FAQ
+Why was my account placed in the teen experience if I already gave my date of birth?
+Age prediction is an extra safety check. It can apply the teen experience even if you already gave your date of birth when you created your account. If you are 18 or older and this happened by mistake, you can verify your age.
+What kind of ID do I need?
+Persona accepts different government IDs depending on your country. You will see the options during verification.
+Common examples include:
+Passport
+Driver’s license or state/provincial ID
+National ID card
+Residency permit
+Employment authorization card
+Your ID must:
+Be government-issued
+Be valid and easy to read
+Show your full name and date of birth
+Show a clear photo of your face
+What information must be visible on my ID?
+The photo of your ID must clearly show your full name, date of birth, and a photo of your face. You do not need to show ID numbers, such as a national ID number or Social Security number. You may cover those before uploading.
+What if I do not have a camera for a live selfie?
+If your computer does not have a camera, you can use another device. If you cannot take a selfie at all, you can use a government ID.
+Was this article helpful?
+Submit

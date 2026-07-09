@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platform Governance Events — 2026-07-09</title>
+<style>
+:root {
+  --bg: #ffffff; --fg: #1a1d21; --muted: #6b7280; --line: #e5e7eb;
+  --panel: #f6f7f9; --accent: #2563eb; --accent-fg: #ffffff;
+  --major: #b45309; --major-bg: #fef3c7;
+  --minor: #4b5563; --minor-bg: #e5e7eb;
+  --baseline: #1d4ed8; --baseline-bg: #dbeafe;
+  --review: #7c3aed; --review-bg: #ede9fe;
+  --ok: #15803d; --ok-bg: #dcfce7;
+  --warn: #b45309; --warn-bg: #fef3c7;
+  --fail: #b91c1c; --fail-bg: #fee2e2;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111417; --fg: #e6e8ea; --muted: #9aa1a9; --line: #2a2f35;
+    --panel: #1a1f24; --accent: #60a5fa; --accent-fg: #0b1220;
+    --major: #fbbf24; --major-bg: #45340a;
+    --minor: #cbd5e1; --minor-bg: #2e353d;
+    --baseline: #93c5fd; --baseline-bg: #172a54;
+    --review: #c4b5fd; --review-bg: #33245c;
+    --ok: #4ade80; --ok-bg: #133821;
+    --warn: #fbbf24; --warn-bg: #45340a;
+    --fail: #f87171; --fail-bg: #4a1414;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+header { padding: 20px 24px 8px; }
+header h1 { margin: 0 0 4px; font-size: 20px; }
+header .sub { color: var(--muted); font-size: 13px; }
+nav.tabs { display: flex; gap: 4px; padding: 12px 24px 0; border-bottom: 1px solid var(--line); }
+nav.tabs button {
+  border: 1px solid var(--line); border-bottom: none; background: var(--panel); color: var(--fg);
+  padding: 7px 16px; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 13px;
+}
+nav.tabs button.active { background: var(--bg); font-weight: 600; border-color: var(--line); position: relative; top: 1px; }
+main { padding: 16px 24px 48px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+.toolbar label { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.toolbar select, .toolbar input[type="search"] {
+  background: var(--panel); color: var(--fg); border: 1px solid var(--line);
+  border-radius: 6px; padding: 5px 8px; font-size: 13px;
+}
+.toolbar input[type="search"] { width: 220px; }
+.toolbar .count { margin-left: auto; color: var(--muted); font-size: 12px; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 900px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); background: var(--panel); position: sticky; top: 0; }
+tr.event { cursor: pointer; }
+tr.event:hover { background: var(--panel); }
+tr.grouphead td {
+  background: var(--panel); font-weight: 600; font-size: 13px; padding: 6px 10px;
+  border-top: 2px solid var(--line);
+}
+td.date { white-space: nowrap; font-variant-numeric: tabular-nums; }
+td.date .basis { display: block; font-size: 11px; color: var(--muted); }
+.badge {
+  display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600;
+  white-space: nowrap;
+}
+.b-major { color: var(--major); background: var(--major-bg); }
+.b-minor { color: var(--minor); background: var(--minor-bg); }
+.b-baseline { color: var(--baseline); background: var(--baseline-bg); }
+.b-review { color: var(--review); background: var(--review-bg); }
+.b-ok { color: var(--ok); background: var(--ok-bg); }
+.b-warn { color: var(--warn); background: var(--warn-bg); }
+.b-fail { color: var(--fail); background: var(--fail-bg); }
+.cat { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+a { color: var(--accent); }
+tr.detail td { background: var(--panel); padding: 14px 16px; }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 20px; margin: 10px 0; }
+.detail-grid div { font-size: 12px; }
+.detail-grid .k { color: var(--muted); }
+blockquote {
+  margin: 10px 0; padding: 8px 12px; border-left: 3px solid var(--accent);
+  background: var(--bg); border-radius: 0 6px 6px 0; font-style: italic;
+}
+.links { margin-top: 10px; }
+.links a { display: inline-block; margin: 2px 12px 2px 0; word-break: break-all; }
+.review-note { margin-top: 10px; padding: 8px 12px; border-radius: 6px; background: var(--review-bg); color: var(--review); font-size: 13px; }
+.empty { padding: 24px; text-align: center; color: var(--muted); }
+footer { padding: 0 24px 24px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>AI Platform Governance Events</h1>
+  <div class="sub" id="subtitle"></div>
+</header>
+<nav class="tabs">
+  <button id="tab-events" class="active">Events</button>
+  <button id="tab-sources">Sources</button>
+</nav>
+<main>
+  <section id="panel-events">
+    <div class="toolbar">
+      <label>Group by
+        <select id="groupby">
+          <option value="none">None</option>
+          <option value="company">Company</option>
+          <option value="category">Category</option>
+          <option value="importance">Importance</option>
+          <option value="year">Year</option>
+        </select>
+      </label>
+      <label>Sort by
+        <select id="sortby">
+          <option value="date_desc">Date ↓ (newest first)</option>
+          <option value="date_asc">Date ↑ (oldest first)</option>
+          <option value="company">Company</option>
+          <option value="score">Safety score ↓</option>
+        </select>
+      </label>
+      <label>Company
+        <select id="f-company"><option value="">All</option></select>
+      </label>
+      <label>Importance
+        <select id="f-importance"><option value="">All</option></select>
+      </label>
+      <label><input type="checkbox" id="f-review"> Needs review only</label>
+      <label>Search <input type="search" id="f-search" placeholder="title, summary, quote…"></label>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="tablewrap">
+      <table id="events-table">
+        <thead>
+          <tr>
+            <th>Date</th><th>Company</th><th>Platform</th><th>Event</th>
+            <th>Category</th><th>Importance</th><th>Score</th><th>Review</th><th>Source</th>
+          </tr>
+        </thead>
+        <tbody id="events-body"></tbody>
+      </table>
+    </div>
+  </section>
+  <section id="panel-sources" hidden>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Source</th><th>Company</th><th>Status</th><th>Last checked</th><th>Last changed</th><th>Notes</th></tr>
+        </thead>
+        <tbody id="sources-body"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<footer>
+  Click an event row to see its summary, quote, and verification links.
+  Generated by <code>scripts/export.py</code> from the run JSON; see the run report for methodology.
+</footer>
+<script id="data" type="application/json">{"generated": "2026-07-09", "updated_at": "2026-07-09", "events": [{"event_id": "OPENAI-CHATGPT-2024-02-13-MEMORY-LAUNCH", "company": "OpenAI", "platform": "ChatGPT", "event_title": "ChatGPT memory and temporary chat launched", "event_summary": "OpenAI introduced persistent memory in ChatGPT (on by default, with user controls to review, delete, or disable memories) and a temporary chat mode that keeps conversations out of history and model training. Increases personalization and relational continuity of the chatbot while adding new privacy controls.", "event_importance": "major_safety_relevant_event", "event_type": "product_feature_change", "event_date": "2024-02-13", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "G_PRIVACY_MEMORY_RETENTION_TRAINING", "primary_subcategory_code": "G2_MEMORY_CONTROLS", "safety_relevance_score": 2, "expected_direction": "mixed_or_ambiguous", "affected_user_group": "all_users", "analytic_priority": "medium_secondary", "mechanism_summary": "Persistent memory increases personalization and potential emotional continuity/dependency in adolescent use; temporary chat and memory controls add privacy options for sensitive disclosures.", "survey_exposure_mapping": "primary_platform_users", "source_name": "OpenAI Blog - Memory and new controls for ChatGPT", "source_url": "https://openai.com/index/memory-and-new-controls-for-chatgpt/", "supporting_source_urls": "https://help.openai.com/en/articles/8590148-memory-faq|https://web.archive.org/web/20240502120859/https://openai.com/index/memory-and-new-controls-for-chatgpt/", "relevant_quote": "Temporary chats won’t appear in history, won’t use memory, and won’t be used to train our models... We’re taking steps to assess and mitigate biases, and steer ChatGPT away from proactively remembering sensitive information, like your health details - unless you explicitly ask it to.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "OPENAI-CHATGPT-2025-04-29-SYCOPHANCY-ROLLBACK", "company": "OpenAI", "platform": "ChatGPT", "event_title": "GPT-4o sycophancy update rolled back", "event_summary": "OpenAI rolled back an April 24-25, 2025 GPT-4o update after it made ChatGPT overly sycophantic, including validating doubts, fueling anger, and reinforcing negative emotions. OpenAI published post-mortems and committed to sycophancy-specific evaluations before deployment.", "event_importance": "major_safety_relevant_event", "event_type": "safety_announcement", "event_date": "2025-04-29", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "K_INCIDENT_RESPONSE_PRODUCT_CHANGE", "primary_subcategory_code": "K1_SAFETY_INCIDENT_RESPONSE", "safety_relevance_score": 2, "expected_direction": "safer", "affected_user_group": "all_users", "analytic_priority": "medium_secondary", "mechanism_summary": "Sycophantic model behavior can validate harmful plans or negative emotions in emotionally vulnerable adolescent users; the rollback and new evaluations reduce that exposure.", "survey_exposure_mapping": "primary_platform_users", "source_name": "OpenAI Blog - Sycophancy in GPT-4o", "source_url": "https://openai.com/index/sycophancy-in-gpt-4o/", "supporting_source_urls": "https://openai.com/index/expanding-on-sycophancy/|https://web.archive.org/web/20260101125221/https://openai.com/index/sycophancy-in-gpt-4o/", "relevant_quote": "We have rolled back last week’s GPT‑4o update in ChatGPT so people are now using an earlier version with more balanced behavior. The update we removed was overly flattering or agreeable—often described as sycophantic.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "OPENAI-CHATGPT-2025-08-07-GPT5-DEFAULT", "company": "OpenAI", "platform": "ChatGPT", "event_title": "GPT-5 released as default ChatGPT model", "event_summary": "OpenAI launched GPT-5 in August 2025, replacing GPT-4o as the default consumer model. OpenAI later reported that GPT-5 reduced non-ideal model responses in mental health emergencies by more than 25% compared to 4o.", "event_importance": "minor_contextual_update", "event_type": "model_release", "event_date": "2025-08-07", "date_basis": "rollout_start_date", "date_confidence": "high", "primary_category_code": "I_PRODUCT_MODEL_INTEGRATION_EVENTS", "primary_subcategory_code": "I1_NEW_MODEL_RELEASE_OR_MODEL_REPLACEMENT", "safety_relevance_score": 2, "expected_direction": "safer", "affected_user_group": "all_users", "analytic_priority": "covariate_context", "mechanism_summary": "Default model replacement changed safety behavior for all ChatGPT users, including documented improvement in mental-health emergency responses.", "survey_exposure_mapping": "primary_platform_users", "source_name": "ChatGPT Release Notes", "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", "supporting_source_urls": "https://web.archive.org/web/20260102071947/https://help.openai.com/en/articles/6825453-chatgpt-release-notes|https://openai.com/index/helping-people-when-they-need-it-most/|https://web.archive.org/web/20251231011715/https://openai.com/index/helping-people-when-they-need-it-most/", "relevant_quote": "GPT-5 is slowly rolling out to all users on ChatGPT Plus, Pro, Team, and Free plans worldwide across web, mobile, and desktop... GPT-5 in ChatGPT is our next flagship model and the new default for all logged-in users.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "OPENAI-CHATGPT-2025-08-26-CRISIS-SAFEGUARDS", "company": "OpenAI", "platform": "ChatGPT", "event_title": "Crisis-safeguard commitments after teen suicide lawsuit", "event_summary": "OpenAI published 'Helping people when they need it most', acknowledging that safeguards can degrade in long conversations and committing to strengthen crisis mitigations, expand interventions, and add parental controls. Published the same day the Raine family lawsuit alleged ChatGPT acted as a 'suicide coach' for their teenage son.", "event_importance": "major_safety_relevant_event", "event_type": "safety_announcement", "event_date": "2025-08-26", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "D_SELF_HARM_CRISIS_HANDLING", "primary_subcategory_code": "D2_SELF_HARM_OR_SUICIDE_RESPONSE_PROTOCOL", "safety_relevance_score": 3, "expected_direction": "safer", "affected_user_group": "all_users", "analytic_priority": "high_confirmatory", "mechanism_summary": "Documents weaknesses and planned strengthening of ChatGPT's suicide/self-harm response behavior, directly relevant to adolescent crisis interactions; incident-linked governance change.", "survey_exposure_mapping": "primary_platform_users", "source_name": "OpenAI Blog - Helping people when they need it most", "source_url": "https://openai.com/index/helping-people-when-they-need-it-most/", "supporting_source_urls": "https://web.archive.org/web/20251231011715/https://openai.com/index/helping-people-when-they-need-it-most/", "relevant_quote": "These safeguards can sometimes be less reliable in long interactions: as the back-and-forth grows, parts of the model’s safety training may degrade... ChatGPT may correctly point to a suicide hotline when someone first mentions intent, but after many messages over a long period of time, it might eventually offer an answer that goes against our safeguards... We’re strengthening these mitigations so they remain reliable in long conversations.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "OPENAI-CHATGPT-2025-09-16-TEEN-SAFETY-AGE-PREDICTION", "company": "OpenAI", "platform": "ChatGPT", "event_title": "Teen safety principles and age-prediction system announced", "event_summary": "OpenAI published 'Teen safety, freedom, and privacy' and 'Building towards age prediction', announcing an age-prediction system to identify under-18 users from behavioral signals and route them to an age-appropriate experience with stricter content rules, plus parental notification in cases of acute distress.", "event_importance": "major_safety_relevant_event", "event_type": "safety_announcement", "event_date": "2025-09-16", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "A_AGE_ELIGIBILITY_ASSURANCE", "primary_subcategory_code": "A2_AGE_PREDICTION_OR_AGE_INFERENCE", "safety_relevance_score": 3, "expected_direction": "safer", "affected_user_group": "teens", "analytic_priority": "high_confirmatory", "mechanism_summary": "Age prediction routes suspected minors into a restricted teen experience (blocking graphic sexual content, adding crisis-related parental notification), changing adolescent exposure and crisis pathways on the most-used platform.", "survey_exposure_mapping": "primary_platform_users", "source_name": "OpenAI Blog - Teen safety, freedom, and privacy", "source_url": "https://openai.com/index/teen-safety-freedom-and-privacy/", "supporting_source_urls": "https://openai.com/index/building-towards-age-prediction/|https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt|https://web.archive.org/web/20251231081004/https://openai.com/index/teen-safety-freedom-and-privacy/", "relevant_quote": "We’re building an age-prediction system to estimate age based on how people use ChatGPT. If there is doubt, we’ll play it safe and default to the under-18 experience... And, if an under-18 user is having suicidal ideation, we will attempt to contact the users’ parents and if unable, will contact the authorities in case of imminent harm.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "OPENAI-CHATGPT-2025-09-29-PARENTAL-CONTROLS", "company": "OpenAI", "platform": "ChatGPT", "event_title": "Parental controls launched for ChatGPT", "event_summary": "OpenAI rolled out parental controls: parents link accounts with teens, set quiet hours, turn off voice mode, memory, and image generation, opt teen conversations out of model training, and receive safety notifications if systems detect potential self-harm risk. Linked teen accounts automatically get stricter content protections.", "event_importance": "major_safety_relevant_event", "event_type": "product_feature_change", "event_date": "2025-09-29", "date_basis": "rollout_start_date", "date_confidence": "high", "primary_category_code": "C_PARENTAL_FAMILY_CONTROLS", "primary_subcategory_code": "C1_PARENT_DASHBOARD_OR_FAMILY_CENTER", "safety_relevance_score": 3, "expected_direction": "safer", "affected_user_group": "teens", "analytic_priority": "high_confirmatory", "mechanism_summary": "Gives parents oversight and restriction tools over teen ChatGPT use and creates a self-harm alert pathway to parents, directly changing adolescent exposure, privacy, and crisis escalation on ChatGPT.", "survey_exposure_mapping": "primary_platform_users", "source_name": "OpenAI Blog - Introducing parental controls", "source_url": "https://openai.com/index/introducing-parental-controls/", "supporting_source_urls": "https://help.openai.com/en/articles/12315553-parental-controls-faq|https://web.archive.org/web/20260107104512/https://openai.com/index/introducing-parental-controls/|https://web.archive.org/web/20260128234253/https://help.openai.com/en/articles/12315553-parental-controls-faq", "relevant_quote": "The teen account will automatically get additional content protections, including reduced graphic content, viral challenges, sexual, romantic or violent roleplay, and extreme beauty ideals... If there are signs of acute distress, we will contact parents by email, text message and push alert on their phone, unless they have opted out.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "OPENAI-CHATGPT-2025-10-27-SENSITIVE-CONVERSATIONS", "company": "OpenAI", "platform": "ChatGPT", "event_title": "Default model updated for sensitive conversations with clinician input", "event_summary": "OpenAI updated ChatGPT's default model, working with 170+ mental health experts, to better recognize distress, de-escalate, and route users to professional care, reporting 65-80% reductions in non-compliant responses. Expanded crisis hotline access (including 988 texting guidance), safer-model rerouting for sensitive conversations, and break reminders.", "event_importance": "major_safety_relevant_event", "event_type": "safety_announcement", "event_date": "2025-10-27", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "D_SELF_HARM_CRISIS_HANDLING", "primary_subcategory_code": "D2_SELF_HARM_OR_SUICIDE_RESPONSE_PROTOCOL", "safety_relevance_score": 3, "expected_direction": "safer", "affected_user_group": "all_users", "analytic_priority": "high_confirmatory", "mechanism_summary": "Directly changes ChatGPT's suicide/self-harm and mental-health-crisis response behavior and crisis-resource routing, the core exposure pathway for adolescents using ChatGPT for emotional support.", "survey_exposure_mapping": "primary_platform_users", "source_name": "OpenAI Blog - Strengthening ChatGPT's responses in sensitive conversations", "source_url": "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/", "supporting_source_urls": "https://openai.com/index/gpt-5-system-card-sensitive-conversations/|https://web.archive.org/web/20260102181527/https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/", "relevant_quote": "We worked with more than 170 mental health experts to help ChatGPT more reliably recognize signs of distress, respond with care, and guide people toward real-world support–reducing responses that fall short of our desired behavior by 65-80%.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "OPENAI-CHATGPT-2025-10-29-USAGE-POLICY-ADVICE-LIMITS", "company": "OpenAI", "platform": "ChatGPT", "event_title": "Usage policies updated to restrict tailored medical/legal advice", "event_summary": "OpenAI's updated Usage Policies (effective 2025-10-29) unified rules across products and prohibit use for provision of tailored advice that requires a license, such as legal or medical advice, without appropriate involvement by a licensed professional.", "event_importance": "major_safety_relevant_event", "event_type": "policy_change", "event_date": "2025-10-29", "date_basis": "policy_effective_date", "date_confidence": "high", "primary_category_code": "F_MENTAL_HEALTH_ADVICE_BOUNDARIES", "primary_subcategory_code": "F1_DIAGNOSIS_TREATMENT_REFUSAL_OR_LIMITATION", "safety_relevance_score": 3, "expected_direction": "safer", "affected_user_group": "all_users", "analytic_priority": "medium_secondary", "mechanism_summary": "Tightens the boundary on personalized medical (including mental-health) advice from ChatGPT, plausibly shifting adolescents from AI-delivered clinical guidance toward professional help-seeking.", "survey_exposure_mapping": "primary_platform_users", "source_name": "OpenAI Usage Policies", "source_url": "https://openai.com/policies/usage-policies", "supporting_source_urls": "https://web.archive.org/web/20251102012204/https://openai.com/policies/usage-policies", "relevant_quote": "Provision of tailored advice that requires a license, such as legal or medical advice, without appropriate involvement by a licensed professional [is prohibited]. Effective: October 29, 2025.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "OPENAI-CHATGPT-2025-12-18-MODEL-SPEC-U18", "company": "OpenAI", "platform": "ChatGPT", "event_title": "Model Spec updated with Under-18 Principles", "event_summary": "OpenAI added U18 Principles to its Model Spec governing model behavior for users aged 13-17: extra care on self-harm and suicide, no immersive romantic/sexual roleplay, caution on body image and disordered eating, refusal to help conceal unsafe behavior from caregivers, prioritizing safety over autonomy. Age-prediction rollout begins on consumer plans, defaulting to the teen experience when age is uncertain.", "event_importance": "major_safety_relevant_event", "event_type": "policy_change", "event_date": "2025-12-18", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "B_TEEN_MODE_YOUTH_SAFETY_DEFAULTS", "primary_subcategory_code": "B3_SENSITIVE_TOPIC_HANDLING_FOR_TEENS", "safety_relevance_score": 3, "expected_direction": "safer", "affected_user_group": "teens", "analytic_priority": "high_confirmatory", "mechanism_summary": "Codifies teen-specific model behavior for self-harm, disordered eating, roleplay intimacy, and caregiver concealment, and begins defaulting uncertain-age users into the teen experience - directly changing adolescent mental-health-relevant interactions.", "survey_exposure_mapping": "primary_platform_users", "source_name": "OpenAI Blog - Updating our Model Spec with teen protections", "source_url": "https://openai.com/index/updating-model-spec-with-teen-protections/", "supporting_source_urls": "https://model-spec.openai.com/2025-12-18.html|https://web.archive.org/web/20260101011900/https://openai.com/index/updating-model-spec-with-teen-protections/", "relevant_quote": "We’ve implemented safeguards to guide the model to take extra care when discussing higher-risk areas, including self-harm and suicide, romantic or sexualized roleplay, graphic or explicit content, dangerous activities and substances, body image and disordered eating, and requests to keep secrets about unsafe behavior.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "ANTHROPIC-CLAUDE-2024-06-06-USAGE-POLICY-MINORS-API", "company": "Anthropic", "platform": "Claude", "event_title": "Usage policy update permits minor-facing API products with safeguards", "event_summary": "Anthropic's updated Usage Policy (announced 2024-05-10, effective 2024-06-06) allows organizations to incorporate the Claude API into products for minors if they implement required safety features and disclose AI use, while consumer terms continue to prohibit use by individuals under 18. High-risk uses affecting healthcare decisions require additional safety measures.", "event_importance": "major_safety_relevant_event", "event_type": "developer_policy_change", "event_date": "2024-06-06", "date_basis": "policy_effective_date", "date_confidence": "high", "primary_category_code": "I_PRODUCT_MODEL_INTEGRATION_EVENTS", "primary_subcategory_code": "I5_API_OR_DEVELOPER_POLICY_CHANGE", "safety_relevance_score": 3, "expected_direction": "access_increasing", "affected_user_group": "minors", "analytic_priority": "medium_secondary", "mechanism_summary": "Opens a sanctioned pathway for minors to use Claude-powered products (e.g., tutoring) with mandated safeguards, changing adolescent access to Claude-based tools while keeping Claude.ai itself 18+.", "survey_exposure_mapping": "any_platform_users", "source_name": "Anthropic News - Updating our Usage Policy", "source_url": "https://www.anthropic.com/news/updating-our-usage-policy", "supporting_source_urls": "", "relevant_quote": "Our updated policy allows organizations to incorporate our API into their products for minors if they agree to implement certain safety features.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "ANTHROPIC-CLAUDE-2025-08-28-CONSUMER-TERMS-TRAINING", "company": "Anthropic", "platform": "Claude", "event_title": "Consumer terms updated: model-training setting and 5-year retention", "event_summary": "Anthropic announced updated consumer terms giving Claude Free/Pro/Max users a choice on whether new or resumed chats are used for model training; users opting in accept data retention extended to five years, while those declining keep 30-day retention. Existing users had until 2025-10-08 to choose.", "event_importance": "major_safety_relevant_event", "event_type": "privacy_change", "event_date": "2025-08-28", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "G_PRIVACY_MEMORY_RETENTION_TRAINING", "primary_subcategory_code": "G3_MODEL_TRAINING_OPT_OUT_OR_DATA_USE", "safety_relevance_score": 2, "expected_direction": "mixed_or_ambiguous", "affected_user_group": "all_users", "analytic_priority": "medium_secondary", "mechanism_summary": "Changes whether sensitive conversations (including emotional-support chats) are used for training and how long they are retained, altering privacy exposure for adolescent-aged Claude users.", "survey_exposure_mapping": "primary_platform_users", "source_name": "Anthropic News - Updates to Consumer Terms and Privacy Policy", "source_url": "https://www.anthropic.com/news/updates-to-our-consumer-terms", "supporting_source_urls": "https://www.anthropic.com/legal/privacy", "relevant_quote": "We are extending data retention to five years, if you allow us to use your data for model training... [otherwise users] will continue with our existing 30-day data retention period.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "ANTHROPIC-CLAUDE-2025-12-18-WELLBEING-CRISIS-RESOURCES", "company": "Anthropic", "platform": "Claude", "event_title": "User wellbeing measures: crisis-resource banner, underage detection, sycophancy reduction", "event_summary": "Anthropic detailed wellbeing protections on Claude.ai: automated detection of self-harm-risk conversations triggering a banner routing users to crisis resources (988 Lifeline in US/Canada via ThroughLine partnership), self-harm response training with 98.6-99.3% appropriate-response rates, classifiers flagging self-identified under-18 users for account disabling, and sycophancy reduction in sensitive conversations.", "event_importance": "major_safety_relevant_event", "event_type": "safety_announcement", "event_date": "2025-12-18", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "D_SELF_HARM_CRISIS_HANDLING", "primary_subcategory_code": "D1_988_OR_CRISIS_RESOURCE_ROUTING", "safety_relevance_score": 3, "expected_direction": "safer", "affected_user_group": "all_users", "analytic_priority": "high_confirmatory", "mechanism_summary": "Adds direct 988/crisis-resource routing and documents self-harm response behavior and underage-account enforcement on Claude.ai - the platform's core crisis and youth-access governance for adolescent-relevant use.", "survey_exposure_mapping": "primary_platform_users", "source_name": "Anthropic News - Protecting the wellbeing of our users", "source_url": "https://www.anthropic.com/news/protecting-well-being-of-users", "supporting_source_urls": "", "relevant_quote": "When this happens, a banner will appear on Claude.ai, pointing users to where they can seek human support... the 988 Lifeline in the US and Canada, the Samaritans Helpline in the UK, or Life Link in Japan.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "GOOGLE-GEMINI-2023-11-15-BARD-TEEN-ACCESS", "company": "Google", "platform": "Gemini", "event_title": "Bard (Gemini predecessor) opened to teens with safety guardrails", "event_summary": "Google opened Bard to teens meeting the minimum age to manage their own Google Account, with teen-specific guardrails trained to avoid content inappropriate for younger users, safety onboarding (AI Literacy Guide), and automatic double-check of the first fact-based question. Content policies were shaped with child safety and development experts.", "event_importance": "major_safety_relevant_event", "event_type": "product_feature_change", "event_date": "2023-11-15", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "A_AGE_ELIGIBILITY_ASSURANCE", "primary_subcategory_code": "A1_MINIMUM_AGE_POLICY", "safety_relevance_score": 3, "expected_direction": "access_increasing", "affected_user_group": "teens", "analytic_priority": "high_confirmatory", "mechanism_summary": "First sanctioned teen access to Google's chatbot, with teen-specific guardrails - directly changes adolescent exposure to and eligibility for the platform.", "survey_exposure_mapping": "primary_platform_users", "source_name": "Google Blog - How we've created a helpful and responsible Bard experience for teens", "source_url": "https://blog.google/products/gemini/google-bard-expansion-teens/", "supporting_source_urls": "", "relevant_quote": "Trained Bard to recognize areas that are inappropriate to younger users and implemented safety features and guardrails to help prevent unsafe content.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "GOOGLE-GEMINI-2025-02-12-AGE-ESTIMATION-TESTING", "company": "Google", "platform": "Gemini", "event_title": "Machine-learning age-estimation testing and expanded teen protections announced", "event_summary": "Google announced it would begin testing a machine-learning-based age-estimation model in the U.S. to estimate whether users are under 18 and apply protections, alongside Family Link updates (School Time, contact management) and a commitment to responsibly expand teen access to AI products including Gemini.", "event_importance": "major_safety_relevant_event", "event_type": "safety_announcement", "event_date": "2025-02-12", "date_basis": "announcement_date", "date_confidence": "high", "primary_category_code": "A_AGE_ELIGIBILITY_ASSURANCE", "primary_subcategory_code": "A2_AGE_PREDICTION_OR_AGE_INFERENCE", "safety_relevance_score": 2, "expected_direction": "safer", "affected_user_group": "minors", "analytic_priority": "medium_secondary", "mechanism_summary": "Age estimation enables applying minor-specific protections across Google products including Gemini, changing which adolescent users receive protected experiences.", "survey_exposure_mapping": "any_platform_users", "source_name": "Google Blog - New digital protections for kids, teens and parents", "source_url": "https://blog.google/technology/families/google-new-built-in-protections-kids-teens/", "supporting_source_urls": "", "relevant_quote": "Begin testing a machine learning-based age estimation model in the U.S. ... to estimate whether a user is over or under 18 so that we can apply protections.", "classification_confidence": "high", "human_review_needed": false, "human_review_reason": "", "suggested_question_for_reviewer": "", "review_priority": "", "run_id": "20260701"}, {"event_id": "GOOGLE-GEMINI-2025-05-05-UNDER13-FAMILY-LINK", "company": "Google", "platform": "Gemini", "event_title": "Gemini opened to children under 13 via Family Link supervised accounts", "event_summary": "Google began rolling out Gemini access for children under 13 with Family Link supervised accounts (reported rollout the week of 2025-05-05). Parents control access, receive first-use notifications, and children's data is not used to train AI models; supervised-account access is unavailable in the EEA, Switzerland, and UK.", "event_importance": "major_safety_relevant_event", "event_type": "product_feature_change", "event_date": "2025-05-05", "date_basis": "rollout_start_date", "date_confidence": "medium", "primary_category_code": "A_AGE_ELIGIBILITY_ASSURANCE", "primary_subcategory_code": "A5_UNDER_13_SUPERVISED_ACCESS", "safety_relevance_score": 3, "expected_direction": "access_increasing", "affected_user_group": "children_under_13", "analytic_priority": "high_confirmatory", "mechanism_summary": "Extends chatbot access to under-13 children under parental supervision with training-data exclusions and content filters, a major change in child access to a general-purpose AI chatbot.", "survey_exposure_mapping": "any_platform_users", "source_name": "Gemini for Children Guide (Family Link)", "source_url": "https://support.google.com/gemini/answer/16109150", "supporting_source_urls": "https://support.google.com/families/answer/16109150", "relevant_quote": "You can give your child under 13 (or the applicable age in your country) access to Gemini Apps... you're in control of your child's Gemini Apps access, including turning it on or off, using the Google Family Link app.", "classification_confidence": "medium", "human_review_needed": true, "human_review_reason": "Rollout start date (week of 2025-05-05) comes from third-party reporting of a parent email; the official help page documents the feature but not the rollout date.", "suggested_question_for_reviewer": "Confirm rollout start date for under-13 Gemini access via an official Google source or archived announcement.", "review_priority": "medium", "run_id": "20260701"}, {"event_id": "ANTHROPIC-CLAUDE-SNAP-2025-09-15-USAGE-POLICY", "company": "Anthropic", "platform": "Claude", "event_title": "Baseline: Anthropic Usage Policy (effective 2025-09-15)", "event_summary": "Current Usage Policy defines a minor as anyone under 18 regardless of jurisdiction, prohibits facilitating, promoting, or glamorizing suicide, self-harm, or disordered eating, prohibits sexualization or grooming of minors, and requires organizations giving minors direct API access to follow additional Help Center guidelines.", "event_importance": "baseline_policy_snapshot", "event_type": "usage_policy", "event_date": "2025-09-15", "date_basis": "policy_effective_date", "date_confidence": "high", "primary_category_code": "E_HARMFUL_CONTENT_REFUSAL_SAFETY_FILTERS", "primary_subcategory_code": "E1_SELF_HARM_METHODS_OR_INSTRUCTIONS_REFUSAL", "safety_relevance_score": 3, "expected_direction": "safer", "affected_user_group": "all_users", "analytic_priority": "low_descriptive", "mechanism_summary": "Documents the current content-policy boundary for self-harm, disordered eating, and minor-safety content on Claude - the baseline governance state for later change detection.", "survey_exposure_mapping": "primary_platform_users", "source_name": "Anthropic Usage Policy", "source_url": "https://www.anthropic.com/legal/aup", "supporting_source_urls": "", "relevant_quote": "Facilitate, promote, or glamorize any form of suicide or self-harm, including disordered eating [is prohibited]; a minor is any individual under the age of 18 years old, regardless of jurisdiction.", "classification_confidence": "high", "human_review_needed": true, "human_review_reason": "Policy has an effective date (2025-09-15) but the diff against the prior version was not retrieved; unclear which provisions are new as of that date.", "suggested_question_for_reviewer": "Compare against the pre-2025-09-15 Usage Policy version to determine what changed.", "review_priority": "low", "run_id": "20260701"}, {"event_id": "ANTHROPIC-CLAUDE-SNAP-2026-07-08-PRIVACY-POLICY", "company": "Anthropic", "platform": "Claude", "event_title": "Baseline: Anthropic Privacy Policy version effective 2026-07-08", "event_summary": "New Privacy Policy version (published 2026-06-08, effective 2026-07-08) states services are not directed to under-18s, allows training on inputs/outputs unless users opt out (with a safety-review exception), and provides 30-day back-end deletion of deleted conversations.", "event_importance": "baseline_policy_snapshot", "event_type": "privacy_change", "event_date": "2026-07-08", "date_basis": "policy_effective_date", "date_confidence": "high", "primary_category_code": "G_PRIVACY_MEMORY_RETENTION_TRAINING", "primary_subcategory_code": "G3_MODEL_TRAINING_OPT_OUT_OR_DATA_USE", "safety_relevance_score": 2, "expected_direction": "unknown", "affected_user_group": "all_users", "analytic_priority": "low_descriptive", "mechanism_summary": "Documents current privacy/training/retention rules governing sensitive Claude conversations; a new version takes effect one week after this run, so a diff against the prior version may reveal a codable event.", "survey_exposure_mapping": "primary_platform_users", "source_name": "Anthropic Privacy Policy", "source_url": "https://www.anthropic.com/legal/privacy", "supporting_source_urls": "", "relevant_quote": "Our Services are not directed towards, and we do not knowingly collect, use, disclose, sell, or share any information from children under the age of 18.", "classification_confidence": "high", "human_review_needed": true, "human_review_reason": "A new policy version takes effect 2026-07-08; what changed relative to the prior version was not retrieved, so this may conceal a codable privacy event.", "suggested_question_for_reviewer": "Diff the 2026-07-08 Privacy Policy against the prior version to determine whether a privacy_change event should be coded.", "review_priority": "medium", "run_id": "20260701"}, {"event_id": "GOOGLE-GEMINI-SNAP-2026-07-01-UNDER13-PROTECTIONS", "company": "Google", "platform": "Gemini", "event_title": "Baseline: Gemini under-13 supervised experience protections", "event_summary": "Current help documentation for supervised under-13 Gemini access: parents toggle access in Family Link and get first-activation email notification; added content filters for minors prevent Gemini from claiming to be a person, having human emotions, or role-playing as a harmful character; the Keep Activity setting is unavailable to under-13 users.", "event_importance": "baseline_policy_snapshot", "event_type": "baseline_snapshot", "event_date": "2026-07-01", "date_basis": "retrieval_date", "date_confidence": "high", "primary_category_code": "B_TEEN_MODE_YOUTH_SAFETY_DEFAULTS", "primary_subcategory_code": "B1_STRICTER_CONTENT_FILTERS_FOR_MINORS", "safety_relevance_score": 3, "expected_direction": "safer", "affected_user_group": "children_under_13", "analytic_priority": "low_descriptive", "mechanism_summary": "Documents the current child-specific content filters and parental controls for Gemini, including anti-anthropomorphism filters directly relevant to emotional-support and companionship use by children.", "survey_exposure_mapping": "any_platform_users", "source_name": "Gemini for Children Guide (Family Link)", "source_url": "https://support.google.com/gemini/answer/16109150", "supporting_source_urls": "", "relevant_quote": "Added content filters for minors prevent Gemini from claiming to be a person or having human emotions, or role-playing as a harmful character... The Keep Activity setting is not available to users under 13.", "classification_confidence": "high", "human_review_needed": true, "human_review_reason": "Important baseline lacking a historical effective date (per constitution Section 10.6).", "suggested_question_for_reviewer": "Determine when the minor-specific content filters were introduced, if a dated source can be located.", "review_priority": "low", "run_id": "20260701"}, {"event_id": "GOOGLE-GEMINI-SNAP-2026-07-01-PRIVACY-HUB", "company": "Google", "platform": "Gemini", "event_title": "Baseline: Gemini Apps privacy, retention, and human-review settings", "event_summary": "Current Gemini Apps Privacy Hub state: activity auto-deletes after 18 months by default (3/36-month options); Google uses activity to train generative AI models unless Keep Activity is off or temporary chats are used; a subset of chats is human-reviewed and reviewed chats are retained up to three years; temporary chats are retained 72 hours.", "event_importance": "baseline_policy_snapshot", "event_type": "baseline_snapshot", "event_date": "2026-07-01", "date_basis": "retrieval_date", "date_confidence": "high", "primary_category_code": "G_PRIVACY_MEMORY_RETENTION_TRAINING", "primary_subcategory_code": "G1_CHAT_HISTORY_RETENTION_POLICY", "safety_relevance_score": 2, "expected_direction": "unknown", "affected_user_group": "all_users", "analytic_priority": "low_descriptive", "mechanism_summary": "Documents retention, training, and human-review defaults governing sensitive Gemini conversations, the baseline privacy exposure for adolescent users of the platform.", "survey_exposure_mapping": "primary_platform_users", "source_name": "Gemini Apps Privacy Hub", "source_url": "https://support.google.com/gemini/answer/13594961", "supporting_source_urls": "", "relevant_quote": "Your activity is auto-deleted after 18 months... A subset of chats are reviewed by human reviewers (including Google's trained service providers) to help improve Google services... retained for up to three years.", "classification_confidence": "high", "human_review_needed": true, "human_review_reason": "Important baseline lacking a historical effective date (per constitution Section 10.6).", "suggested_question_for_reviewer": "None; retain for change detection on future runs.", "review_priority": "low", "run_id": "20260701"}], "sources": [{"source_slug": "chatgpt-release-notes", "source_name": "ChatGPT Release Notes", "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", "company": "OpenAI", "platform": "ChatGPT", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/chatgpt-release-notes/2026-07-09.txt", "note": "fetched via wayback"}, {"source_slug": "openai-usage-policies", "source_name": "OpenAI Usage Policies", "source_url": "https://openai.com/policies/usage-policies", "company": "OpenAI", "platform": "ChatGPT", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/openai-usage-policies/2026-07-09.txt", "note": "fetched via wayback"}, {"source_slug": "openai-parental-controls-faq", "source_name": "OpenAI Parental Controls FAQ", "source_url": "https://help.openai.com/en/articles/12315553-parental-controls-faq", "company": "OpenAI", "platform": "ChatGPT", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/openai-parental-controls-faq/2026-07-09.txt", "note": "fetched via wayback"}, {"source_slug": "openai-teen-safety-blog", "source_name": "OpenAI Teen Safety Blog Post", "source_url": "https://openai.com/index/teen-safety-freedom-and-privacy/", "company": "OpenAI", "platform": "ChatGPT", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/openai-teen-safety-blog/2026-07-09.txt", "note": "fetched via wayback"}, {"source_slug": "openai-introducing-parental-controls", "source_name": "OpenAI Introducing Parental Controls", "source_url": "https://openai.com/index/introducing-parental-controls/", "company": "OpenAI", "platform": "ChatGPT", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/openai-introducing-parental-controls/2026-07-09.txt", "note": "fetched via wayback"}, {"source_slug": "openai-age-prediction-help", "source_name": "OpenAI Age Prediction Help", "source_url": "https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt", "company": "OpenAI", "platform": "ChatGPT", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/openai-age-prediction-help/2026-07-09.txt", "note": "fetched via wayback"}, {"source_slug": "anthropic-news", "source_name": "Anthropic News", "source_url": "https://www.anthropic.com/news", "company": "Anthropic", "platform": "Claude", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/anthropic-news/2026-07-09.txt", "note": "fetched via live"}, {"source_slug": "anthropic-usage-policy", "source_name": "Anthropic Usage Policy", "source_url": "https://www.anthropic.com/legal/aup", "company": "Anthropic", "platform": "Claude", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/anthropic-usage-policy/2026-07-09.txt", "note": "fetched via live"}, {"source_slug": "anthropic-wellbeing-post", "source_name": "Anthropic Protecting User Wellbeing", "source_url": "https://www.anthropic.com/news/protecting-well-being-of-users", "company": "Anthropic", "platform": "Claude", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/anthropic-wellbeing-post/2026-07-09.txt", "note": "fetched via live"}, {"source_slug": "anthropic-privacy-policy", "source_name": "Anthropic Privacy Policy", "source_url": "https://www.anthropic.com/legal/privacy", "company": "Anthropic", "platform": "Claude", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/anthropic-privacy-policy/2026-07-09.txt", "note": "fetched via live"}, {"source_slug": "google-gemini-blog", "source_name": "Google Gemini Blog", "source_url": "https://blog.google/products/gemini/", "company": "Google", "platform": "Gemini", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/google-gemini-blog/2026-07-09.txt", "note": "fetched via live"}, {"source_slug": "gemini-privacy-hub", "source_name": "Gemini Apps Privacy Hub", "source_url": "https://support.google.com/gemini/answer/13594961", "company": "Google", "platform": "Gemini", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/gemini-privacy-hub/2026-07-09.txt", "note": "fetched via live"}, {"source_slug": "gemini-children-guide", "source_name": "Gemini for Children Guide (Family Link)", "source_url": "https://support.google.com/gemini/answer/16109150", "company": "Google", "platform": "Gemini", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/gemini-children-guide/2026-07-09.txt", "note": "fetched via live"}, {"source_slug": "bard-teens-blog", "source_name": "Google Bard for Teens Blog Post", "source_url": "https://blog.google/products/gemini/google-bard-expansion-teens/", "company": "Google", "platform": "Gemini", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/bard-teens-blog/2026-07-09.txt", "note": "fetched via live"}, {"source_slug": "google-kids-protections", "source_name": "Google Built-in Protections for Kids and Teens", "source_url": "https://blog.google/technology/families/google-new-built-in-protections-kids-teens/", "company": "Google", "platform": "Gemini", "status": "success", "last_checked": "2026-07-09", "last_changed": "2026-07-09", "last_snapshot": "snapshots/google-kids-protections/2026-07-09.txt", "note": "fetched via live"}]}</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("data").textContent);
+const EVENTS = DATA.events;
+
+const IMPORTANCE_LABEL = {
+  major_safety_relevant_event: ["Major", "b-major"],
+  minor_contextual_update: ["Minor", "b-minor"],
+  baseline_policy_snapshot: ["Baseline", "b-baseline"],
+  exclude: ["Excluded", "b-minor"],
+};
+function el(tag, attrs = {}, ...children) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") node.className = v;
+    else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
+    else node.setAttribute(k, v);
+  }
+  for (const child of children) {
+    if (child == null) continue;
+    node.append(child.nodeType ? child : document.createTextNode(child));
+  }
+  return node;
+}
+function link(url, label) {
+  return el("a", { href: url, target: "_blank", rel: "noopener noreferrer" }, label || url);
+}
+function catShort(code) { return code ? code.split("_")[0] : ""; }
+function catLabel(code) {
+  if (!code) return "";
+  return code.split("_").slice(1).join(" ").toLowerCase();
+}
+
+document.getElementById("subtitle").textContent =
+  `${EVENTS.length} records · ` +
+  `${EVENTS.filter(e => e.event_importance === "major_safety_relevant_event").length} major safety-relevant · ` +
+  `${EVENTS.filter(e => e.human_review_needed).length} need review · ` +
+  `data updated ${DATA.updated_at}`;
+
+// Populate filter options
+const companies = [...new Set(EVENTS.map(e => e.company))].sort();
+for (const c of companies) document.getElementById("f-company").append(el("option", { value: c }, c));
+const importances = [...new Set(EVENTS.map(e => e.event_importance))];
+for (const imp of importances) {
+  document.getElementById("f-importance").append(
+    el("option", { value: imp }, (IMPORTANCE_LABEL[imp] || [imp])[0]));
+}
+
+const state = { expanded: new Set() };
+
+function filtered() {
+  const company = document.getElementById("f-company").value;
+  const importance = document.getElementById("f-importance").value;
+  const reviewOnly = document.getElementById("f-review").checked;
+  const q = document.getElementById("f-search").value.trim().toLowerCase();
+  return EVENTS.filter(e => {
+    if (company && e.company !== company) return false;
+    if (importance && e.event_importance !== importance) return false;
+    if (reviewOnly && !e.human_review_needed) return false;
+    if (q) {
+      const hay = [e.event_title, e.event_summary, e.relevant_quote, e.event_id,
+        e.primary_category_code, e.primary_subcategory_code, e.platform, e.company]
+        .join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function sorted(list) {
+  const mode = document.getElementById("sortby").value;
+  const byDate = (a, b) => String(a.event_date).localeCompare(String(b.event_date));
+  const copy = [...list];
+  if (mode === "date_asc") copy.sort(byDate);
+  else if (mode === "date_desc") copy.sort((a, b) => byDate(b, a));
+  else if (mode === "company") copy.sort((a, b) => a.company.localeCompare(b.company) || byDate(b, a));
+  else if (mode === "score") copy.sort((a, b) => (b.safety_relevance_score - a.safety_relevance_score) || byDate(b, a));
+  return copy;
+}
+
+function groupKey(e) {
+  const mode = document.getElementById("groupby").value;
+  if (mode === "company") return e.company;
+  if (mode === "category") return `${catShort(e.primary_category_code)} — ${catLabel(e.primary_category_code)}`;
+  if (mode === "importance") return (IMPORTANCE_LABEL[e.event_importance] || [e.event_importance])[0];
+  if (mode === "year") return String(e.event_date).slice(0, 4);
+  return null;
+}
+
+function detailRow(e) {
+  const td = el("td", { colspan: "9" });
+  td.append(el("div", {}, e.event_summary));
+  const grid = el("div", { class: "detail-grid" });
+  const meta = [
+    ["Event ID", e.event_id], ["Run", e.run_id], ["Type", e.event_type],
+    ["Date basis", `${e.date_basis} (confidence: ${e.date_confidence})`],
+    ["Subcategory", e.primary_subcategory_code],
+    ["Expected direction", e.expected_direction],
+    ["Affected group", e.affected_user_group],
+    ["Analytic priority", e.analytic_priority],
+    ["Survey mapping", e.survey_exposure_mapping],
+    ["Classification confidence", e.classification_confidence],
+  ];
+  for (const [k, v] of meta) grid.append(el("div", {}, el("span", { class: "k" }, k + ": "), String(v)));
+  td.append(grid);
+  td.append(el("div", {}, el("span", { class: "k", style: "color:var(--muted);font-size:12px" }, "Mechanism: "), e.mechanism_summary));
+  td.append(el("blockquote", {}, "“" + e.relevant_quote + "”"));
+  const links = el("div", { class: "links" }, el("strong", {}, "Verify: "));
+  links.append(link(e.source_url, e.source_name));
+  for (const u of (e.supporting_source_urls || "").split("|").filter(Boolean)) links.append(link(u));
+  td.append(links);
+  if (e.human_review_needed) {
+    td.append(el("div", { class: "review-note" },
+      "⚑ Needs review — " + e.human_review_reason +
+      (e.suggested_question_for_reviewer ? " Question: " + e.suggested_question_for_reviewer : "")));
+  }
+  return el("tr", { class: "detail" }, td);
+}
+
+function render() {
+  const body = document.getElementById("events-body");
+  body.replaceChildren();
+  const list = sorted(filtered());
+  document.getElementById("count").textContent = `${list.length} of ${EVENTS.length} records`;
+  if (!list.length) {
+    body.append(el("tr", {}, el("td", { colspan: "9", class: "empty" }, "No records match the current filters.")));
+    return;
+  }
+  const grouping = document.getElementById("groupby").value !== "none";
+  if (grouping) {
+    // Cluster rows by group (groups ordered by first appearance in the sorted
+    // list, so the sort mode still decides group order); the sort within each
+    // group is preserved because Array.prototype.sort is stable.
+    const order = new Map();
+    for (const e of list) {
+      const g = groupKey(e);
+      if (!order.has(g)) order.set(g, order.size);
+    }
+    list.sort((a, b) => order.get(groupKey(a)) - order.get(groupKey(b)));
+  }
+  let lastGroup;
+  for (const e of list) {
+    if (grouping) {
+      const g = groupKey(e);
+      if (g !== lastGroup) {
+        const n = list.filter(x => groupKey(x) === g).length;
+        body.append(el("tr", { class: "grouphead" }, el("td", { colspan: "9" }, `${g} (${n})`)));
+        lastGroup = g;
+      }
+    }
+    const [impLabel, impClass] = IMPORTANCE_LABEL[e.event_importance] || [e.event_importance, "b-minor"];
+    const row = el("tr", { class: "event", onclick: () => {
+      state.expanded.has(e.event_id) ? state.expanded.delete(e.event_id) : state.expanded.add(e.event_id);
+      render();
+    }},
+      el("td", { class: "date" }, e.event_date, el("span", { class: "basis" }, e.date_basis.replaceAll("_", " "))),
+      el("td", {}, e.company),
+      el("td", {}, e.platform),
+      el("td", {}, e.event_title),
+      el("td", {}, el("span", { class: "cat", title: e.primary_category_code + " / " + e.primary_subcategory_code },
+        catShort(e.primary_subcategory_code) + " " + catLabel(e.primary_category_code))),
+      el("td", {}, el("span", { class: "badge " + impClass }, impLabel)),
+      el("td", {}, String(e.safety_relevance_score)),
+      el("td", {}, e.human_review_needed ? el("span", { class: "badge b-review", title: e.human_review_reason }, "⚑ review") : ""),
+      el("td", { onclick: ev => ev.stopPropagation() }, link(e.source_url, "source ↗")),
+    );
+    body.append(row);
+    if (state.expanded.has(e.event_id)) body.append(detailRow(e));
+  }
+}
+
+function renderSources() {
+  const body = document.getElementById("sources-body");
+  body.replaceChildren();
+  for (const s of DATA.sources) {
+    const cls = s.status.startsWith("success") ? "b-ok"
+      : s.status.startsWith("failed") ? "b-fail" : "b-warn";
+    body.append(el("tr", {},
+      el("td", {}, link(s.source_url, s.source_name)),
+      el("td", {}, s.company || ""),
+      el("td", {}, el("span", { class: "badge " + cls, title: s.status }, s.status.split(":")[0])),
+      el("td", {}, s.last_checked || ""),
+      el("td", {}, s.last_changed || ""),
+      el("td", {}, s.note || ""),
+    ));
+  }
+}
+
+for (const [btn, panel] of [["tab-events", "panel-events"], ["tab-sources", "panel-sources"]]) {
+  document.getElementById(btn).addEventListener("click", () => {
+    for (const b of document.querySelectorAll("nav.tabs button")) b.classList.remove("active");
+    document.getElementById(btn).classList.add("active");
+    document.getElementById("panel-events").hidden = panel !== "panel-events";
+    document.getElementById("panel-sources").hidden = panel !== "panel-sources";
+  });
+}
+for (const id of ["groupby", "sortby", "f-company", "f-importance", "f-review", "f-search"]) {
+  document.getElementById(id).addEventListener("input", render);
+}
+render();
+renderSources();
+</script>
+</body>
+</html>

@@ -6,7 +6,9 @@ on:
       - main
     paths:
       - ".github/workflows/pages.yml"
-      - "data/events_*.json"
+      - "data/events.json"
+      - "data/state.json"
+      - "data/sources.csv"
       - "scripts/export.py"
   workflow_dispatch:
 
@@ -32,13 +34,7 @@ jobs:
           python-version: "3.12"
 
       - name: Build static viewer
-        run: |
-          latest_run="$(find data -maxdepth 1 -name 'events_*.json' | sort | tail -n 1)"
-          if [ -z "$latest_run" ]; then
-            echo "No data/events_*.json file found" >&2
-            exit 1
-          fi
-          python scripts/export.py "$latest_run" --csv --out-dir site --force --index
+        run: python scripts/export.py --csv --out-dir site --force --index
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

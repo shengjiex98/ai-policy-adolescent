@@ -1,0 +1,136 @@
+--- 2024-05-02
++++ 2025-12-14
+@@ -1,29 +1,47 @@
+-SNAPSHOT: http://web.archive.org/web/20240502120859/https://openai.com/index/memory-and-new-controls-for-chatgpt
+-TIMESTAMP: 20240502120859
++SNAPSHOT: https://web.archive.org/web/20251214173511/https://openai.com/index/memory-and-new-controls-for-chatgpt/
++TIMESTAMP: 20251214173511
+ ORIGINAL: https://openai.com/index/memory-and-new-controls-for-chatgpt/
+ ---
+ Memory and new controls for ChatGPT | OpenAI
+ 197 captures
+ 02 May 2024 - 27 Jun 2026
+-Apr
+-MAY
+-Jun
+-02
+-2023
++Nov
++DEC
++Jan
++14
+ 2024
+ 2025
++2026
+ success
+ fail
+ About this capture
+ COLLECTED BY
+ Collection:
+-GDELT Project
++Save Page Now Outlinks
+ TIMESTAMPS
+-The Wayback Machine - https://web.archive.org/web/20240502120859/https://openai.com/index/memory-and-new-controls-for-chatgpt
++The Wayback Machine - https://web.archive.org/web/20251214173511/https://openai.com/index/memory-and-new-controls-for-chatgpt/
+ Skip to main content
++Log in
++Switch to
++ChatGPT
++(opens in a new window)
++Sora
++(opens in a new window)
++API Platform
++(opens in a new window)
++OpenAI
+ February 13, 2024
++Product
+ Memory and new controls for ChatGPT
+-We’re testing the ability for ChatGPT to remember things you discuss to make future chats more helpful. You’re in control of ChatGPT’s memory.
++Loading…
++Share
++June 3, 2025 update: Memory improvements are starting to roll out for free users. In addition to the saved memories that were there before, ChatGPT now references your recent conversations to provide more personalized responses.
++Free users have a lightweight version of memory improvements that provides short term continuity across conversations. Memory for Plus and Pro users provides a longer term understanding of the user.
++You’re in control of ChatGPT’s memory and can turn off  referencing “saved memories” or “chat history” at any time in Settings.
++April 10, 2025 update: Memory in ChatGPT is now more comprehensive. In addition to the saved memories that were there before, it now references all your past conversations to deliver responses that feel more relevant and tailored to you. This means memory now works in two ways: "saved memories" you’ve asked it to remember and "chat history", which are insights ChatGPT gathers from past chats to improve future ones.
++You’re in control of ChatGPT’s memory. You can turn off referencing "saved memories" or "chat history" at any time in Settings. If you’ve already opted out of memory, ChatGPT won’t reference past conversations by default. You can also ask ChatGPT to change what it knows about you directly in conversation, or use Temporary Chat for conversations that don’t use or update memory. To see what ChatGPT remembers about you, you can also ask it.
++The more you use ChatGPT, the more useful it becomes. New conversations build upon what it already knows about you to make smoother, more tailored interactions over time. This is available in ChatGPT to Plus and Pro users, and Team, Enterprise, and Edu users in a few weeks.
++September 5, 2024 update: Memory is now available to ChatGPT Free, Plus, Team, and Enterprise users. Based on feedback from the earlier test, ChatGPT now lets you know when memories are updated. We’ve also made it easier to access all memories when updates occur—hover over “Memory updated,” then click “Manage memories” to review everything ChatGPT has picked up from your conversations or forget any unwanted memories. You can still access memories at any time in settings.
+ We’re testing memory with ChatGPT. Remembering things you discuss across all chats saves you from having to repeat information and makes future conversations more helpful.
+ You’re in control of ChatGPT’s memory. You can explicitly tell it to remember something, ask it what it remembers, and tell it to forget conversationally or through settings. You can also turn it off entirely.
+ We are rolling out to a small portion of ChatGPT free and Plus users this week to learn how useful it is. We will share plans for broader roll out soon.
+@@ -38,21 +56,25 @@
+ Loading...
+ If you want ChatGPT to forget something, just tell it. You can also view and delete specific memories or clear all memories in settings (Settings > Personalization > Manage Memory). ChatGPT's memories evolve with your interactions and aren't linked to specific conversations. Deleting a chat doesn't erase its memories; you must delete the memory itself. You can find more details in our
+ Help Center
++⁠
+ (opens in a new window)
+ .
+ Loading...
+ We may use content that you provide to ChatGPT, including memories, to improve our models for everyone. If you’d like, you can turn this off through your Data Controls. As always, we won't train on content from ChatGPT Team and Enterprise customers. Learn more about how we use content to train our models and your choices in our
+ Help Center
++⁠
+ (opens in a new window)
+ .
+ Use temporary chat for conversations without memory
+ If you’d like to have a conversation without using memory, use temporary chat. Temporary chats won't appear in history, won't use memory, and won't be used to train our models. Learn more about temporary chats in our
+ Help Center
++⁠
+ (opens in a new window)
+ .
+ Loading...
+ Custom instructions also allow ChatGPT to be more helpful
+ Custom Instructions
++⁠
+ continue to allow you to provide ChatGPT with direct guidance on what you’d like it to know about you and how you’d like it to respond. For explicit information or instructions, you can add it to your Custom Instructions. For information shared via conversations, ChatGPT can remember relevant details for you.
+ Evolving our privacy and safety standards
+ Memory brings additional privacy and safety considerations, such as what type of information should be remembered and how it’s used. We’re taking steps to assess and mitigate biases, and steer ChatGPT away from proactively remembering sensitive information, like your health details - unless you explicitly ask it to.
+@@ -67,34 +89,29 @@
+ GPTs will have their own distinct memory. Builders will have the option to enable memory for their GPTs. Like your chats, memories are not shared with builders. To interact with a memory-enabled GPT, you will also need to have memory on. For example:
+ The
+ Books GPT
++⁠
+ (opens in a new window)
+ helps you find your next read. With memory enabled, it remembers your preferences, such as favorite genres or top books, and tailors recommendations accordingly, without needing repeated inputs.
+ Each GPT has its own memory, so you might need to repeat details you’ve previously shared with ChatGPT. For example:
+ If you're using the
+ Artful Greeting Card GPT
++⁠
+ (opens in a new window)
+ to create a birthday card for your daughter, it won’t know her age or that she loves jellyfish. You’ll need to tell it the relevant details.
+ Memory for GPTs will be available when we roll it out more broadly.
++ChatGPT
++Policies and Procedures
++2024
+ Author
+ OpenAI
+ Related articles
+-View all
+-Product
+-Apr 4, 2024
+-Apr 4, 2024
+-Apr 4, 2024
+-Introducing improvements to the fine-tuning API and expanding our custom models program
+-Introducing improvements to the fine-tuning API and expanding our custom models program
+-Introducing improvements to the fine-tuning API and expanding our custom models program
+-Apr 1, 2024
+-Apr 1, 2024
+-Apr 1, 2024
+-Start using ChatGPT instantly
+-Start using ChatGPT instantly
+-Start using ChatGPT instantly
+-Mar 29, 2024
+-Mar 29, 2024
+-Mar 29, 2024
+-Navigating the challenges and opportunities of synthetic voices
+-Navigating the challenges and opportunities of synthetic voices
+-Navigating the challenges and opportunities of synthetic voices
++View all product articles
++Global news partnerships: Le Monde and Prisa Media
++Company
++Mar 13, 2024
++Review completed & Altman, Brockman to continue to lead OpenAI
++Company
++Mar 8, 2024
++OpenAI announces new members to board of directors
++Company
++Mar 8, 2024

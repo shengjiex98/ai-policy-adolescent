@@ -1,0 +1,168 @@
+{
+  "run_id": "20260701",
+  "run_date": "2026-07-01",
+  "retrieved_at": "2026-07-01T17:45:00-04:00",
+  "constitution": "rules/CLAUDE_platform_governance_events.md",
+  "notes": "V1 agent-driven run. Companies: OpenAI, Anthropic, Google DeepMind. Dated events since 2023-01-01 plus baseline snapshots. OpenAI web properties returned HTTP 403 to direct fetches; per constitution these were not bypassed, and OpenAI evidence was assembled from web-search results pointing at official openai.com/help.openai.com pages. All such records are flagged human_review_needed. Update 2026-07-09: all OpenAI records were verified against Wayback Machine snapshots of the official pages (quotes replaced with verbatim archived text, snapshot URLs added to supporting_source_urls, review flags cleared). Extracted snapshot text is preserved in data/raw/wayback/.",
+  "source_run_log": [
+    {
+      "source_name": "ChatGPT Release Notes",
+      "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "company_hint": "OpenAI",
+      "platform_hint": "ChatGPT",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": "Live page 403; content retrieved from Wayback snapshot 20260102071947"
+    },
+    {
+      "source_name": "OpenAI Usage Policies",
+      "source_url": "https://openai.com/policies/usage-policies",
+      "company_hint": "OpenAI",
+      "platform_hint": "ChatGPT",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": "Live page 403; content retrieved from Wayback snapshot 20251102012204"
+    },
+    {
+      "source_name": "OpenAI Parental Controls FAQ",
+      "source_url": "https://help.openai.com/en/articles/12315553-parental-controls-faq",
+      "company_hint": "OpenAI",
+      "platform_hint": "ChatGPT",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 0,
+      "error_message": "Live page 403; content retrieved from Wayback snapshot 20260128234253; supporting source for 2025-09-29 event"
+    },
+    {
+      "source_name": "OpenAI Teen Safety Blog Post",
+      "source_url": "https://openai.com/index/teen-safety-freedom-and-privacy/",
+      "company_hint": "OpenAI",
+      "platform_hint": "ChatGPT",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": "Live page 403; content retrieved from Wayback snapshot 20251231081004"
+    },
+    {
+      "source_name": "OpenAI Introducing Parental Controls",
+      "source_url": "https://openai.com/index/introducing-parental-controls/",
+      "company_hint": "OpenAI",
+      "platform_hint": "ChatGPT",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": "Live page 403; content retrieved from Wayback snapshot 20260107104512"
+    },
+    {
+      "source_name": "OpenAI Age Prediction Help",
+      "source_url": "https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt",
+      "company_hint": "OpenAI",
+      "platform_hint": "ChatGPT",
+      "status": "partial",
+      "records_found": 0,
+      "records_included": 0,
+      "error_message": "Live page 403; no Wayback snapshot available as of 2026-07-09; retained as supporting URL only"
+    },
+    {
+      "source_name": "Anthropic News",
+      "source_url": "https://www.anthropic.com/news",
+      "company_hint": "Anthropic",
+      "platform_hint": "Claude",
+      "status": "partial",
+      "records_found": 0,
+      "records_included": 0,
+      "error_message": "Hub page only lists 2026 posts; historical safety posts were fetched directly by URL (see individual sources)"
+    },
+    {
+      "source_name": "Anthropic Usage Policy",
+      "source_url": "https://www.anthropic.com/legal/aup",
+      "company_hint": "Anthropic",
+      "platform_hint": "Claude",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": ""
+    },
+    {
+      "source_name": "Anthropic Protecting User Wellbeing",
+      "source_url": "https://www.anthropic.com/news/protecting-well-being-of-users",
+      "company_hint": "Anthropic",
+      "platform_hint": "Claude",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": ""
+    },
+    {
+      "source_name": "Anthropic Privacy Policy",
+      "source_url": "https://www.anthropic.com/legal/privacy",
+      "company_hint": "Anthropic",
+      "platform_hint": "Claude",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": ""
+    },
+    {
+      "source_name": "Google Gemini Blog",
+      "source_url": "https://blog.google/products/gemini/",
+      "company_hint": "Google",
+      "platform_hint": "Gemini",
+      "status": "partial",
+      "records_found": 0,
+      "records_included": 0,
+      "error_message": "Hub page only surfaces recent posts with no teen/safety items; historical posts fetched directly by URL"
+    },
+    {
+      "source_name": "Gemini Apps Privacy Hub",
+      "source_url": "https://support.google.com/gemini/answer/13594961",
+      "company_hint": "Google",
+      "platform_hint": "Gemini",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": ""
+    },
+    {
+      "source_name": "Gemini for Children Guide (Family Link)",
+      "source_url": "https://support.google.com/gemini/answer/16109150",
+      "company_hint": "Google",
+      "platform_hint": "Gemini",
+      "status": "success",
+      "records_found": 2,
+      "records_included": 2,
+      "error_message": ""
+    },
+    {
+      "source_name": "Google Bard for Teens Blog Post",
+      "source_url": "https://blog.google/products/gemini/google-bard-expansion-teens/",
+      "company_hint": "Google",
+      "platform_hint": "Gemini",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": ""
+    },
+    {
+      "source_name": "Google Built-in Protections for Kids and Teens",
+      "source_url": "https://blog.google/technology/families/google-new-built-in-protections-kids-teens/",
+      "company_hint": "Google",
+      "platform_hint": "Gemini",
+      "status": "success",
+      "records_found": 1,
+      "records_included": 1,
+      "error_message": ""
+    }
+  ],
+  "discovered_sources": [
+    "https://openai.com/index/memory-and-new-controls-for-chatgpt/",
+    "https://openai.com/index/sycophancy-in-gpt-4o/",
+    "https://openai.com/index/helping-people-when-they-need-it-most/",
+    "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/",
+    "https://openai.com/index/updating-model-spec-with-teen-protections/",
+    "https://www.anthropic.com/news/updating-our-usage-policy",
+    "https://www.anthropic.com/news/updates-to-our-consumer-terms"
+  ]
+}
