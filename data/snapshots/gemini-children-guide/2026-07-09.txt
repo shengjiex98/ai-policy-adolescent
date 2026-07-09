@@ -1,0 +1,159 @@
+SOURCE: Gemini for Children Guide (Family Link)
+URL: https://support.google.com/gemini/answer/16109150
+FETCHED: 2026-07-09T02:32:05-07:00
+VIA: live
+---
+Guide your child's Gemini Apps experience - Gemini Apps Help
+Skip to main content
+Guide your child's Gemini Apps experience
+You can give your child under 13 (or
+the applicable age in your country
+) access to Gemini Apps. As a parent, you're in control of your child’s Gemini Apps access, including turning it on or off, using the Google Family Link app.
+Our filters try to limit inappropriate content from appearing, but they're not perfect. Your child may encounter content you don't want them to see. Like many other AI apps, Gemini is conversational and can feel like a human. It's important for you to help your child understand that it's an AI tool, not a person to confide in.
+In this article, learn about:
+Help your child use Gemini Apps responsibly
+Added protections for minors in Gemini Apps
+Gemini Apps availability for supervised accounts
+How to manage your child’s access to Gemini Apps
+Help your child use Gemini Apps responsibly
+To help guide your conversations about using Gemini Apps in a responsible way, use the reminders and resources below.
+Explore together
+As your child is learning how to use generative AI, explore the tool with them and supervise their use.
+Try Gemini Apps
+Your child can use generative AI to learn and be creative. With Gemini Apps, they can do things like:
+Ask questions
+about things they’re curious about, like why the sky is blue or how long dinosaurs lived.
+Be creative by getting
+help writing a story, making up a silly song, or brainstorming ideas for their next art project.
+Get a little help with learning.
+If they’re stuck on a tricky math problem or a book report, Gemini Apps can give them clues and explanations to help them figure it out themselves. Learn how to
+use Guided Learning
+and
+create study materials
+.
+Tip:
+You can help your child use Gemini on your smart home devices.
+Learn how to guide your child's Gemini for Home experience
+.
+Learn about generative AI & Gemini Apps
+Learn about using generative AI and responses from Gemini Apps. Here are some resources to help get started:
+Family Guide to AI
+Learn about generative AI
+An overview of the Gemini app
+Remember that Gemini isn’t a person
+Help your child understand that although Gemini is conversational, it's not a person and cannot think for itself or feel emotions. Its responses can sometimes seem overly encouraging or supportive. Remind them that they are interacting with an app, and Gemini should not be treated as a friend or used to discuss personal problems or secrets.
+Remind your child not to enter personal information
+Let your child know not to share sensitive personal information like their address, school name, or family information in their chats with Gemini Apps.
+Double-check responses
+Gemini is new and evolving, and can
+hallucinate
+and present inaccurate information as factual.
+Help your child think critically about Gemini Apps responses.
+Here are some resources to learn more about responses:
+Learn about how AI can make mistakes
+Learn about responses from Gemini Apps
+View related sources
+Report inappropriate or inaccurate content
+Our filters try to limit access to inappropriate content, but they’re not perfect. Your child may encounter content you don’t want them to see.
+If your child encounters inappropriate or incorrect content,you or your child can report it.
+You can report it by submitting feedback or your child can mark it as a bad response
+.
+Added protections for minors in Gemini Apps
+Content filters
+To help protect all users, Gemini Apps attempts to identify and block harmful content, avoiding certain responses that violate our policy guidelines like violence, sexually explicit material, and harassment. For more information about these types of responses,
+review the policy guidelines for the Gemini app
+.
+Added content filters for minors
+In addition to the protections for all Gemini Apps users, there are added content filters for minors who are signed into their Google account. These additional protections are designed to provide a more protective experience for minors, including filters to avoid Gemini claiming to be a person or having human emotions, or role-playing as a harmful character.
+These filters have been designed for minors and try to limit access to inappropriate content, but they’re not perfect. Your child may encounter content you don’t want them to see.
+Privacy
+The Keep Activity setting is not available to users under 13 (or
+the applicable age in your country
+).
+Gemini Apps availability for supervised accounts
+Important:
+We’re gradually releasing access to Gemini Apps for supervised accounts, so access might not be available to your child just yet even if you have Gemini Apps enabled in Family Link.
+Gemini Apps are not available for supervised accounts in the European Economic Area, Switzerland, and the United Kingdom.
+Gemini Apps feature availability for supervised accounts
+Some Gemini Apps features have age requirements and are not yet available for supervised users.
+Gemini as the digital assistant on Android devices
+Important:
+“Hey Google” and Voice Match are not available to use with Gemini Apps for users under 13 (or
+the applicable age in your country
+). “Hey Google” and Voice Match will still work with other devices, like Smart Displays and smart speakers that support Google Assistant.
+Learn how to set up “Hey Google” and Voice Match for shared devices
+.
+Google Assistant may help for certain actions. When that happens,
+some Google Assistant settings, like Personal Results, apply
+.
+When lock screen access is turned on,
+Gemini can respond when the screen is locked
+.
+Manage your child’s access to Gemini Apps
+A parent must enable access before their child under 13 (or
+the applicable age in your country
+) can use Gemini Apps with a supervised account. When your child first activates the app, you’ll receive an email notification. You can change your child’s access to Gemini Apps at any time.
+Go to
+familylink.google.com
+or open the Family Link app
+.
+Select your child.
+Tap
+Controls
+Gemini
+Gemini Apps
+.
+Turn Gemini Apps on
+or off
+.
+Turn off a child’s access to Gemini Apps in older versions of Family Link
+If you use an older version of Family Link, to turn your child’s access to Gemini Apps on or off:
+Go to
+familylink.google.com
+or open the Family Link app
+.
+Select your child.
+Tap
+Controls
+Content restrictions
+Gemini
+Gemini Apps.
+Turn Gemini Apps on
+or off
+.
+Troubleshoot your child’s access to Gemini Apps
+If your child is unable to access Gemini Apps or gets an error message that “Gemini isn’t available for your account,” try the following steps:
+Make sure Gemini Apps is enabled.
+Check your Google Family Link settings to make sure Gemini Apps is turned on. After you enable Gemini Apps in Family Link, if your child doesn't have access yet, try restarting Gemini. It may take a few hours for the change to take effect.
+Check if Gemini Apps is available for your child.
+Check that your child is trying to access Gemini Apps on an
+available device, or in an available language or region
+.
+Learn more about availability
+for users under 13 (or
+the applicable age in your country
+).
+Need more help?
+Try these next steps:
+Post to the help community
+Get answers from community members
+true
+Search
+Clear search
+Close search
+Google apps
+Main menu
+true
+Search Help Center
+false
+true
+true
+true
+true
+true
+5295044
+false
+false
+false
+false
+false

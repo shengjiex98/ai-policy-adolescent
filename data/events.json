@@ -1,9 +1,6 @@
 {
-  "run_id": "20260701",
-  "run_date": "2026-07-01",
-  "retrieved_at": "2026-07-01T17:45:00-04:00",
-  "constitution": "rules/CLAUDE_platform_governance_events.md",
-  "notes": "V1 agent-driven run. Companies: OpenAI, Anthropic, Google DeepMind. Dated events since 2023-01-01 plus baseline snapshots. OpenAI web properties returned HTTP 403 to direct fetches; per constitution these were not bypassed, and OpenAI evidence was assembled from web-search results pointing at official openai.com/help.openai.com pages. All such records are flagged human_review_needed. Update 2026-07-09: all OpenAI records were verified against Wayback Machine snapshots of the official pages (quotes replaced with verbatim archived text, snapshot URLs added to supporting_source_urls, review flags cleared). Extracted snapshot text is preserved in data/raw/wayback/.",
+  "schema_version": 2,
+  "updated_at": "2026-07-09",
   "events": [
     {
       "event_id": "OPENAI-CHATGPT-2024-02-13-MEMORY-LAUNCH",
@@ -32,7 +29,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "OPENAI-CHATGPT-2025-04-29-SYCOPHANCY-ROLLBACK",
@@ -61,7 +59,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "OPENAI-CHATGPT-2025-08-07-GPT5-DEFAULT",
@@ -90,7 +89,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "OPENAI-CHATGPT-2025-08-26-CRISIS-SAFEGUARDS",
@@ -119,7 +119,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "OPENAI-CHATGPT-2025-09-16-TEEN-SAFETY-AGE-PREDICTION",
@@ -148,7 +149,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "OPENAI-CHATGPT-2025-09-29-PARENTAL-CONTROLS",
@@ -177,7 +179,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "OPENAI-CHATGPT-2025-10-27-SENSITIVE-CONVERSATIONS",
@@ -206,7 +209,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "OPENAI-CHATGPT-2025-10-29-USAGE-POLICY-ADVICE-LIMITS",
@@ -235,7 +239,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "OPENAI-CHATGPT-2025-12-18-MODEL-SPEC-U18",
@@ -264,7 +269,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "ANTHROPIC-CLAUDE-2024-06-06-USAGE-POLICY-MINORS-API",
@@ -293,7 +299,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "ANTHROPIC-CLAUDE-2025-08-28-CONSUMER-TERMS-TRAINING",
@@ -322,7 +329,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "ANTHROPIC-CLAUDE-2025-12-18-WELLBEING-CRISIS-RESOURCES",
@@ -351,7 +359,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "GOOGLE-GEMINI-2023-11-15-BARD-TEEN-ACCESS",
@@ -380,7 +389,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "GOOGLE-GEMINI-2025-02-12-AGE-ESTIMATION-TESTING",
@@ -409,7 +419,8 @@
       "human_review_needed": false,
       "human_review_reason": "",
       "suggested_question_for_reviewer": "",
-      "review_priority": ""
+      "review_priority": "",
+      "run_id": "20260701"
     },
     {
       "event_id": "GOOGLE-GEMINI-2025-05-05-UNDER13-FAMILY-LINK",
@@ -438,7 +449,8 @@
       "human_review_needed": true,
       "human_review_reason": "Rollout start date (week of 2025-05-05) comes from third-party reporting of a parent email; the official help page documents the feature but not the rollout date.",
       "suggested_question_for_reviewer": "Confirm rollout start date for under-13 Gemini access via an official Google source or archived announcement.",
-      "review_priority": "medium"
+      "review_priority": "medium",
+      "run_id": "20260701"
     },
     {
       "event_id": "ANTHROPIC-CLAUDE-SNAP-2025-09-15-USAGE-POLICY",
@@ -467,7 +479,8 @@
       "human_review_needed": true,
       "human_review_reason": "Policy has an effective date (2025-09-15) but the diff against the prior version was not retrieved; unclear which provisions are new as of that date.",
       "suggested_question_for_reviewer": "Compare against the pre-2025-09-15 Usage Policy version to determine what changed.",
-      "review_priority": "low"
+      "review_priority": "low",
+      "run_id": "20260701"
     },
     {
       "event_id": "ANTHROPIC-CLAUDE-SNAP-2026-07-08-PRIVACY-POLICY",
@@ -496,7 +509,8 @@
       "human_review_needed": true,
       "human_review_reason": "A new policy version takes effect 2026-07-08; what changed relative to the prior version was not retrieved, so this may conceal a codable privacy event.",
       "suggested_question_for_reviewer": "Diff the 2026-07-08 Privacy Policy against the prior version to determine whether a privacy_change event should be coded.",
-      "review_priority": "medium"
+      "review_priority": "medium",
+      "run_id": "20260701"
     },
     {
       "event_id": "GOOGLE-GEMINI-SNAP-2026-07-01-UNDER13-PROTECTIONS",
@@ -525,7 +539,8 @@
       "human_review_needed": true,
       "human_review_reason": "Important baseline lacking a historical effective date (per constitution Section 10.6).",
       "suggested_question_for_reviewer": "Determine when the minor-specific content filters were introduced, if a dated source can be located.",
-      "review_priority": "low"
+      "review_priority": "low",
+      "run_id": "20260701"
     },
     {
       "event_id": "GOOGLE-GEMINI-SNAP-2026-07-01-PRIVACY-HUB",
@@ -554,168 +569,8 @@
       "human_review_needed": true,
       "human_review_reason": "Important baseline lacking a historical effective date (per constitution Section 10.6).",
       "suggested_question_for_reviewer": "None; retain for change detection on future runs.",
-      "review_priority": "low"
+      "review_priority": "low",
+      "run_id": "20260701"
     }
-  ],
-  "source_run_log": [
-    {
-      "source_name": "ChatGPT Release Notes",
-      "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
-      "company_hint": "OpenAI",
-      "platform_hint": "ChatGPT",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": "Live page 403; content retrieved from Wayback snapshot 20260102071947"
-    },
-    {
-      "source_name": "OpenAI Usage Policies",
-      "source_url": "https://openai.com/policies/usage-policies",
-      "company_hint": "OpenAI",
-      "platform_hint": "ChatGPT",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": "Live page 403; content retrieved from Wayback snapshot 20251102012204"
-    },
-    {
-      "source_name": "OpenAI Parental Controls FAQ",
-      "source_url": "https://help.openai.com/en/articles/12315553-parental-controls-faq",
-      "company_hint": "OpenAI",
-      "platform_hint": "ChatGPT",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 0,
-      "error_message": "Live page 403; content retrieved from Wayback snapshot 20260128234253; supporting source for 2025-09-29 event"
-    },
-    {
-      "source_name": "OpenAI Teen Safety Blog Post",
-      "source_url": "https://openai.com/index/teen-safety-freedom-and-privacy/",
-      "company_hint": "OpenAI",
-      "platform_hint": "ChatGPT",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": "Live page 403; content retrieved from Wayback snapshot 20251231081004"
-    },
-    {
-      "source_name": "OpenAI Introducing Parental Controls",
-      "source_url": "https://openai.com/index/introducing-parental-controls/",
-      "company_hint": "OpenAI",
-      "platform_hint": "ChatGPT",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": "Live page 403; content retrieved from Wayback snapshot 20260107104512"
-    },
-    {
-      "source_name": "OpenAI Age Prediction Help",
-      "source_url": "https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt",
-      "company_hint": "OpenAI",
-      "platform_hint": "ChatGPT",
-      "status": "partial",
-      "records_found": 0,
-      "records_included": 0,
-      "error_message": "Live page 403; no Wayback snapshot available as of 2026-07-09; retained as supporting URL only"
-    },
-    {
-      "source_name": "Anthropic News",
-      "source_url": "https://www.anthropic.com/news",
-      "company_hint": "Anthropic",
-      "platform_hint": "Claude",
-      "status": "partial",
-      "records_found": 0,
-      "records_included": 0,
-      "error_message": "Hub page only lists 2026 posts; historical safety posts were fetched directly by URL (see individual sources)"
-    },
-    {
-      "source_name": "Anthropic Usage Policy",
-      "source_url": "https://www.anthropic.com/legal/aup",
-      "company_hint": "Anthropic",
-      "platform_hint": "Claude",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": ""
-    },
-    {
-      "source_name": "Anthropic Protecting User Wellbeing",
-      "source_url": "https://www.anthropic.com/news/protecting-well-being-of-users",
-      "company_hint": "Anthropic",
-      "platform_hint": "Claude",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": ""
-    },
-    {
-      "source_name": "Anthropic Privacy Policy",
-      "source_url": "https://www.anthropic.com/legal/privacy",
-      "company_hint": "Anthropic",
-      "platform_hint": "Claude",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": ""
-    },
-    {
-      "source_name": "Google Gemini Blog",
-      "source_url": "https://blog.google/products/gemini/",
-      "company_hint": "Google",
-      "platform_hint": "Gemini",
-      "status": "partial",
-      "records_found": 0,
-      "records_included": 0,
-      "error_message": "Hub page only surfaces recent posts with no teen/safety items; historical posts fetched directly by URL"
-    },
-    {
-      "source_name": "Gemini Apps Privacy Hub",
-      "source_url": "https://support.google.com/gemini/answer/13594961",
-      "company_hint": "Google",
-      "platform_hint": "Gemini",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": ""
-    },
-    {
-      "source_name": "Gemini for Children Guide (Family Link)",
-      "source_url": "https://support.google.com/gemini/answer/16109150",
-      "company_hint": "Google",
-      "platform_hint": "Gemini",
-      "status": "success",
-      "records_found": 2,
-      "records_included": 2,
-      "error_message": ""
-    },
-    {
-      "source_name": "Google Bard for Teens Blog Post",
-      "source_url": "https://blog.google/products/gemini/google-bard-expansion-teens/",
-      "company_hint": "Google",
-      "platform_hint": "Gemini",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": ""
-    },
-    {
-      "source_name": "Google Built-in Protections for Kids and Teens",
-      "source_url": "https://blog.google/technology/families/google-new-built-in-protections-kids-teens/",
-      "company_hint": "Google",
-      "platform_hint": "Gemini",
-      "status": "success",
-      "records_found": 1,
-      "records_included": 1,
-      "error_message": ""
-    }
-  ],
-  "discovered_sources": [
-    "https://openai.com/index/memory-and-new-controls-for-chatgpt/",
-    "https://openai.com/index/sycophancy-in-gpt-4o/",
-    "https://openai.com/index/helping-people-when-they-need-it-most/",
-    "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/",
-    "https://openai.com/index/updating-model-spec-with-teen-protections/",
-    "https://www.anthropic.com/news/updating-our-usage-policy",
-    "https://www.anthropic.com/news/updates-to-our-consumer-terms"
   ]
 }

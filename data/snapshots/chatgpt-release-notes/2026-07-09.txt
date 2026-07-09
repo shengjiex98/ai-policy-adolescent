@@ -1,43 +1,770 @@
-SNAPSHOT: https://web.archive.org/web/20260102071947/https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-TIMESTAMP: 20260102071947
-ORIGINAL: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+SOURCE: ChatGPT Release Notes
+URL: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+FETCHED: 2026-07-09T02:30:51-07:00
+VIA: wayback:https://web.archive.org/web/20260709021116/https://help.openai.com/en/articles/6825453-chatgpt-release-notes
 ---
 ChatGPT — Release Notes | OpenAI Help Center
-1,379 captures
-16 Dec 2022 - 09 Jul 2026
-Dec
-JAN
-Feb
-02
-2025
-2026
-2027
-success
-fail
-About this capture
-COLLECTED BY
-Collection:
-Local News - U.S.
-This collection contains crawl data collected daily from a seed 
-list of US-based local news websites. Between 2005 and 2023, almost 2900
- local newspapers shut down. This collection aims to archive existing 
-news sites should they shut down too.
-Seed list used as of 2025-07-17 located
-here
-. The majority of seeds are provided courtesy of Northwestern University's
-State of Local News Project
-.
-TIMESTAMPS
-The Wayback Machine - https://web.archive.org/web/20260102071947/https://help.openai.com/en/articles/6825453-chatgpt-release-notes
 ChatGPT — Release Notes
 A changelog of the latest updates and release notes for ChatGPT
-Updated: 11 days ago
+Updated: 6 hours ago
+July 8, 2026
+Introducing GPT-Live-1 in ChatGPT Voice
+We’re rolling out a new ChatGPT Voice experience. ChatGPT Voice is now powered by GPT-Live-1 for paid users and GPT-Live-1 mini for Free users. Both models can listen and speak at the same time, making turn-taking and interruptions feel more natural.
+GPT-Live-1 works inside a ChatGPT chat, with spoken responses appearing alongside streamed text. It can use web search and memory, show visual results through supported widgets, and work with text and images in the same conversation.
+GPT-Live-1 is rolling out across consumer plans, including Free, on chatgpt.com and the ChatGPT iOS and Android apps in supported regions. It is not available in ChatGPT Business, Enterprise, or Edu workspaces at launch. GPT-Live-1 does not support video or screen sharing at this time; eligible subscribers can continue using those capabilities with Advanced Voice Mode.
+July 6, 2026
+GPT-5.5 Instant Mini in ChatGPT
+We’re rolling out GPT-5.5 Instant Mini in ChatGPT. It replaces GPT-5.3 Instant Mini as the fallback model users reach after hitting their GPT-5.5 Instant or Auto rate limits. Because it serves as a fallback, it won’t appear in the model picker. This update does not affect the API or Codex.
+Compared with GPT-5.3 Instant Mini, GPT-5.5 Instant Mini better tracks evolving user intent, calibrates tone, and avoids repetitive or overly structured responses. Testing also showed stronger personalization and fewer factual issues.
+June 26, 2026
+Personal finance in ChatGPT expands to Plus users and Android
+The personal finance experience in ChatGPT is rolling out to Plus users in the U.S. on web and iOS. It is also now available on Android for Pro and Plus users in the U.S.
+Eligible users can securely connect supported financial accounts, view a dashboard of their finances, and ask ChatGPT questions grounded in their financial context
+Improved dictation in ChatGPT
+We’re rolling out a new speech-to-text model for dictation in ChatGPT across all plans. This is a behind-the-scenes update, so there are no changes to how you use dictation.
+The update improves transcription accuracy across languages and accents, including when multilingual speakers mix or switch between languages. Evaluations showed gains in Japanese, Korean, Chinese, Urdu, Vietnamese, accented English, and long-form Spanish, French, Italian, and Portuguese.
+Dictation is also more robust in noisy public spaces and workplace environments, with quiet or whispered speech, and when transcribing combinations of letters and numbers.
+In our ChatGPT dictation evaluations, word error rate—a standard measure of transcription accuracy—was at least 10% lower for top languages tested than with the previous production model.
+Retiring GPT-4.5
+As of June 26, 2026, GPT-4.5 is no longer available in ChatGPT, including for custom GPTs. Existing conversations that used GPT-4.5 can continue with GPT-5.5.
+This retirement was previously announced on May 28, 2026. It applies to ChatGPT only; there are no changes to the API.
+June 25, 2026
+Codex Remote GA and DigitalOcean plugin
+Codex Remote is now generally available on all ChatGPT plans. From the ChatGPT mobile app, users can start or continue work on a connected Mac or Windows host, review progress, and approve actions from their phone. Remote Control now uses authenticated one-to-one QR pairing between each supported mobile device and each host. Connections used since June 8 remain paired; older inactive connections need to pair again. Signing out turns off Remote Control without removing existing pairings.
+The new
+DigitalOcean Droplet Workspace plugin
+lets Codex provision a DigitalOcean Droplet, configure SSH access, and connect it to the Codex app as a remote workspace. Users should update the ChatGPT mobile app and Codex app to the latest versions before connecting.
+Learn more about using Codex with a ChatGPT plan
+.
+June 24, 2026
+GPT-5.5 Instant Update
+We’re updating GPT-5.5 Instant, our most-used model in ChatGPT, to improve conversational quality—especially when users are making a decision, asking for advice, planning something, researching options, or shopping.
+The model is better at identifying the underlying goal behind a question and carrying context across multiple turns. It also follows complex instructions more reliably: when a request includes several constraints or requirements, responses are more likely to address all of them and clearly explain why a recommendation is a good fit.
+When users add constraints, clarify what they mean, or push back on an answer, the model should adapt more effectively instead of repeating its original approach.
+Shopping and local business queries should also feel more useful. The model makes better use of location context to surface relevant nearby options and can bring together product recommendations, business information, and images more coherently when those elements are helpful.
+Overall, responses should feel more tasteful and cohesive. Formatting is less templated and more intentionally designed, with greater creativity alongside better restraint.
+June 22, 2026
+Large pastes are now handled as attachments for more plans
+Starting today for
+ChatGPT Free and Go
+users, long pastes are handled differently in ChatGPT.
+If you paste
+more than 10k characters
+into the composer, ChatGPT will automatically convert the content into an
+attachment
+instead of inserting it directly into the text field. This keeps the composer cleaner and helps prevent large pastes from consuming your entire context window.
+You can still move the content back into the message at any time by clicking on
+Show in text field
+to convert the attachment back to a direct paste.
+This is already available to
+ChatGPT Plus, Pro,
+and
+Business
+users. Previously if you sent more than 5k characters it was sent as an attachment. The threshold has now also been raised to 10k characters.
+June 18, 2026
+ChatGPT app experience updates
+ChatGPT now has more ways to help with common questions, from pronunciation guidance to World Cup updates. It’s also smoother to use, with easier chat organization and sharing, more control over connected apps, and faster photo uploads on iOS, and more.
+Web, iOS, and Android
+Help with pronunciations
+: ChatGPT can now include text and audio pronunciation guidance for words in more than 60 languages. Ask how to pronounce a word and ChatGPT can explain it with both audio and text in the conversation.
+World Cup updates
+: ChatGPT can now help you follow the tournament in a more conversational way. Ask about schedules, matchups, teams and players, country storylines, predictions, and what different match outcomes mean. Get started at
+chatgpt.com/football
+.
+App permission controls
+: You can now choose when ChatGPT asks before using connected apps. Set ChatGPT to always ask, ask before making changes, or only ask before important changes. Manage preferences in Settings > Apps.
+Web
+Easier pinning and sidebar organization
+: It’s now easier to keep important work close in ChatGPT. You can pin chats and projects directly from the sidebar, and your Pinned section now includes both chats and projects. You can also organize Recents as one combined list, or group chats by project so related work stays together.
+Easier conversation sharing
+: Sharing a conversation is now faster, with a one-click flow that no longer opens a separate pop-up.
+Create a note from a response
+: Highlight text in a ChatGPT response and choose ‘Start writing’ to keep working on it, or save it to your Library to come back to later.
+iOS
+Improved camera and photo uploads
+: Taking and uploading photos in ChatGPT on iOS is now faster and smoother, making it easier to add images to your conversations.
+Android
+Long-press send to choose a model
+: Android users on paid plans can now long-press the send button to choose a model for a one-off message without changing their default model.
+Updated composer and tools menu
+: The composer in Android now has inline mentions, and an updated menu for Plugins.
+Record & Replay in Codex
+Record & Replay is a new Codex app feature for macOS that lets eligible users demonstrate a workflow once and turn it into a reusable skill. It is useful for repetitive workflows or tasks that are easier to show than describe, such as creating a configured issue, publishing a video, or downloading a recurring report.
+Record & Replay requires Computer Use to be available and enabled, and initial availability excludes the European Union, UK and Switzerland. Learn more in the
+Record & Replay guide
+.
+June 17, 2026
+Scheduled tasks in ChatGPT
+With scheduled tasks, users can ask ChatGPT to send reminders, handle recurring work, or monitor things for them. This update makes tasks easier to find and manage, faster and more reliable, with more useful notifications.
+What’s changing
+A new Scheduled page, discoverable in the sidebar, gives users one place to view active tasks, see when they’ll run next, and pause, resume, edit, or delete them.
+All tasks are faster and more reliable.
+Users can schedule work for specific times or broader windows, such as morning, afternoon, or evening.
+Monitoring tasks can search the web and check connected apps for changes and notify users only when there is something worth reporting.
+Availability and limits
+Rolling out to Plus, Pro, Business, and Enterprise users.
+Active task limits vary by tier.
+Tasks cannot run more than once per hour, and unattended tasks may automatically pause after a period of inactivity.
+Update on Pulse
+Pulse is being sunset as proactive updates move into scheduled tasks. Pro users will continue to have access for 14 days from today. To keep receiving daily updates, you can ask ChatGPT to schedule a daily briefing based on your interests and past chats.
+June 12, 2026
+Retiring GPT-5.2 models
+As of June 12, 2026, GPT-5.2 models are no longer available in ChatGPT.
+This applies to GPT-5.2 Instant, GPT-5.2 Thinking, and GPT-5.2 Pro. Existing conversations that used GPT-5.2 will automatically continue on the corresponding GPT-5.5 model. GPT-5.5 models remain available in ChatGPT.
+This retirement was previously announced with the release of GPT-5.3 Instant. Models will generally remain available in ChatGPT for 90 days after a successor is released.
+Additional controls for memory summary
+You can now delete the memories shown on your memory summary page and turn memory off by selecting “Delete and turn off memory” from the three-dot menu. This does not delete your past chats. If you turn memory back on later, ChatGPT may create new memories from chats that remain in your chat history. This control is available to all ChatGPT users on the web and rolling out on mobile soon.
+To make changes to your memory summary, you can:
+Type what you want changed into the text box at the bottom of the memory summary, and it will update accordingly.
+Highlight any text in the memory summary to make a specific correction.
+If you don’t want information from a chat to be used to personalize responses, you can turn off memory or use Temporary Chat. Temporary Chats don’t use existing memories or create new memories.
+Memory updates, including memory summary, are still rolling out across ChatGPT plans and countries. You’ll be notified in ChatGPT when memory updates are available to you.
+June 11, 2026
+Codex updates
+We’ve made several Codex updates, including:
+Eligible Plus and Pro users now have rate-limit reset banking, including one free reset at launch and the ability to send referral invitations form within the Codex app. When an eligible recipient sends their first Codex message, both people receive a banked rate-limit reset. Banked resets are usable for 30 days after they are granted. Learn more in
+Invite friends and coworkers
+and review the
+current terms
+.
+This release also adds
+Developer mode
+for Browser use in Chrome and the Codex in-app browser. Developer mode gives Codex controlled Chrome DevTools Protocol access so it can profile JavaScript, inspect console output and network traffic, review page state such as the DOM and applied styles, and diagnose live browser issues. The feature is off by default  - users can toggle the feature from Codex app settings.
+Other changes in this release include the
+/init
+command for generating an AGENTS.md project-instructions scaffold, customizable macOS Dock icons, an
+Unread chats
+section in the command menu, and clearer usage-limit errors with plan and workspace guidance, including reset timing when available.
+Learn more
+.
+June 10, 2026
+Simplified controls in the model picker
+We’re updating the model picker to make it easier to choose the balance of speed and reasoning effort that works best for your task.
+The model picker now has the following simplified options:
+Instant
+Medium
+High
+Extra High
+[Pro plans only]
+Pro Standard
+[Pro plans only]
+Pro Extended
+[Pro plans only]
+On iOS and Android, you can find the picker at the top of the conversation. On web, it appears directly in the message composer.
+Users have the ability to decide whether Instant auto-switches to Medium for higher reasoning when required. You can turn this on or off in General >  Settings.
+What changed from the previous model picker:
+Thinking Standard is now Medium, Thinking Extended is now High, and Thinking Heavy is now Extra High. Pro Standard and Pro Extended remain available under Pro. Thinking Light is no longer available.
+Old
+New
+Instant
+Instant
+Thinking - Light
+[removed]
+Thinking - Standard
+Medium
+Thinking - Extended
+High
+Thinking - Heavy
+Extra High
+Pro Standard
+Pro Standard
+Pro Extended
+Pro Extended
+Availability
+These model picker updates are rolling out to Plus and Pro users on web, iOS, and Android globally today.
+June 8, 2026
+ChatGPT app experience updates
+Improvement to charts, table of contents and full screen writing. Also fixes long-standing issues around editing messages with attachments, and various other bug fixes.
+Web, iOS, and Android
+Interactive charts in answers:
+ChatGPT can now turn some answers into rich and interactive bar, line, pie, and scatter charts directly in the conversation. Ask for a chart, or ChatGPT may include one when it helps make trends and comparisons easier to understand.
+Web
+Table of contents in longer conversations:
+Conversations longer than five responses can now include a table of contents, so you can scan sections and jump to the part you need.
+Full-screen writing blocks for longer-form work:
+Writing blocks now cover long-form writing use cases, including essays, PRDs, reports, blog posts, notes, and other document work. Longer writing can now open in a focused full-screen editor. You can save your document to the Library, so you can find, reuse, or edit documents later. The experience also adds a wider document layout, cleaner titles, a table of contents for long documents, download support, undo and redo fixes, improved save behavior, and clearer loading states.
+Send an email directly from within a chat:
+If you’ve connected Gmail or Outlook, you can now ask ChatGPT to draft and send emails directly from the same conversation. ChatGPT will create a draft and you can choose to send it without leaving ChatGPT. Sending emails is available on the web for users on Plus, Pro, Business, and Enterprise plans with Gmail or Outlook connected.
+iOS
+Edit messages with attachments:
+You can now edit messages that include attachments, so you can revise your prompt without starting over.
+Long-press send to choose a model:
+Users on paid plans can now long-press the send button to choose a model for a one-off message without changing their default model.
+Autocorrection applies before sending:
+Last-second auto-corrections now automatically apply as before your message is sent to avoid typos.
+Immediate image previews after sending:
+When you upload an image on iOS, ChatGPT used to show a grey box after you sent your message. Now it shows the preview right away so that it’s clear which photo you sent.
+Cleaned up logged-out mobile web experience:
+Logged-out users now see a composer in the middle of the screen to avoid being blocked by popups. The sidebar has also been simplified.
+Android
+Cleaner edit-message flow:
+Android now makes it clearer when you’re editing a previous message.
+June 4, 2026
+Memory that stays more up to date
+We’ve upgraded memory so ChatGPT can better keep your context up to date, helping responses stay more relevant. This makes memory more useful by reducing stale or contradictory saved memories and helps ChatGPT better understand your preferences, goals, and ongoing work. You can review the memories that ChatGPT may use to personalize responses through sources or in your memory summary.
+Memories are now updated automatically, with ChatGPT keeping track of the details it determines are most important so it can continue building on the context you’ve already shared. If you prefer to revert to the legacy saved memories system, go to Settings > Memory > Saved memories.
+This update is rolling this out to Plus and Pro users in the US today. To access it on iOS or Android, update your ChatGPT app to the latest version. We’ll expand to Free and Go plans and additional countries over the next few weeks. Users will receive an in-product notice when the update becomes available to them. For Plus and Pro users, ChatGPT can also remember more useful context, with twice as much memory capacity.
+Lockdown Mode is now available to all logged-in users
+Lockdown Mode is now available to all logged-in users across account types and workspaces. It is an optional opt-in advanced security setting that limits access to the web and external services to help reduce the risk of data exfiltration from prompt injection attacks.
+When Lockdown Mode is on, ChatGPT restricts network-enabled capabilities such as live web browsing, deep research, agent mode, file downloads, and some web-derived image support. Personal users can turn it on from Settings > Security. Workspace admins can configure access for members through workspace settings and role-based access controls.
+Learn more:
+Lockdown Mode
+Rolling out ads in the UK
+We're beginning to roll out ads for users on Free and Go plans in the UK. Plus, Pro, Business, Enterprise, and Education plans will remain ad-free.
+June 2, 2026
+Active account session controls
+We’re rolling out
+Active sessions
+, a new security feature in ChatGPT that helps users review sessions associated with their account and sign out of sessions they don’t recognize.
+Users can now:
+Review first-party OpenAI sessions from
+Settings
+>
+Security
+>
+Active sessions
+, with available details such as device, app, approximate location, sign-in time, trusted-device status, and whether it is the current session
+Log out of individual sessions or all sessions from
+Active sessions
+Active sessions shows sessions known through session management, including ChatGPT, Codex, and API Platform sessions where available. It does not manage third-party app sessions, connected apps, Sign in with ChatGPT sessions used only for third-party services, or Codex CLI sessions.
+Learn more:
+Managing active sessions in ChatGPT
+June 1, 2026
+Find live jobs and format your resume in ChatGPT
+ChatGPT can now help with more of the job search process, from finding relevant live roles to tailoring a resume for a specific opportunity.
+When you search for jobs, ChatGPT can surface live listings and freelance opportunities from sources like Indeed, Upwork, Appcast, and across the web. Results are personalized using your experience, skills, and goals to highlight roles that may be a strong fit. You can follow links to apply directly on the source sites.
+You can now also upload or create a resume in ChatGPT, tailor it to a specific role, and download it in a polished, professional format.
+Availability:
+Job search: Available to users in the U.S. on Free, Go, Plus, and Pro plans
+Resume formatting: Available in English globally on the web for all plans
+May 29, 2026
+Codex updates: Computer use and remote control for Windows, usage profiles
+Codex now supports Computer Use on Windows in the Codex app, so eligible users can ask Codex to see, click, and type in Windows applications while they test, debug, and refine what they are building. Users can start work on a Windows machine and use ChatGPT on iOS or Android, or Codex on Mac, to check progress, continue the thread, respond to prompts, and steer work while away from the desk; the Windows machine remains the host for project files, shell, app server, and local context.
+This release also includes infrastructure updates that improve responsiveness and in-app browser speed, stability, and web compatibility, plus Codex Profiles for eligible users to see their Codex identity, activity over time, profile details, usage stats, and token activity. Computer Use on Windows is unavailable in the European Economic Area, the United Kingdom, and Switzerland at launch.
+Learn more:
+Computer Use
+,
+Remote control
+,
+Profiles
+.
+May 28, 2026
+GPT-5.5 Instant Update
+We’re updating GPT-5.5 Instant in ChatGPT and the API to improve response style and quality. It’s now easier to read, more natural in everyday conversations, and better paced in practical help tasks, with fewer overly long or bullet-heavy responses.
+With this update, canvas will no longer be available in GPT-5.5 Instant or GPT-5.5 Thinking. Writing and coding functionality is now supported directly in chat responses through writing blocks and code blocks. Paid users can continue using canvas for a limited time through legacy models until those models are sunset.
+Retiring OpenAI o3 and GPT-4.5
+Today, we’re continuing to retire older models with limited usage in ChatGPT so we can better serve our newer, most capable models. OpenAI o3 will be retired from ChatGPT on August 26, 2026 following a 90-day sunset period, and GPT-4.5 will be retired from ChatGPT on June 26, 2026 following a 30-day sunset period. These models are currently available to paid users only via model settings. These changes apply to ChatGPT only; there are no changes to the API.
+May 21, 2026
+Codex updates: richer context, goal mode, browser improvements, and remote locked use
+Codex now has more ways to understand your work context and keep longer tasks moving:
+Appshots
+in the Codex app on macOS let you attach an app window to a Codex thread with a hotkey, including a screenshot and available text, so Codex can understand what you are looking at without a long setup prompt.
+Goal mode
+is generally available across the Codex app, IDE extension, and CLI, so you can define an outcome and success criteria and let Codex keep working toward it.
+In-app browser annotations
+support more precise styling feedback for browser-based and frontend work.
+Locked computer use
+lets eligible Mac Computer Use users keep Codex working remotely and securely after the Mac locks, subject to existing Computer Use regional constraints.
+Browser use improvements
+include advanced annotation mode, faster asset extraction, read-only JavaScript context, tab grouping usability, less Chrome extension tab clutter, and reliability improvements.
+Learn more:
+Appshots
+,
+Goal mode
+,
+locked computer use
+,
+in-app browser annotations
+, and
+config reference
+.
+May 15, 2026
+Personal finances in ChatGPT
+We’re starting to roll out a new personal finance experience in ChatGPT.  Pro users in the United States can securely connect supported financial accounts, see a dashboard of where their money is going, and ask questions grounded in their financial context.
+Available on web and iOS, Finances lets you view spending, bills, subscriptions, net worth, and investment information in one place. You can ask questions directly in ChatGPT or use the Finances page to explore insights, review upcoming payments, track recurring charges, and think through budgets, savings goals, debt payoff, and other financial decisions.
+Users can connect accounts through Plaid. This experience is rolling out gradually, so some eligible users may not see it right away.
+ChatGPT can help users understand and plan, but it cannot move money, pay bills, place trades, file taxes, or act as a financial, legal, tax, or investment adviser.
+May 14, 2026
+Codex remote access from the ChatGPT mobile app
+Codex is now available in preview in the ChatGPT mobile app, so you can stay connected to active work from your phone while Codex continues running on the connected Mac host. From mobile, you can start or continue threads, answer questions, change direction, approve actions, review what Codex found, and move across connected hosts without stepping away from the work. That means you can keep an investigation moving, make a decision when Codex reaches a fork, or spin up a new idea before you are back at your desk. You can currently connect your phone to Codex running on macOS.
+The mobile experience loads live context from the machine where Codex is operating, including project context, approvals, plugins, screenshots, terminal output, diffs, and test results. Codex in the ChatGPT mobile app is rolling out on iOS and Android across all plans, including Free and Go, in supported regions. To try it, update both the ChatGPT mobile app and the Codex app on macOS. Setup starts in the Codex App on the host and continues in ChatGPT after scanning a QR code; the host must remain awake, online, and running Codex for remote access to continue.
+Learn more in
+Remote connections
+.
+File library expands to Free and Go users, with storage management
+File library is expanding to Free and Go users, including to users in the European Economic Area (EEA) making it easier to find, reuse, and build on files you upload or create in ChatGPT. You can add recent files from the composer, browse saved files in Library, and ask ChatGPT about files you’ve used before, like “What should I know about the document I uploaded yesterday?”
+We’re also introducing storage management across plans. Storage includes files you upload and files created in ChatGPT, including documents, spreadsheets, presentations, and images. Limits vary by plan:
+Free
+:
+500 MB
+Go
+:
+4 GB
+Plus
+and
+Business
+:
+20 GB
+Pro
+:
+100 GB
+Generated images will continue to appear in the Images tab.
+Storage management is currently available on web and you can access it from Settings > Storage; you can also delete files directly from Library.
+Files remain in your Library until you delete them. Files uploaded in Temporary Chat aren’t saved to Library.
+Library and ‘Recent files’ in the composer are supported on web, iOS, and Android.
+Learn more
+about File storage and Library in ChatGPT.
+May 12, 2026
+More images in answers for Free users
+Free users in ChatGPT will now see more inline images from the web to help make visual topics easier to understand, including well-known people, places, and products. When visuals can add clarity, images may appear alongside relevant parts of an answer. You can click any image to view it at its original size and see source attribution.
+This is rolling out globally on web and iOS to Free users for responses using 5.5-Instant.
+May 7, 2026
+Trusted contact in ChatGPT
+Over the coming weeks, we'll be rolling out trusted contact, an optional safety feature for adults with personal ChatGPT accounts.
+Trusted contact in ChatGPT helps you connect with a person you trust if you need additional support. You may choose your trusted contact in settings, and ChatGPT will send them an  invitation to participate. Once they accept, if automated systems and trained reviewers detect you may be talking about suicide in a way that signals a serious safety concern, ChatGPT may notify your trusted contact and encourage them to check in with you.
+Trusted contact is available for eligible users with personal ChatGPT accounts in supported regions. It is not available for Business, Enterprise, or Edu workspaces.
+For more information about this feature and eligibility requirements, see
+Trusted contact in ChatGPT
+and our
+blog post
+.
+May 5, 2026
+Memory sources and more personalized responses in ChatGPT
+Starting today, we’re rolling out memory improvements to ChatGPT Plus and Pro users that make responses more personalized, useful, and continuous over time. ChatGPT can now better pull in relevant context from your past chats, saved memories, and, where available, files and connected Gmail app, to offer more tailored ideas, recommendations, and next steps. It is also faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often.
+We’re also introducing memory sources across all ChatGPT consumer plans, so you can see what information helped personalize a response and make edits if something is no longer relevant. Tap the Sources icon below the response to view relevant saved memories, past chats, and custom instructions. Plus and Pro users may also see files in their library and referenced emails from a connected Gmail account. If something is outdated or no longer relevant, you can correct it, delete it, or mark it as not relevant. Memory sources may not show every factor that shaped a response, and we’ll keep improving this view to make it more comprehensive over time. Memory sources are rolling out on the web and coming to mobile soon.
+These updates are designed to make personalization more useful while keeping you in control. Memory sources are only shown within your account experience, and if you share a chat, those sources are not shown in the shared chat. You can delete chats, use temporary chats that do not use or update memory or appear in history, turn off memory, disconnect apps anytime, and manage whether your content is used to help improve our models.
+GPT-5.5 Instant in ChatGPT
+We’re rolling out GPT-5.5 Instant as ChatGPT’s new default model. It replaces GPT-5.3 Instant for all ChatGPT users and improves everyday answers across accuracy, clarity and conciseness, image understanding, STEM questions, and when ChatGPT decides to search the web.
+GPT-5.5 Instant is more factually reliable, especially for prompts where accuracy matters most. It also gives tighter, more direct answers without losing useful details, asks fewer unnecessary follow-up questions, and reduces clutter like overformatting and gratuitous emojis.
+For Plus and Pro users using chatgpt on web, GPT-5.5 Instant can more effectively use context from past chats, files, and Gmail, when connected, to make responses more relevant. This can help ChatGPT tailor suggestions, pick up ongoing work, and reduce the need to repeat context across conversations.
+GPT-5.5 Instant is rolling out starting today to all ChatGPT users. Paid users can continue using GPT-5.3 Instant for three months through model configuration settings before it is retired.
+ChatGPT for Excel and Google Sheets
+ChatGPT for Excel and Google Sheets is now available globally, bringing ChatGPT into a sidebar in Microsoft Excel and Google Sheets so you can build, update, and understand spreadsheets in place. It can help with trackers, budgets, formulas, multi-tab files, scenario work, and spreadsheet cleanup, and supports Skills and apps where available.
+Free and Go include limited usage; Plus and Pro use the same agentic usage limits as Codex. You can purchase additional credits if you need to go beyond plan limits.
+Install ChatGPT for Excel from Microsoft Marketplace or ChatGPT from Google Workspace Marketplace, then sign in with an eligible ChatGPT account. Review outputs before relying on formulas or analysis.
+Learn more
+.
+April 30, 2026
+Advanced Account Security in ChatGPT
+We’re rolling out Advanced Account Security, an optional setting for personal ChatGPT accounts that adds stronger sign-in requirements and stricter account safeguards to help reduce the risk of ATO (account take over), unauthorized access, and data exposure.
+With Advanced Account Security enabled, ChatGPT uses stronger sign-in methods like passkeys or compatible security keys and turns off weaker paths like password sign-in, email/SMS sign-in codes, and email-based account recovery. It also adds recovery keys, shorter active sessions, login notifications, and session management controls, giving users more protection and visibility across their account.
+Because these protections are stricter, recovery is also stricter. Users should save their recovery keys and keep access to their enrolled passkeys or security keys. If access to all sign-in methods and recovery keys is lost, access to the account may be lost.
+Learn more:
+Advanced Account Security
+April 28, 2026
+Easier model selection in ChatGPT
+We’re making it easier to choose the right model before you send a message. Model selection now appears in the composer, so you can find and switch models from the same place where you write your prompt.
+We’re also moving thinking effort controls into the model picker. When you choose a Thinking or Pro model, you can select the level of thinking effort directly from the model picker.
+This update is available on web to ChatGPT users on Plus, Pro, and Business plans.
+April 22, 2026
+Fast answers in ChatGPT
+Sometimes, you just want the right answer as quickly as possible. We’re rolling out Fast answers, a quicker way to get responses to common information-seeking questions in ChatGPT, like “Show me the Seven Wonders of the World” or “Which football team has the most super bowl titles?”
+When your question doesn’t require a personalized response and ChatGPT has a high-confidence answer ready, it can now respond faster while still providing a useful, in-depth answer. Fast answers do not reference your past chats or memory.
+Fast answers are available globally on web, iOS, and Android for logged in and logged out users across plans. If you prefer ChatGPT to always generate personalized answers, you can turn Fast answers off anytime in Personalization settings.
+We’ll continue expanding Fast answers to more kinds of questions over time.
+ChatGPT for Clinicians
+We’re launching
+ChatGPT for Clinicians
+, a free version of ChatGPT for verified clinicians in the United States. It’s designed to support real clinical work at the time of care, including evidence review, documentation, and medical research, with trusted clinical search, citations, reusable skills, deep research across medical literature, and support for earning CME credits on eligible clinical questions.
+If you already have a ChatGPT account, you can use that same account to sign up. After signup, ChatGPT for Clinicians appears as a separate workspace under the same login, and your existing ChatGPT workspace remains available.
+For more information, please see our help article
+ChatGPT for Clinicians
+or our blog post
+Making ChatGPT better for clinicians
+.
+April 21, 2026
+ChatGPT Images 2.0 in ChatGPT
+We’re introducing
+ChatGPT Images 2.0
+, our new image generation model in ChatGPT.
+ChatGPT Images 2.0
+is available on all ChatGPT plans.
+We’re also introducing
+images with thinking
+. When given more time to think, it can plan and refine image outputs before generating them.
+Images with thinking
+is available on all paid ChatGPT plans. It is available when you select
+Thinking
+and
+Pro
+models.
+April 16, 2026
+Rolling out ads in Australia, New Zealand, and Canada
+We're beginning to rollout ads for users on Free and Go plans in Australia, New Zealand, and Canada. Plus, Pro, Business, Enterprise, and Education plans do not have ads.
+April 9, 2026
+GPT-5.3 Instant mini in ChatGPT
+Today, we’re releasing
+GPT-5.3 Instant Mini
+in ChatGPT. It replaces GPT-5 Instant Mini as the fallback model users reach after hitting their rate limits for GPT-5.3 Instant. Because it serves as a fallback, it won’t appear in the model picker.
+Compared with GPT-5 Instant Mini, GPT-5.3 Instant Mini feels more natural in conversation, with stronger writing and contextual awareness throughout chats. It outperforms GPT-5 Instant Mini across a range of use cases.
+New Pro plan options
+We’re introducing a new $100/month Pro plan and updating how Codex usage works across Plus and Pro.
+Pro ($100/month):
+Built for longer, high-intensity Codex sessions. It includes unlimited access to GPT-5.4, access to GPT-5.4 Pro, and, for a limited time, up to 10x more Codex usage than Plus (up from 5X standard usage allowance).
+Pro ($200/month):
+Our highest-usage option remains available and continues on its current Codex promotion through May 31.
+Plus ($20/month):
+Plus remains best for steady, day-to-day use. As the temporary Codex promotion on Plus ends, we’re rebalancing Plus usage to support more sessions across the week, rather than longer, high-intensity sessions on a single day.
+You can upgrade, switch, or cancel your plan from
+Settings > My Plan
+or from the Pricing page.
+April 8, 2026
+Outlook shared mailboxes and calendars in ChatGPT
+The Outlook Email and Calendar apps for ChatGPT can now help with delegated or shared Outlook resources, when you have access. You can ask ChatGPT to read messages from a shared mailbox, browse its folders, mark mail read or unread, move messages, or send plain-text email from or on behalf of that mailbox. For shared Outlook calendars, ChatGPT can help create, update, RSVP to, cancel, delete, or add small attachments to events.
+To use this, connect the Outlook Email or Outlook Calendar app and provide the exact shared mailbox address or target calendar when asking ChatGPT. Availability may depend on your Microsoft permissions and workspace app settings.
+Learn more
+.
+April 2, 2026
+ChatGPT in Apple CarPlay
+We’re rolling out ChatGPT in CarPlay, giving you access to a hands-free ChatGPT experience while on-the-go.  If you have iOS 26.4 or newer and are connected to a supported car, you can start new voice conversations with ChatGPT directly from the CarPlay interface. You can also resume existing conversations you were having using
+voice mode
+in the ChatGPT mobile app.
+Learn more
+.
+March 27, 2026
+Updated Box, Notion, Linear, and Dropbox apps
+We’re rolling out updated
+Box
+,
+Notion
+,
+Linear
+, and
+Dropbox
+apps in ChatGPT. These updates add new app actions, including new write capabilities where supported, and bring the latest app experience into ChatGPT.
+If you already use these apps in ChatGPT, reconnect the app to start using the updated experience.  Existing sync functionality (Pro users only) for these apps is not affected.
+March 26, 2026
+A simplified sidebar on mobile
+To give you more space to view your most critical chats and projects, the sidebar menu is now simplified on iOS and Android. ChatGPT experiences available to you based on your plan and usage—like Images, Codex, Pulse, and Apps—now appear in a horizontal bar above your chats and projects.
+Location Sharing
+Users can now choose to share their device location so ChatGPT can provide more relevant information, such as local recommendations, news, and weather. Sharing your device location is completely optional and off until you choose to enable it. You can update device location sharing in Settings > Data Controls at any time.
+Enabling location sharing will also enable precise location. Precise location means ChatGPT can use your device’s specific location, such as an exact address, to provide more tailored results. For example, if you ask “what are the best coffee shops near me?”, ChatGPT can use your precise location to provide more relevant nearby results. On mobile devices, you can choose to toggle off precise location separately while keeping approximate device location sharing on for additional control.
+ChatGPT deletes precise location data after it’s used to provide a more relevant response. If ChatGPT’s response includes information related to your specific location, such as the names of nearby restaurants or maps, that information becomes part of your conversation like any other response and will remain in your chat history unless you delete the conversation.
+Parents who have set up parental controls can choose to disable device location sharing for their teen.
+Rolling out to all ChatGPT consumers plans on iOS, Android, and web.
+Plugins in Codex
+Codex now includes a curated plugins directory that lets users discover, install, and use packaged workflows built from apps and skills directly in Codex. Plugins are installable bundles for reusable Codex workflows, making it easier to share the same setup across projects or teams. Plugins can package skills, optional app integrations, and MCP server configurations in a single place.
+Learn more.
+March 25, 2026
+Large pastes are now handled as attachments
+Starting today for
+ChatGPT Plus
+,
+Pro
+, and
+Business
+users, long pastes are handled differently in ChatGPT.
+If you paste
+more than 5k characters
+into the composer, ChatGPT will automatically convert the content into an
+attachment
+instead of inserting it directly into the text field. This keeps the composer cleaner and helps prevent large pastes from consuming your entire context window.
+You can still move the content back into the message at any time by clicking on
+Show in text field
+to convert the attachment back to a direct paste.
+Google Drive app unification
+Google’s file connectors in ChatGPT are now unified under Google Drive, providing a single app experience for interacting with your Google Docs, Sheets and Slides on Google Drive.
+If you’re a new user, you can connect to the Google Drive app in ChatGPT to use Google Drive, Docs, Sheets, and Slides actions, removing the need to install and authenticate separate Google file apps. If you’ve already connected to the separate apps in the past, they will continue to work as normal. You can also reconnect the Google Drive app to get the new actions - ChatGPT will switch over once you’ve done the reconnection.
+For Pro users, Google Drive sync behavior is unchanged.
+Read more
+.
+March 24, 2026
+Shopping updates in ChatGPT
+We’ve improved shopping in ChatGPT to make it easier to discover, compare, and decide on products.
+Product results are now more visually rich, with improved detail and relevance. You can browse products in chat, refine results through conversation, and upload images to find similar items. Products can also be compared side by side with key details such as price, reviews, and features, making it easier to compare without opening multiple tabs.
+We’ve also improved product data coverage, freshness, and speed so results are more up to date and useful. These improvements are rolling out to all ChatGPT users this week.
+These updates improve how ChatGPT retrieves and presents product information from merchants and other providers using the Agentic Commerce Protocol (ACP).
+March 23, 2026
+File Library in ChatGPT
+Now, it’s easier to find, reuse, and build on your files over time. When you upload or create a file—whether it’s a PDF, spreadsheet, image, or more—it’s automatically saved to your Library. Generated images will continue to appear in the Images tab.
+You can quickly reference files in a chat using recent files in the composer, or browse everything you’ve uploaded in the Library tab in the sidebar. You can also ask ChatGPT about files you’ve saved (“What should I know about the document I uploaded yesterday?”)
+Library is available on web only. ‘Recent files’ in the composer and file search in ChatGPT are supported on iOS and Android.
+Files remain in your Library until you delete them. Files uploaded in Temporary Chat are not saved to your Library.
+Availability:
+Rolling out globally for Plus, Pro, and Business users, coming soon to users in the European Economic Area, Switzerland, and the United Kingdom.
+March 20, 2026
+Codex for Students
+Codex for Students is now available for verified university students in the United States and Canada. Eligible students can claim $100 in ChatGPT credits, or 2,500 credits, to extend Codex usage beyond the limits included in ChatGPT Free, Go, Plus, and Pro.
+To get started, students sign in at chatgpt.com/codex/students and complete student verification through SheerID with their university email. Credits are applied automatically to the student's personal workspace, can be used in Codex, are not API credits, and expire 12 months after the grant date.
+Learn more.
+March 19, 2026
+Legacy deep research mode deprecation notice
+The legacy deep research mode will be removed on Thursday, March 26, 2026. This change only affects the legacy mode; the current deep research experience will remain unchanged.
+Historical conversations and results will remain accessible.
+To learn more about deep research, see:
+Deep research in ChatGPT
+.
+March 18, 2026
+GPT-5.4 mini in ChatGPT
+We’re rolling out GPT-5.4 mini in ChatGPT. GPT-5.4 mini is available to Free and Go users via the “Thinking” feature in the + menu. For all other users, GPT-5.4 mini is available as a rate limit fallback for GPT-5.4 Thinking.
+For Plus, Pro, and other paid users, GPT-5.4 mini will be used as a fallback for GPT-5.4 Thinking when rate limits are reached, helping with continued access to reasoning capabilities during high usage. Enterprise customers will retain the option to default Auto routing to GPT-5.4 mini, if preferred.
+GPT-5.4 mini will not appear as a selectable model in the model picker. Learn more in our
+blog post
+.
+March 17, 2026
+Updates to the model picker in ChatGPT
+We’ve simplified the model picker to make it easier to choose the right level of reasoning.
+Users on Plus, Pro, Business, Enterprise, and Edu accounts will see a set of model options depending on their plan, including:
+Instant
+– fast responses for everyday questions
+Thinking
+– deeper reasoning for more complex tasks
+Pro
+– the most advanced reasoning models
+The Auto functionality can be accessed by clicking
+Configure
+in the model picker menu and choosing "Auto-switch to Thinking.” This setting will automatically be on if your last chat was set to Auto.
+Configure more advanced settings
+If you want more control, click
+Configure
+to:
+Turn
+automatic switching
+between Instant and Thinking on or off
+Access
+legacy models
+Set
+thinking effort
+when Thinking or Pro is selected
+We’ve also simplified the
+retry menu
+, making it easier to regenerate responses with Thinking or Pro models by clicking on the three dots underneath the response.
+Sunsetting the “Nerdy” base style
+We’re sunsetting the preset Nerdy base style to simplify options and improve response quality. Users who selected it will be moved to the default personality. You can manage personality settings anytime in ChatGPT under Settings → Personalization.
+March 16, 2026
+GPT-5.3 Instant update
+We’re rolling out an update to GPT-5.3 Instant that improves follow-up tone and reduces teaser-style phrasing in responses (e.g., “If you want…”, “You’ll never believe…”, “I can tell you these three things that…”).
+March 11, 2026
+Retiring GPT-5.1 models
+As of March 11, 2026, GPT-5.1 models are no longer available in ChatGPT.
+This applies to GPT-5.1 Instant, GPT-5.1 Thinking, and GPT-5.1 Pro. Existing conversations that used GPT-5.1 will automatically continue on the corresponding current model: GPT-5.3 Instant, GPT-5.4 Thinking, or GPT-5.4 Pro.
+March 10, 2026
+Interactive learning for math and science
+When you ask ChatGPT about certain topics, it can now present an
+interactive visual module
+that lets you experiment with formulas and variables in real time. Adjust inputs, manipulate equations, and instantly see how changes affect graphs and outcomes—turning abstract concepts into something you can explore directly.
+Interactive learning launches with
+70+ math and science topics
+, including concepts like the Pythagorean theorem, ideal gas law, circle area, and lens equations.
+This feature builds on other learning tools in ChatGPT, like
+study mode
+and
+quizzes
+, designed to help students work through problems step by step and strengthen understanding.
+Try asking:
+“Help me understand the Pythagorean theorem.”
+“Explain how PV = nRT works.”
+“How do I find the area of a circle?”
+Availability:
+Rolling out to all logged-in ChatGPT users across consumer and business plans.
+Auto top-up for flexible usage credits
+Eligible ChatGPT Plus and Pro users can now turn on auto top-up for credits used with Codex and Sora. Auto top-up automatically replenishes your shared credit balance when it falls below the minimum balance you choose, using your default payment method on file to purchase only the amount needed to reach your target balance.
+You can manage auto top-up from Codex Settings → Usage Dashboard. Auto top-up applies to the same shared credit balance used across supported features like Codex and Sora, and if your balance is already below your selected minimum when you turn it on, a top-up may happen right away. Learn more:
+Using Credits for Flexible Usage in ChatGPT (Free/Go/Plus/Pro) & Sora
+.
+March 5, 2026
+GPT-5.4 Thinking in ChatGPT
+GPT‑5.4 brings together the best of our recent advances in reasoning, coding, and agentic workflows into a single frontier model. It incorporates the industry-leading coding capabilities of
+GPT‑5.3‑Codex⁠
+while improving how the model works across tools, software environments, and professional tasks involving spreadsheets, presentations, and documents. The result is a model that gets complex real work done accurately, effectively, and efficiently—delivering what you asked for with less back and forth.
+In ChatGPT, GPT‑5.4 Thinking can now provide an upfront plan of its thinking, so you can
+adjust course mid-response
+while it’s working
+,
+and arrive at a final output that’s more closely aligned with what you need without additional turns. GPT‑5.4 Thinking improves
+deep web research,
+particularly for highly specific queries, while
+better maintaining context
+for questions that require longer thinking. GPT‑5.4 Thinking also has improved context window management that supports its ability to think for longer. Together, these improvements mean higher-quality answers that arrive faster and stay relevant to the task at hand.
+March 4, 2026
+Codex app on Windows
+The Codex app is now available on Windows for ChatGPT plans that include Codex. The app gives users a Windows desktop surface for running multiple Codex agents in parallel, with isolated worktrees and reviewable diffs that can be edited, discarded, or turned into a pull request.
+Users can sign in with ChatGPT from the app and keep work moving across the app, CLI, and IDE without switching between tools for every task. Learn more:
+Using Codex with your ChatGPT plan
+.
+March 3, 2026
+GPT-5.3 Instant Update
+GPT‑5.3 Instant delivers more accurate answers, richer and better-contextualized results when searching the web, and reduces unnecessary dead ends, caveats, and overly declarative phrasing that can interrupt the flow of conversation.
+This update focuses on the parts of the ChatGPT experience people feel every day: tone, relevance, and conversational flow. These are nuanced problems that don’t always show up in benchmarks, but shape whether ChatGPT feels helpful or frustrating. GPT‑5.3 Instant directly reflects user feedback in these areas.
+February 27, 2026
+ChatGPT Web and Android updates: Edit image prompts, share faster, and smoother conversations
+Web
+Edit messages with images.
+You can now edit messages that include image attachments, so you don’t have to start over to adjust your prompt or regenerate results.
+Open search results in a new tab.
+Cmd+click in the search panel now opens results in a new tab, making it easier to explore without losing your place.
+Faster sharing.
+Sharing chats is now easier and faster, with a quicker-loading share menu.
+Export visuals from Code Blocks.
+Flowcharts, diagrams, and data visualizations created in Code Blocks can now be exported as images for easy reuse.
+Android
+Automatic scroll to latest message.
+Existing conversations now automatically scroll to the bottom, so you can jump right back in.
+Faster sidebar actions.
+Sidebar interactions, such as renaming chats, are now faster and more responsive.
+Improved dictation visuals.
+Dictation now has a clearer, more streamlined interface that keeps your text visible and updates as you speak.
+Keyboard opens automatically when attaching files.
+The keyboard now opens automatically after you attach a file, helping you continue your message seamlessly.
+Bug fixes
+Fixed increased message streaming errors in GPT-5.2 Thinking
+Fixed a flicker affecting the Voice Mode button when opening a conversation
+Sidebar actions on mobile web no longer stick while scrolling
+February 25, 2026
+Add sources to your projects from anywhere
+Projects now make it easy to build a living knowledge base by adding sources wherever your context already lives; from apps, conversations, or quick text inputs.
+Sources from apps:
+Paste a link to a Slack channel or Google Drive file or folder to add it directly as a project source.
+Additionally, use connected apps directly in chats.
+Sources from chats:
+Save useful ChatGPT responses into your project so great outputs become reusable knowledge.
+Ad-hoc text sources:
+Paste notes, briefs, or reference material directly to capture context instantly.
+Learn more about
+projects in ChatGPT
+.
+February 20, 2026
+Expanded context window for Thinking
+ChatGPT now has a total context window length of 256k tokens (128k input and 128k max output) when you manually select Thinking. Previously it was 196k total tokens.
+February 19, 2026
+Interactive Code Blocks in ChatGPT
+We improved Code Blocks in ChatGPT to make them more interactive.
+You can write, edit, and preview your code in ChatGPT, all in one
+place:
+Write and edit text in-line
+Preview diagrams and mini apps directly in chat
+Review code in split-screen views
+February 13, 2026
+Retiring GPT-4o and other legacy models
+As
+previously announced
+, we have retired GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini from ChatGPT. We are also retiring GPT-5 (Instant and Thinking),
+as previously announced
+. There are no API changes at this time. For details, see our
+blog post
+and
+Help Center
+.
+ChatGPT updates: Better file uploads, easier copying, and more reliable long chats
+Web
+Attach up to 20 files in a single message.
+You can now upload up to 20 files at once (previously 10), making it easier to analyze document sets, compare multiple files, or provide broader context in a single message.
+Expanded file type support.
+We now support additional text and code file formats, improving compatibility with source files, logs, configuration files, and other structured text.
+Cleaner “Select All” behavior (Cmd+A).
+Cmd+A now selects only the conversation content, excluding surrounding interface elements for cleaner copying and sharing of chat transcripts.
+Android
+Quick tools in the composer.
+A new quick-tools menu in the message composer makes common actions easier to access.
+Simplified composer.
+The message composer has been streamlined to reduce visual complexity and make it easier to focus on your message.
+iOS
+Performance improvements.
+We’ve made multiple performance enhancements to improve responsiveness and overall speed throughout the app.
+Web, iOS, and Android
+Improved reliability for long “Thinking” chats.
+We've reduced interruption rates in longer “Thinking” chats through infrastructure improvements.
+February 12, 2026
+ChatGPT Voice Update
+We’re making an update to ChatGPT Voice that improves its ability to follow user instructions, and usage of tools like web search to provide better responses. This update applies to the version of Voice primarily used by those on the free ChatGPT plan, and by Plus users when limits are reached for the main model.
+February 10, 2026
+Updates to deep research
+We’re introducing improvements to deep research in ChatGPT to help produce more accurate, credible reports with greater control. You can now focus research on specific websites and a larger collection of connected apps as trusted sources.
+A redesigned sidebar entry point and fullscreen report view make it easier to start, review, and manage research in one place. Create and edit a research plan before it begins, and track progress with the ability to adjust direction mid-run.
+Rolling out throughout today to Plus and Pro users, with Free and Go users following in the coming days.
+For more information, please refer to our help center article:
+Deep research in ChatGPT
+GPT-5.2 Instant Update
+We’re making an update to GPT-5.2 Instant in ChatGPT and the API that improves response style and quality.
+Users should notice responses that are more measured and grounded in tone, in a way that’s more contextually appropriate to the conversation. The model also tends to output clearer, more relevant answers to advice-seeking and how-to questions, more reliably placing the most important info upfront.
+February 9, 2026
+Testing ads in ChatGPT (Free, Go)
+We’re beginning to roll out a test for ads in ChatGPT in the U.S. for logged-in adults on the Free and Go tiers. Plus, Pro, Business, Enterprise, and Education plans do not have ads. The test will be a subset of users to start. We will expand over the coming weeks as we learn from this test.
+ChatGPT’s answers are generated independently from advertising. Answers are optimized based on what’s most helpful to you. When you see an ad, they are always clearly labeled as sponsored and visually separated from the organic answer.
+Ads are shown using information that stays within ChatGPT and is not shared with advertisers. This includes what you’re discussing, how you interact with ads (such as ads you hide or engage with), and your past chats and memories, if you have ads personalization enabled. You’re in control of this experience: you can dismiss ads, share feedback, learn how and why you’re being shown an ad, delete your ad data with one tap, and manage ad personalization at any time.
+Advertisers never see your chats or personal details and receive only aggregated performance information, like impressions and clicks. During the test, ads do not appear in chats about sensitive topics or regulated topics, including health, mental health, or politics, and are not shown to users who tell us or we predict are under 18.
+February 4, 2026
+Update on thinking time settings for GPT-5.2 Thinking in ChatGPT
+Jan 10, 2026:
+We lowered the Standard and Light thinking time as we observed users prefer faster responses. As part of this update, the
+Extended
+thinking setting for GPT-5.2 was unintentionally changed to be lower which we have now fixed.
+February 3, 2026:
+We made another small reduction to Standard thinking time based on testing.
+February 4, 2026:
+We’re restoring the
+Extended
+thinking level for GPT-5.2 Thinking to its prior setting, correcting the inadvertent reduction from January. Extended is now back to its prior level.
+We periodically adjust the default thinking time for our reasoning models. These changes are based on ongoing experiments to find the best balance between answer quality and response speed for users.
+The
+thinking level toggle
+introduced in September 2025 gives users more choice beyond Standard, allowing them to select the right thinking level for their question—whether they want lighter, faster responses or more extended reasoning when depth and accuracy matter more.
+Thinking time is not directly comparable across different models. Each model is tuned independently to what works best for users. We’ll continue to adjust these settings as models evolve, and will keep giving users clear controls when there are meaningful tradeoffs to choose from.
+February 2, 2026
+Introducing the Codex app
+Today we’re releasing the Codex app for MacOS,  a command center for managing multiple coding agents in parallel. The app lets you run long‑horizon and background tasks, review clean diffs from isolated worktrees, see agent progress and decisions, and execute reusable skills and automations.
+Available with ChatGPT plans that include Codex, with a limited‑time promo: Free and Go can try Codex with included limits, while Plus, and Pro users get 2x Codex rate limits.
+Get started by downloading the macOS app, and
+learn more
+about Codex.
+January 30, 2026
+More visual responses
+Responses in ChatGPT are now more visual and easier to scan.
+For everyday questions, responses may include at-a-glance visuals—like checking your team’s latest stats, converting units, or doing a quick calculation.
+Answers now also highlight important people, places, products, and ideas. You can tap any highlight to open a side panel with key facts and trusted sources, making it easy to understand the context without asking follow-up questions.
+Rolling out globally on iOS, Android, web.
+January 29, 2026
+Retiring GPT-4o and other legacy models
+On February 13, 2026, alongside the
+previously announced retirement
+⁠ of GPT‑5 (Instant and Thinking), we will retire GPT‑4o, GPT‑4.1, GPT‑4.1 mini, and OpenAI o4-mini from ChatGPT. In the API, there are no changes at this time. For more, see our
+blog post
+or
+help center
+.
+January 26, 2026
+Improvements to search response quality in Voice
+We’ve improved search responses in ChatGPT Voice to deliver more complete, up-to-date answers, including better access to shopping results.
+January 22, 2026
+5.2 Personality System Prompt Update
+We’re updating GPT-5.2 Instant’s default personality to be more conversational and better at adapting its tone contextually, making exchanges feel smoother and more natural. You can still select a different base style and tone for ChatGPT, along with tuning characteristics like warmth and emoji use, within the Personalization menu in settings.
+January 20, 2026
+Voice Updates
+We’re making an update to ChatGPT Voice for paid users that improves its ability to follow user instructions, as well as fixes a bug where Voice can sometimes repeat back custom instructions.
+Rolling out age prediction
+We're rolling out an age prediction model on ChatGPT consumer plans to help determine whether an account likely belongs to someone under 18, so we can apply the right experience and safeguards for teens.
+The model looks at a combination of behavioral and account-level signals, including how long an account has existed, typical times of day when someone is active, usage patterns over time, and a user’s stated age.
+If an adult is placed in the under-18 experience by mistake, they can quickly verify their age with a selfie through Persona, a verification service available in Settings > Account. Users can check whether safeguards have been added and verify at any time.
+January 15, 2026
+Improved memory for finding details from past chats (Plus & Pro)
+When reference chat history is enabled, ChatGPT can now more reliably find specific details from your past chats when you ask. Any past chat used to answer your question now appears as a source so you can open and review the original context.
+This memory improvement is now available for Plus and Pro users globally.
+January 12, 2026
+Dictation Updates
+We’re improving our dictation capabilities in ChatGPT for all logged-in users, significantly reducing empty transcriptions and improving accuracy.
+January 7, 2026
+Health in ChatGPT
+We’re starting to roll out
+Health
+, a dedicated space in ChatGPT for health and wellness conversations. You can securely connect medical records, Apple Health and supported wellness apps so answers can be grounded in your own data. Health is designed to help you navigate medical care, not replace it. Health conversations, memory, and files are kept separate from the rest of ChatGPT and are not used to train our foundation models.
+Health appears as a new space in the ChatGPT sidebar. If you ask a health-related question in a regular chat, ChatGPT may also suggest continuing in Health. If you’re interested in getting access as it becomes available, you can sign up for the
+waitlist
+. We’re starting by providing access to a small group of early users to learn and continue refining the experience. At launch, Health is available on
+web and iOS
+, with Android coming soon to
+ChatGPT Free, Go, Plus, and Pro users
+in supported countries (excluding the EEA, Switzerland, and the UK).
+Learn more in the
+blog
+or
+help center article
+.
 December 22, 2025
 Your Year with ChatGPT
 Today we’re rolling out
 Your Year with ChatGPT
 , an optional, personalized end-of-year experience that reflects on how you interacted with ChatGPT in 2025. It highlights high-level themes from your conversations and includes summary statistics about your usage over the year.
-This experience is rolling out gradually throughout the day, so it may not be available to everyone immediately. It’s available to Free, Plus, and Pro users, and is not available on Business, Enterprise, or Edu plans.
+This experience is rolling out gradually throughout the day, so it may not be available to everyone immediately. It’s available to Free, Plus, and Pro users in United States, United Kingdom, Canada, Australia, and New Zealand as well as Go, Plus, and Pro users in India, and is not available on Business, Enterprise, or Edu plans.
 To see
 Your Year with ChatGPT
 , Memory and Reference Chat History must be turned on, and you must meet a minimum activity threshold. If you have very limited activity, you’ll only see basic chat statistics.
@@ -178,6 +905,7 @@ Available to users in India who are new, on the free plan, or are current ChatGP
 If you have an existing ChatGPT Go membership, we may be able to automatically add the promotion for you at the end of your current billing cycle - review
 ChatGPT Go Promotion (India)
 for more details.
+Update: as of January 21, 2026, the promo has ended
 October 30, 2025
 ChatGPT Go expansion
 We're excited to announce that ChatGPT Go, our low cost subscription plan, is now available in 8 additional countries in Europe, bringing total coverage to
@@ -224,10 +952,8 @@ Research: Keep transcripts, survey results, and market research in one place, so
 Project owners can choose to share a project with “Only those invited” or “Anyone with a link,” and can change visibility settings at any time including switching back to invite-only. The following collaboration limits apply:
 Pro users:
 up to 40 files and 100 collaborators
-​
 Plus and Go users:
 up to 25 files and 10 collaborators
-​
 Free users:
 up to 5 files and 5 collaborators
 October 22, 2025
@@ -1003,7 +1729,6 @@ Canvas in GPTs
 : Canvas can now be used with GPTs when enabled in the GPT creator. This toggle will be enabled for newly created GPTs by default.
 Python code execution
 : You can now execute Python code in a canvas. ChatGPT will take a pass on fixing bugs in your code and provide comments on errors.
-​
 Canvas shortcut
 : You can now paste content into ChatGPT and instantly open it in canvas via a shortcut in the upper right corner of the composer.
 Canvas in Toolbox
@@ -1276,12 +2001,5 @@ General performance: Among other improvements, users will notice that ChatGPT is
 Conversation history: You’ll soon be able to view past conversations with ChatGPT, rename your saved conversations and delete the ones you don’t want to keep. We are gradually rolling out this feature.
 Daily limit: To ensure a high-quality experience for all ChatGPT users, we are experimenting with a daily message cap. If you’re included in this group, you’ll be presented with an option to extend your access by providing feedback to ChatGPT.
 To see if you’re using the updated version, look for “ChatGPT Dec 15 Version” at the bottom of the screen.
-Need more help? Contact us
-AI Chat
-Chat now
-AI Phone Call (beta)
-1-888-GPT-0090
-Calls may be recorded to improve OpenAI services.
-Learn more.
 Was this article helpful?
 Submit
