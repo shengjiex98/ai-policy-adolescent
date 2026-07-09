@@ -1,13 +1,11 @@
 # /// script
 # requires-python = ">=3.11"
-# dependencies = ["openpyxl"]
 # ///
-"""Generate data/input_sources.xlsx seeded with official sources for
+"""Generate data/input_sources.csv seeded with official sources for
 Anthropic, OpenAI, and Google DeepMind (V1 scope)."""
 
+import csv
 from pathlib import Path
-
-from openpyxl import Workbook
 
 COLUMNS = [
     "source_name",
@@ -69,14 +67,11 @@ SOURCES = [
 
 
 def main() -> None:
-    out_path = Path(__file__).resolve().parent.parent / "data" / "input_sources.xlsx"
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "sources"
-    ws.append(COLUMNS)
-    for row in SOURCES:
-        ws.append(row)
-    wb.save(out_path)
+    out_path = Path(__file__).resolve().parent.parent / "data" / "input_sources.csv"
+    with out_path.open("w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(COLUMNS)
+        writer.writerows(SOURCES)
     print(f"Wrote {len(SOURCES)} sources to {out_path}")
 
 
