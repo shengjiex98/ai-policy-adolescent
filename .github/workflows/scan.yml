@@ -1,0 +1,99 @@
+name: Weekly source scan
+
+on:
+  schedule:
+    # Mondays 13:00 UTC
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run deterministic scan (stage 1)
+        id: scan
+        run: |
+          python scripts/scan.py | tee "$RUNNER_TEMP/scan.log"
+          changed="$(awk '/^CHANGED/ {print $2}' "$RUNNER_TEMP/scan.log" | paste -sd ',' -)"
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          echo "Changed sources: ${changed:-none}"
+
+      # No content changes: push the state bookkeeping (last_checked dates)
+      # straight to main. Nothing analytic changed, so no review is needed.
+      - name: Commit scan state (no content changes)
+        if: steps.scan.outputs.changed == ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/state.json
+          if git diff --cached --quiet; then
+            echo "State unchanged; nothing to commit."
+          else
+            git commit -m "chore: weekly scan $(date -u +%F), no content changes"
+            git push
+          fi
+
+      # Content changed: wake the agent (stage 2) to classify the diffs into
+      # governance events, then open a PR for human review.
+      - name: Install Claude Code
+        if: steps.scan.outputs.changed != ''
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Classify changes into governance events (stage 2)
+        if: steps.scan.outputs.changed != ''
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CHANGED_SOURCES: ${{ steps.scan.outputs.changed }}
+          PR_BODY_FILE: ${{ runner.temp }}/pr_body.md
+        run: |
+          claude --dangerously-skip-permissions --model claude-sonnet-5 -p "$(cat .github/scan-prompt.md)
+
+          Changed sources this scan: $CHANGED_SOURCES
+          Write the PR body to this file: $PR_BODY_FILE"
+
+      - name: QC gate
+        if: steps.scan.outputs.changed != ''
+        run: python scripts/export.py --csv --out-dir "$RUNNER_TEMP/qc-gate" --force
+
+      - name: Ensure PR body exists
+        if: steps.scan.outputs.changed != ''
+        env:
+          CHANGED_SOURCES: ${{ steps.scan.outputs.changed }}
+        run: |
+          if [ ! -s "$RUNNER_TEMP/pr_body.md" ]; then
+            {
+              echo "Automated weekly scan detected changes in: $CHANGED_SOURCES"
+              echo
+              echo "The classification agent did not produce a PR body; review"
+              echo "the new files under data/snapshots/, data/events.json, and"
+              echo "data/runs/ directly."
+            } > "$RUNNER_TEMP/pr_body.md"
+          fi
+
+      - name: Open pull request
+        if: steps.scan.outputs.changed != ''
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: scan/run-${{ github.run_number }}
+          add-paths: data/**
+          commit-message: "Weekly scan: source changes in ${{ steps.scan.outputs.changed }}"
+          title: "Weekly scan: source changes detected (${{ steps.scan.outputs.changed }})"
+          body-path: ${{ runner.temp }}/pr_body.md
+          labels: automated-scan
+          delete-branch: true

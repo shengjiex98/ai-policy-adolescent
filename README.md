@@ -61,6 +61,25 @@ The export runs quality-control checks (taxonomy codes, ISO dates, required
 fields, review-flag rules) before writing anything and refuses to overwrite
 existing dated outputs unless `--force` is passed for CI/site publishing.
 
+## Automation
+
+The `Weekly source scan` workflow (`.github/workflows/scan.yml`, Mondays
+13:00 UTC or manual dispatch) runs the two stages unattended:
+
+1. `scan.py` runs deterministically. If nothing changed, the state
+   bookkeeping is committed straight to `main` and the run ends — no LLM is
+   invoked.
+2. If sources changed, the workflow runs Claude Code headlessly with
+   [.github/scan-prompt.md](.github/scan-prompt.md): it classifies the new
+   diffs against the constitution, appends events to `data/events.json`,
+   writes a run record, and drafts the PR body. A QC gate re-validates the
+   registry, then a pull request is opened for human review.
+
+Publication stays PR-gated: the agent proposes, a human merges, and the merge
+triggers the Pages redeploy. Setup requires one repository secret,
+`ANTHROPIC_API_KEY` (Settings → Secrets and variables → Actions). The
+schedule only takes effect once the workflow file is on `main`.
+
 ## Layout
 
 ```
