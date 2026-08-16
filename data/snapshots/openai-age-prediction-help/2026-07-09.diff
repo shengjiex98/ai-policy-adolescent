@@ -1,0 +1,11 @@
+--- snapshots/openai-age-prediction-help/2026-07-09.txt
++++ snapshots/openai-age-prediction-help/2026-07-09.txt
+@@ -1,7 +1,7 @@
+ Age prediction in ChatGPT | OpenAI Help Center
+ Age prediction in ChatGPT
+ Learn how ChatGPT uses age prediction and age verification to support age-appropriate experiences for teens.
+-Updated: 15 hours ago
++Updated: 15 days ago
+ Age prediction is rolling out globally. In the EU, age prediction will roll out in the coming weeks to account for regional requirements.
+ Overview
+ To help provide age-appropriate experiences in ChatGPT, OpenAI may use signals to predict whether an account belongs to someone under 18.

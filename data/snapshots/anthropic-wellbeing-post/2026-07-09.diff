@@ -1,0 +1,18 @@
+--- snapshots/anthropic-wellbeing-post/2026-07-09.txt
++++ snapshots/anthropic-wellbeing-post/2026-07-09.txt
+@@ -100,11 +100,10 @@
+ The public release includes over 100 seed instructions and customizable scoring dimensions, though it doesn't yet include the realism filter we use internally to prevent models from recognizing they're being tested.
+ Edited Feb. 3, 2025: This post originally stated that Opus 4.5 responded appropriately 70% of the time in our stress-testing evals for suicide and self-harm. That figure came from an earlier version of Opus 4.5, and has been corrected to 91%.
+ Related content
+-Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+-Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
++UST is bringing Claude to physical AI
+ Read more
+-More details on Fable 5’s cyber safeguards and our jailbreak framework
++Inviting hard questions
++We’re asking the public for their hardest questions about AI, and committing to show our work as we address them.
+ Read more
+-Introducing Claude Sonnet 5
+-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
++Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust
+ Read more

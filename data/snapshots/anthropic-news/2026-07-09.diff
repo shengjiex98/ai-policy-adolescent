@@ -1,0 +1,62 @@
+--- snapshots/anthropic-news/2026-07-09.txt
++++ snapshots/anthropic-news/2026-07-09.txt
+@@ -6,9 +6,13 @@
+ How to get support
+ Media assets
+ Download press kit
+-The Making of Claude Code
++Inviting hard questions
++Announcements
++Jul 9, 2026
++We’re asking the public for their hardest questions about AI, and committing to show our work as we address them.
+ Features
+ Jul 6, 2026
++The Making of Claude Code
+ The inside story of how Claude Code went from an internal CLI to Anthropic's coding agent, told by researchers, engineers and early users who built it.
+ Announcements
+ Jun 30, 2026
+@@ -22,15 +26,23 @@
+ Jun 30, 2026
+ Claude Science, an AI workbench for scientists, is now available
+ Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+-Product
+-Jun 23, 2026
+-Introducing Claude Tag
+-Claude Tag is a new way for teams to work with Claude.
+ News
+ Search
+ Date
+ Category
+ Title
++Jul 9, 2026
++Case Study
++UST is bringing Claude to physical AI
++Jul 9, 2026
++Announcements
++Inviting hard questions
++Jul 9, 2026
++Announcements
++Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust
++Jul 9, 2026
++Announcements
++Introducing a way to reflect on how you use Claude
+ Jul 6, 2026
+ Case Study
+ Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+@@ -49,16 +61,4 @@
+ Jun 23, 2026
+ Product
+ Introducing Claude Tag
+-Jun 17, 2026
+-Announcements
+-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
+-Jun 12, 2026
+-Announcements
+-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
+-Jun 12, 2026
+-Announcements
+-Results from the first Anthropic Public Record
+-Jun 12, 2026
+-Announcements
+-TCS and Anthropic partner to bring Claude to regulated industries
+ See more

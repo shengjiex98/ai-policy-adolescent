@@ -52,7 +52,7 @@
   "openai-age-prediction-help": {
     "source_name": "OpenAI Age Prediction Help",
     "source_url": "https://help.openai.com/en/articles/12652064-age-prediction-in-chatgpt",
-    "text_hash": "6d199e7a28362e8d3edea209e6f42d7c16361bbb861571e3579d7d0d0619ccaf",
+    "text_hash": "9be28acda58392343bbb26591457632f87c294dd805db8d858be0524736b4ad9",
     "last_checked": "2026-07-09",
     "last_changed": "2026-07-09",
     "last_snapshot": "snapshots/openai-age-prediction-help/2026-07-09.txt",
@@ -62,7 +62,7 @@
   "anthropic-news": {
     "source_name": "Anthropic News",
     "source_url": "https://www.anthropic.com/news",
-    "text_hash": "b80516efb4af6c3971b1a452634069e1013459ccc986fdd80ddf6f70a54fb489",
+    "text_hash": "3eb54b8e333ab864b1aa6b139e34465c3d66c7091db2b32764fa3d551e4362d7",
     "last_checked": "2026-07-09",
     "last_changed": "2026-07-09",
     "last_snapshot": "snapshots/anthropic-news/2026-07-09.txt",
@@ -82,7 +82,7 @@
   "anthropic-wellbeing-post": {
     "source_name": "Anthropic Protecting User Wellbeing",
     "source_url": "https://www.anthropic.com/news/protecting-well-being-of-users",
-    "text_hash": "a4ab67cd4b66517e7bc2b9b0ce02a1b49478f5cd09e9e6d350910539f83c85d2",
+    "text_hash": "026f16538d7a2c551df1c576faba7fafaf6f83fa124a859aff62ba7be7f4fc69",
     "last_checked": "2026-07-09",
     "last_changed": "2026-07-09",
     "last_snapshot": "snapshots/anthropic-wellbeing-post/2026-07-09.txt",
