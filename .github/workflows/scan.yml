@@ -1,9 +1,6 @@
 name: Weekly source scan
 
 on:
-  schedule:
-    # Mondays 13:00 UTC
-    - cron: "0 13 * * 1"
   workflow_dispatch:
 
 permissions:
